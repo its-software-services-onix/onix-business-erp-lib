@@ -29,7 +29,7 @@ namespace Its.Onix.Erp.Businesses.Products
             }
 
             GetProductInfo opr = new GetProductInfo(); 
-            //opr.CopyContexts(this);
+            opr.CopyContexts(this);
             
             MProduct prd = opr.Apply(dat);
 

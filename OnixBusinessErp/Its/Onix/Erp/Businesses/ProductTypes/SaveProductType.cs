@@ -15,7 +15,7 @@ namespace Its.Onix.Erp.Businesses.ProductTypes
             }
 
             GetProductTypeInfo opr = new GetProductTypeInfo();
-            //opr.CopyContexts(this);
+            opr.CopyContexts(this);
             
             MProductType prd = opr.Apply(dat);
 
