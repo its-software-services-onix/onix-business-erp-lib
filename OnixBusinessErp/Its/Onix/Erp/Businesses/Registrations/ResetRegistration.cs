@@ -8,9 +8,6 @@ namespace Its.Onix.Erp.Businesses.Registrations
     {
         protected override void  ValidateActivation(MRegistration dat, MBarcode bc, string barcode)
         {
-            var ctx = GetNoSqlContext();
-            var logger = GetLogger();
-
             if (bc.IsActivated)
             {
                 return;
