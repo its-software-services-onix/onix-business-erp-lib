@@ -15,6 +15,21 @@ namespace Its.Onix.Erp.Businesses.Registrations
         protected abstract void PerformRegistrationAction(MRegistration dat, string barcode);
         protected abstract void ValidateActivation(MRegistration dat, MBarcode bc, string barcode);
 
+        protected string PostData(MRegistration dat, string barcode, string status, string msg)
+        {
+            var ctx = GetNoSqlContext();
+            var logger = GetLogger();
+
+            dat.Status = status;
+            string path = string.Format("registrations/{0}/{1}", dat.Status, barcode);
+            ctx.PostData(path, dat);
+
+            string infoMsg = string.Format(msg, barcode);
+            LogUtils.LogInformation(logger, infoMsg);  
+
+            return infoMsg;
+        }
+
         public int Apply(MRegistration dat)
         {
             ILogger logger = GetLogger();

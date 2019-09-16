@@ -1,6 +1,5 @@
 using System;
 
-using Its.Onix.Core.Utils;
 using Its.Onix.Erp.Models;
 
 namespace Its.Onix.Erp.Businesses.Registrations
@@ -17,12 +16,7 @@ namespace Its.Onix.Erp.Businesses.Registrations
                 return;
             }
 
-            dat.Status = "FAILED";
-            string path = string.Format("registrations/{0}/{1}", dat.Status, barcode);
-            ctx.PostData(path, dat);
-
-            string msg = string.Format("Serial number and PIN has not been registered yet [{0}] ", barcode);
-            LogUtils.LogInformation(logger, msg);
+            string msg = PostData(dat, barcode, "FAILED", "Serial number and PIN has not been registered yet [{0}]");
 
             throw (new ArgumentException(msg));
         }
@@ -38,15 +32,7 @@ namespace Its.Onix.Erp.Businesses.Registrations
 
         protected override void PerformRegistrationAction(MRegistration dat,string barcode)
         {
-            var ctx = GetNoSqlContext();
-            var logger = GetLogger();
-
-            dat.Status = "RESET";
-            string path = string.Format("registrations/{0}/{1}", dat.Status, barcode);
-            ctx.PostData(path, dat);
-
-            string infoMsg = string.Format("Successfully reset serial number and PIN [{0}]", barcode);
-            LogUtils.LogInformation(logger, infoMsg);              
+            PostData(dat, barcode, "RESET", "Successfully reset serial number and PIN [{0}]");
         }    
     }
 }
