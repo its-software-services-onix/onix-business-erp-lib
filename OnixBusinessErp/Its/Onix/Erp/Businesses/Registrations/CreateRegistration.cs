@@ -27,8 +27,7 @@ namespace Its.Onix.Erp.Businesses.Registrations
             string bcPath = null;
             var ctx = GetNoSqlContext();
 
-            if (dat.SerialNumber.Length > 3 &&
-                dat.Pin.Length > 3)
+            if ((dat.SerialNumber.Length > 3) && (dat.Pin.Length > 3))
             {
                 bcPath = BarcodeUtils.BuildBarcodePath("barcodes", dat.SerialNumber, dat.Pin);
                 bc = ctx.GetObjectByKey<MBarcode>(bcPath);
