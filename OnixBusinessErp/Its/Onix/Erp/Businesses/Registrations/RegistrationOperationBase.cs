@@ -32,8 +32,6 @@ namespace Its.Onix.Erp.Businesses.Registrations
 
         public int Apply(MRegistration dat)
         {
-            ILogger logger = GetLogger();
-
             ValidateRegistration(dat);
 
             string barcode = string.Format("{0}-{1}", dat.SerialNumber, dat.Pin);
