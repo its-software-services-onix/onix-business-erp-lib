@@ -12,7 +12,7 @@ cd ${SOLUTION_DIR}
 git checkout ${COMMIT_SHA} -b ${COMMIT_SHA}
 
 dotnet sonarscanner begin \
-    /key:pjamenaja_onix-core \
+    /key:pjamenaja_onix-business-erp \
     /o:pjamenaja \
     /v:${BUILT_VERSION} \
     /d:sonar.host.url=https://sonarcloud.io \
