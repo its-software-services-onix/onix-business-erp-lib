@@ -382,8 +382,8 @@ FN:9,System.String Its.Onix.Erp.Models.MRegistration::get_Pin()
 FNDA:81,System.String Its.Onix.Erp.Models.MRegistration::get_Pin()
 DA:10,81
 FN:10,System.DateTime Its.Onix.Erp.Models.MRegistration::get_RegistrationDate()
-FNDA:19,System.DateTime Its.Onix.Erp.Models.MRegistration::get_RegistrationDate()
-DA:11,19
+FNDA:8,System.DateTime Its.Onix.Erp.Models.MRegistration::get_RegistrationDate()
+DA:11,8
 FN:11,System.String Its.Onix.Erp.Models.MRegistration::get_Status()
 FNDA:36,System.String Its.Onix.Erp.Models.MRegistration::get_Status()
 DA:12,36
@@ -398,142 +398,133 @@ FNF:5
 FNH:5
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessERP\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\CreateRegistration.cs
-FN:14,System.Int32 Its.Onix.Erp.Businesses.Registrations.CreateRegistration::Apply(Its.Onix.Erp.Models.MRegistration)
-FNDA:15,System.Int32 Its.Onix.Erp.Businesses.Registrations.CreateRegistration::Apply(Its.Onix.Erp.Models.MRegistration)
-DA:15,15
-DA:16,15
-DA:18,15
+FN:9,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
+FNDA:2,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
+DA:10,2
+DA:11,2
+DA:12,1
+DA:13,1
+DA:16,1
+DA:17,1
+DA:19,1
+DA:20,1
+BRDA:11,12,0,1
+BRDA:11,12,1,1
+FN:22,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
+FNDA:15,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
+DA:23,15
+DA:24,15
+DA:25,15
+DA:26,15
+DA:27,7
+DA:28,7
+DA:30,8
+BRDA:24,12,0,10
+BRDA:24,25,0,9
+BRDA:24,12,1,6
+BRDA:24,25,1,6
+BRDA:24,43,0,7
+BRDA:24,43,1,8
+FN:32,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
+FNDA:1,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
+DA:33,1
+DA:34,1
+DA:35,1
+LF:18
+LH:18
+BRF:8
+BRH:8
+FNF:3
+FNH:3
+end_of_record
+SF:D:\dev\projects\its_workspace\OnixBusinessERP\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\RegistrationOperationBase.cs
+FN:18,System.String Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::PostData(Its.Onix.Erp.Models.MRegistration,System.String,System.String,System.String)
+FNDA:15,System.String Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::PostData(Its.Onix.Erp.Models.MRegistration,System.String,System.String,System.String)
 DA:19,15
 DA:20,15
-DA:21,7
-DA:22,7
-DA:25,8
-DA:26,8
-DA:27,8
-DA:28,8
-DA:30,8
-DA:31,4
-DA:32,4
-DA:33,4
-DA:34,4
-DA:35,8
-DA:36,8
-DA:38,8
-DA:39,8
-DA:40,6
-DA:41,6
-DA:42,6
-DA:43,6
-DA:45,6
-DA:46,6
-DA:48,6
-DA:51,2
-DA:52,1
-DA:53,1
-DA:54,1
-DA:55,1
-DA:57,1
-DA:58,1
-DA:60,1
-DA:64,1
-DA:65,1
-DA:66,1
-DA:67,1
-DA:69,1
-DA:70,1
-DA:71,1
-DA:73,1
-DA:74,1
-DA:76,1
-DA:77,1
-BRDA:18,19,0,10
-BRDA:18,32,0,9
-BRDA:18,19,1,6
-BRDA:18,32,1,6
-BRDA:18,52,0,7
-BRDA:18,52,1,8
-BRDA:30,113,0,4
-BRDA:30,113,1,4
-BRDA:30,136,0,4
-BRDA:30,136,1,8
-BRDA:39,211,0,6
-BRDA:39,211,1,2
-BRDA:51,301,0,1
-BRDA:51,301,1,1
-LF:46
-LH:46
-BRF:14
-BRH:14
-FNF:1
-FNH:1
+DA:21,15
+DA:23,15
+DA:24,15
+DA:25,15
+DA:27,15
+DA:28,15
+DA:30,15
+DA:31,15
+FN:33,System.Int32 Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::Apply(Its.Onix.Erp.Models.MRegistration)
+FNDA:27,System.Int32 Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::Apply(Its.Onix.Erp.Models.MRegistration)
+DA:34,27
+DA:35,27
+DA:37,15
+DA:38,15
+DA:39,15
+DA:40,15
+DA:42,15
+DA:43,8
+DA:44,8
+DA:45,8
+DA:46,8
+DA:48,15
+DA:49,11
+DA:50,11
+DA:51,11
+DA:54,4
+DA:55,4
+DA:57,4
+DA:61,2
+DA:62,2
+DA:63,2
+DA:64,2
+DA:66,2
+DA:68,2
+DA:69,2
+BRDA:42,55,0,9
+BRDA:42,55,1,6
+BRDA:42,78,0,8
+BRDA:42,78,1,15
+BRDA:48,121,0,11
+BRDA:48,121,1,4
+LF:35
+LH:35
+BRF:6
+BRH:6
+FNF:2
+FNH:2
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessERP\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\ResetRegistration.cs
-FN:14,System.Int32 Its.Onix.Erp.Businesses.Registrations.ResetRegistration::Apply(Its.Onix.Erp.Models.MRegistration)
-FNDA:12,System.Int32 Its.Onix.Erp.Businesses.Registrations.ResetRegistration::Apply(Its.Onix.Erp.Models.MRegistration)
-DA:15,12
-DA:16,12
-DA:18,12
-DA:19,12
-DA:20,5
-DA:21,5
-DA:24,7
-DA:25,7
-DA:26,7
-DA:27,7
-DA:29,7
-DA:30,7
-DA:31,4
-DA:32,4
-DA:33,4
-DA:34,4
-DA:35,7
-DA:36,7
-DA:38,7
-DA:39,7
-DA:40,5
-DA:41,5
-DA:42,5
-DA:43,5
-DA:45,5
-DA:46,5
-DA:48,5
-DA:51,2
-DA:52,1
-DA:53,1
-DA:54,1
-DA:55,1
-DA:57,1
-DA:58,1
-DA:60,1
-DA:64,1
-DA:65,1
-DA:66,1
-DA:67,1
-DA:69,1
-DA:70,1
-DA:71,1
-DA:73,1
-DA:74,1
-DA:76,1
-DA:77,1
-BRDA:18,19,0,9
-BRDA:18,19,1,3
-BRDA:18,39,0,5
-BRDA:18,39,1,7
-BRDA:29,100,0,5
-BRDA:29,100,1,2
-BRDA:29,123,0,4
-BRDA:29,123,1,7
-BRDA:39,198,0,5
-BRDA:39,198,1,2
-BRDA:51,291,0,1
-BRDA:51,291,1,1
-LF:46
-LH:46
-BRF:12
-BRH:12
-FNF:1
-FNH:1
+FN:9,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
+FNDA:2,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
+DA:10,2
+DA:11,2
+DA:12,1
+DA:13,1
+DA:16,1
+DA:18,1
+DA:19,1
+BRDA:11,9,0,1
+BRDA:11,9,1,1
+FN:21,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
+FNDA:12,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
+DA:22,12
+DA:23,12
+DA:24,12
+DA:25,5
+DA:26,5
+DA:28,7
+BRDA:23,12,0,9
+BRDA:23,12,1,3
+BRDA:23,30,0,5
+BRDA:23,30,1,7
+FN:30,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
+FNDA:1,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
+DA:31,1
+DA:32,1
+DA:33,1
+LF:16
+LH:16
+BRF:6
+BRH:6
+FNF:3
+FNH:3
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessERP\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\GetProductTypeInfo.cs
 FN:9,Its.Onix.Erp.Models.MProductType Its.Onix.Erp.Businesses.ProductTypes.GetProductTypeInfo::Apply(Its.Onix.Erp.Models.MProductType)
