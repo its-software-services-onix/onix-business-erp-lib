@@ -6,7 +6,7 @@ using Its.Onix.Core.Factories;
 using Its.Onix.Core.Business;
 using Its.Onix.Core.NoSQL;
 using Its.Onix.Erp.Models;
-using Its.Onix.Erp.Services;
+using Its.Onix.Erp.Utils;
 
 namespace Its.Onix.Erp.Businesses.Contactus
 {
@@ -15,6 +15,7 @@ namespace Its.Onix.Erp.Businesses.Contactus
         [SetUp]
         public void Setup()
         {
+            FactoryBusinessOperationUtils.LoadBusinessOperations();
         }
 
         [Test]
