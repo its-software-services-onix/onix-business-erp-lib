@@ -7,7 +7,7 @@ namespace Its.Onix.Erp.Services
     {
         private static Dictionary<string, string> classMaps = new Dictionary<string, string>();
 
-        public static Dictionary<string, string> GetCachesList()
+        public static Dictionary<string, string> BusinessErpCachesList()
         {
             return classMaps;
         }
@@ -24,9 +24,9 @@ namespace Its.Onix.Erp.Services
 
         private static void InitClassMap()
         {
-            AddClassConfig("CreateBarcode", "OnixBusinessErp.dll:Its.Onix.Erp.Businesses.Barcodes.CreateBarcode");
-            AddClassConfig("CreateRegistration", "OnixBusinessErp.dll:Its.Onix.Erp.Businesses.Registrations.CreateRegistration");
-            AddClassConfig("ResetRegistration", "OnixBusinessErp.dll:Its.Onix.Erp.Businesses.Registrations.ResetRegistration");
+            AddClassConfig("CacheProductTypeList", "OnixBusinessErp.dll:Its.Onix.Erp.Caches.CacheProductTypeList");
+            AddClassConfig("CacheProductList", "OnixBusinessErp.dll:Its.Onix.Erp.Caches.CacheProductList");
+            AddClassConfig("CachePageContents", "OnixBusinessErp.dll:Its.Onix.Erp.Caches.CachePageContents");
         }  
     } 
 }

@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OnixCore" Version="1.0.10" />
+    <PackageReference Include="OnixCore" Version="1.0.11" />
   </ItemGroup>
 </Project>
