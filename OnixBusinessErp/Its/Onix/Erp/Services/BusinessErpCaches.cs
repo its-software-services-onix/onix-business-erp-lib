@@ -24,9 +24,9 @@ namespace Its.Onix.Erp.Services
 
         private static void InitClassMap()
         {
-            AddClassConfig("CacheProductTypeList", "Its.Onix.Erp.Caches.CacheProductTypeList");
-            AddClassConfig("CacheProductList", "Its.Onix.Erp.Caches.CacheProductList");
-            AddClassConfig("CachePageContents", "Its.Onix.Erp.Caches.CachePageContents");
+            AddClassConfig("CacheProductTypeList", "OnixBusinessErp.dll:Its.Onix.Erp.Caches.CacheProductTypeList");
+            AddClassConfig("CacheProductList", "OnixBusinessErp.dll:Its.Onix.Erp.Caches.CacheProductList");
+            AddClassConfig("CachePageContents", "OnixBusinessErp.dll:Its.Onix.Erp.Caches.CachePageContents");
         }  
     } 
 }
