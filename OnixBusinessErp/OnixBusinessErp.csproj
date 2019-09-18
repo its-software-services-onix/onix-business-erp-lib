@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OnixCore" Version="1.0.11" />
+    <ProjectReference Include="D:\dev\projects\its_workspace\OnixCore\OnixCore\OnixCore.csproj" />
+    <!-- <PackageReference Include="OnixCore" Version="1.0.11" /> -->
   </ItemGroup>
 </Project>
