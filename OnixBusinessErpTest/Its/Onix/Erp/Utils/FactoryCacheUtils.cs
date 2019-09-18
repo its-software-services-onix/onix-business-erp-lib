@@ -5,12 +5,15 @@ using Its.Onix.Erp.Services;
 
 namespace Its.Onix.Erp.Utils
 {
-	public static class FactoryBusinessOperationUtils
+	public static class FactoryCacheUtils
 	{
         public static void LoadBusinessOperations()
         {
             FactoryBusinessOperation.ClearRegisteredItems();
             FactoryBusinessOperation.RegisterBusinessOperations(BusinessErpOperations.GetBusinessOperationList());
+
+            FactoryCacheContext.ClearRegisteredItems();
+            FactoryCacheContext.RegisterCaches(BusinessErpCaches.BusinessErpCachesList());
         }
     }
 }
