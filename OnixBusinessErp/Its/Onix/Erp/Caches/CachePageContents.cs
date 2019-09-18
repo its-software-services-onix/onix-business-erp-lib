@@ -18,11 +18,6 @@ namespace Its.Onix.Erp.Caches
             opr = (IBusinessOperationQuery<MContent>)FactoryBusinessOperation.CreateBusinessOperationObject("GetContentList");
         }
 
-        public CachePageContents(string profile)
-        {
-            opr = (IBusinessOperationQuery<MContent>)FactoryBusinessOperation.CreateBusinessOperationObject(profile, "GetContentList");
-        }
-
         protected override Dictionary<string, BaseModel> LoadContents()
         {
             var map = new Dictionary<string, BaseModel>();
