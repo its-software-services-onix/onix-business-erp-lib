@@ -1,6 +1,8 @@
 using System;
 using NUnit.Framework;
 
+using Its.Onix.Core.Databases;
+
 namespace Its.Onix.Erp.Databases
 {
 	public class OnixErpDbContextTest
@@ -11,6 +13,7 @@ namespace Its.Onix.Erp.Databases
         }
 
         [TestCase("130.211.245.2", 5432, "postgres", "postgres", "", "pgsql")]
+        [TestCase("130.211.245.2", 5432, "postgres", "postgres", "", "")]
         public void OnixErpDbContextConnectTest(string host, int port, string db, string user, string passwd, string provider)
         {
             var credential = new DbCredential(host, port, db, user, passwd, provider);
