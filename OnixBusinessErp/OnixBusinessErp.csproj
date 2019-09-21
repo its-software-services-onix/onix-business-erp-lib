@@ -9,6 +9,9 @@
 
   <ItemGroup>
     <!-- <ProjectReference Include="D:\dev\projects\its_workspace\OnixCore\OnixCore\OnixCore.csproj" /> -->
-    <PackageReference Include="OnixCore" Version="1.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.4" />
+    <PackageReference Include="OnixCore" Version="1.0.15" />
   </ItemGroup>
 </Project>

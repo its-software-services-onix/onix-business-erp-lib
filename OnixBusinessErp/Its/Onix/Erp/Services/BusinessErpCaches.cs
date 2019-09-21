@@ -1,32 +1,23 @@
 using System;
 using System.Reflection;
-using System.Collections.Generic;
-
-using Its.Onix.Core.Commons.Plugin;
 
 namespace Its.Onix.Erp.Services
 {   
-    public static class BusinessErpCaches
+    public class BusinessErpCaches : BusinessErpBase
     {
-        private static Dictionary<string, PluginEntry> classMaps = new Dictionary<string, PluginEntry>();
+        private static BusinessErpCaches instance = new BusinessErpCaches();
 
-        public static Dictionary<string, PluginEntry> BusinessErpCachesList()
-        {
-            return classMaps;
-        }
-
-        private static void AddClassConfig(Assembly asm, string name, string fqdn)
-        {
-            PluginEntry entry = new PluginEntry(asm, name, fqdn);
-            classMaps.Add(name, entry);
-        }
-
-        static BusinessErpCaches()
+        private BusinessErpCaches()
         {
             InitClassMap();
         }
+        
+        public static BusinessErpCaches GetInstance()
+        {
+            return instance;
+        }
 
-        private static void InitClassMap()
+        private void InitClassMap()
         {
             Assembly asm = Assembly.GetExecutingAssembly();
 

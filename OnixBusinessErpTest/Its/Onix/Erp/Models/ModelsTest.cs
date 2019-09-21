@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using NUnit.Framework;
 
+using Its.Onix.Erp.Models.Generals;
+
 namespace Its.Onix.Erp.Models
 {
 	public class ModelsTest
@@ -11,6 +13,7 @@ namespace Its.Onix.Erp.Models
         [SetUp]
         public void Setup()
         {
+
             models.Add(new MBarcode());
             models.Add(new MRegistration());
             models.Add(new MProduct());
@@ -22,7 +25,9 @@ namespace Its.Onix.Erp.Models
             models.Add(new MProfile()); 
             models.Add(new MRegistration()); 
             models.Add(new MContactUs()); 
-            models.Add(new MContent());            
+            models.Add(new MContent());  
+
+            models.Add(new Master());            
         }
 
         [TestCase]
