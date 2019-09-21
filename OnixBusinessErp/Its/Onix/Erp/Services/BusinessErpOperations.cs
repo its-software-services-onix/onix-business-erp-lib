@@ -17,7 +17,7 @@ namespace Its.Onix.Erp.Services
             return instance;
         }
 
-        protected override void InitClassMap()
+        private void InitClassMap()
         {
             Assembly asm = Assembly.GetExecutingAssembly();
 

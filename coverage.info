@@ -39,22 +39,22 @@ FNF:1
 FNH:1
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpBase.cs
-FN:15,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
+FN:13,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
 FNDA:16,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
+DA:14,16
+DA:15,16
 DA:16,16
 DA:17,16
-DA:18,16
-DA:19,16
-FN:21,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
+FN:19,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
 FNDA:58,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
+DA:20,58
+DA:21,58
 DA:22,58
-DA:23,58
-DA:24,58
-FN:26,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
+FN:24,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
 FNDA:58,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
+DA:25,58
+DA:26,58
 DA:27,58
-DA:28,58
-DA:29,58
 FN:10,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 FNDA:2,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 DA:11,2

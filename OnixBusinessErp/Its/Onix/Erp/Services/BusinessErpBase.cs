@@ -10,8 +10,6 @@ namespace Its.Onix.Erp.Services
     {
         private readonly Dictionary<string, PluginEntry> classMaps = new Dictionary<string, PluginEntry>();
 
-        protected abstract void InitClassMap();
-
         protected void AddClassConfig(Assembly asm, string apiName, string fqdn)
         {
             PluginEntry entry = new PluginEntry(asm, apiName, fqdn);
