@@ -12,8 +12,8 @@ namespace Its.Onix.Erp.Databases
         {        
         }
 
-        [TestCase("130.211.245.2", 5432, "postgres", "postgres", "", "pgsql")]
-        [TestCase("130.211.245.2", 5432, "postgres", "postgres", "", "")]
+        [TestCase("130.211.245.2", 5432, "onix_erp", "postgres", "", "pgsql")]
+        [TestCase("130.211.245.2", 5432, "onix_erp", "postgres", "", "")]
         public void OnixErpDbContextConnectTest(string host, int port, string db, string user, string passwd, string provider)
         {
             var credential = new DbCredential(host, port, db, user, passwd, provider);
