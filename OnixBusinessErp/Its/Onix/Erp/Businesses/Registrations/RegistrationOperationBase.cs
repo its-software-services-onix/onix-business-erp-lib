@@ -58,7 +58,7 @@ namespace Its.Onix.Erp.Businesses.Registrations
             
             //Update status back to barcode
 
-            bc.IsActivated = true;
+            bc.IsActivated = GetActivateFlag();
             bc.ActivatedDate = DateTime.Now;
             bc.LastMaintDate = DateTime.Now;
             ctx.PutData(bcPath, bc.Key, bc);
@@ -66,6 +66,11 @@ namespace Its.Onix.Erp.Businesses.Registrations
             PerformRegistrationAction(dat, barcode);
 
             return 0;
+        }
+
+        protected virtual bool GetActivateFlag()
+        {
+            return true;
         }
     }
 }
