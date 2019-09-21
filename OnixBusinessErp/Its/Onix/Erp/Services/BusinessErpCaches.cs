@@ -7,14 +7,14 @@ namespace Its.Onix.Erp.Services
     {
         private static BusinessErpCaches instance = new BusinessErpCaches();
 
-        public static BusinessErpCaches GetInstance()
-        {
-            return instance;
-        }
-
         private BusinessErpCaches()
         {
             InitClassMap();
+        }
+        
+        public static BusinessErpCaches GetInstance()
+        {
+            return instance;
         }
 
         private void InitClassMap()
