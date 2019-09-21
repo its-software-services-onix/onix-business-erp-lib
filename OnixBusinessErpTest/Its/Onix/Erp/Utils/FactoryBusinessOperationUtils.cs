@@ -10,7 +10,7 @@ namespace Its.Onix.Erp.Utils
         public static void LoadBusinessOperations()
         {
             FactoryBusinessOperation.ClearRegisteredItems();
-            FactoryBusinessOperation.RegisterBusinessOperations(BusinessErpOperations.GetBusinessOperationList());
+            FactoryBusinessOperation.RegisterBusinessOperations(BusinessErpOperations.GetInstance().ExportedServicesList());
         }
     }
 }
