@@ -12,6 +12,6 @@ namespace Its.Onix.Erp.Databases
         {
         }
 
-        public DbSet<MasterRef> MasterRefs { get; set; }
+        public DbSet<Master> MasterRefs { get; set; }
     }
 }

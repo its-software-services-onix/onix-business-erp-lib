@@ -1,4 +1,4 @@
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Utils\BarcodeUtils.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Utils\BarcodeUtils.cs
 FN:7,System.String Its.Onix.Erp.Utils.BarcodeUtils::BuildBarcodePath(System.String,System.String,System.String)
 FNDA:10,System.String Its.Onix.Erp.Utils.BarcodeUtils::BuildBarcodePath(System.String,System.String,System.String)
 DA:8,10
@@ -15,7 +15,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Utils\RandomUtils.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Utils\RandomUtils.cs
 FN:8,System.String Its.Onix.Erp.Utils.RandomUtils::RandomStringNum(System.Int32)
 FNDA:4,System.String Its.Onix.Erp.Utils.RandomUtils::RandomStringNum(System.Int32)
 DA:9,4
@@ -38,7 +38,7 @@ BRH:2
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpCaches.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpCaches.cs
 FN:13,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpCaches::BusinessErpCachesList()
 FNDA:3,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpCaches::BusinessErpCachesList()
 DA:14,3
@@ -71,7 +71,7 @@ BRH:0
 FNF:4
 FNH:4
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpOperations.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpOperations.cs
 FN:13,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpOperations::GetBusinessOperationList()
 FNDA:55,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpOperations::GetBusinessOperationList()
 DA:14,55
@@ -114,7 +114,7 @@ BRH:0
 FNF:4
 FNH:4
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MBarcode.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MBarcode.cs
 FN:8,System.String Its.Onix.Erp.Models.MBarcode::get_Barcode()
 FNDA:6,System.String Its.Onix.Erp.Models.MBarcode::get_Barcode()
 DA:9,6
@@ -158,7 +158,7 @@ BRH:0
 FNF:12
 FNH:12
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MContactUs.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MContactUs.cs
 FN:7,System.String Its.Onix.Erp.Models.MContactUs::get_Name()
 FNDA:2,System.String Its.Onix.Erp.Models.MContactUs::get_Name()
 DA:8,2
@@ -181,7 +181,7 @@ BRH:0
 FNF:5
 FNH:5
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MContent.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MContent.cs
 FN:8,System.String Its.Onix.Erp.Models.MContent::get_Name()
 FNDA:20,System.String Its.Onix.Erp.Models.MContent::get_Name()
 DA:9,20
@@ -210,7 +210,7 @@ BRH:0
 FNF:5
 FNH:5
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MGenericDescription.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MGenericDescription.cs
 FN:8,System.String Its.Onix.Erp.Models.MGenericDescription::get_Language()
 FNDA:2,System.String Its.Onix.Erp.Models.MGenericDescription::get_Language()
 DA:9,2
@@ -236,7 +236,7 @@ BRH:0
 FNF:6
 FNH:6
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProduct.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProduct.cs
 FN:9,System.String Its.Onix.Erp.Models.MProduct::get_Code()
 FNDA:51,System.String Its.Onix.Erp.Models.MProduct::get_Code()
 DA:10,51
@@ -294,7 +294,7 @@ BRH:0
 FNF:14
 FNH:14
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductComposition.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductComposition.cs
 FN:9,System.String Its.Onix.Erp.Models.MProductComposition::get_Code()
 FNDA:2,System.String Its.Onix.Erp.Models.MProductComposition::get_Code()
 DA:10,2
@@ -320,7 +320,7 @@ BRH:0
 FNF:5
 FNH:5
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductCompositionGroup.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductCompositionGroup.cs
 FN:8,System.String Its.Onix.Erp.Models.MProductCompositionGroup::get_PerUnit()
 FNDA:2,System.String Its.Onix.Erp.Models.MProductCompositionGroup::get_PerUnit()
 DA:9,2
@@ -340,7 +340,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductPerformance.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductPerformance.cs
 FN:8,System.String Its.Onix.Erp.Models.MProductPerformance::get_Code()
 FNDA:2,System.String Its.Onix.Erp.Models.MProductPerformance::get_Code()
 DA:9,2
@@ -366,7 +366,7 @@ BRH:0
 FNF:5
 FNH:5
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductType.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProductType.cs
 FN:9,System.String Its.Onix.Erp.Models.MProductType::get_Code()
 FNDA:43,System.String Its.Onix.Erp.Models.MProductType::get_Code()
 DA:10,43
@@ -392,7 +392,7 @@ BRH:0
 FNF:4
 FNH:4
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProfile.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MProfile.cs
 FN:8,System.String Its.Onix.Erp.Models.MProfile::get_Message1()
 FNDA:2,System.String Its.Onix.Erp.Models.MProfile::get_Message1()
 DA:9,2
@@ -409,7 +409,7 @@ BRH:0
 FNF:3
 FNH:3
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MRegistration.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Legacies\MRegistration.cs
 FN:8,System.String Its.Onix.Erp.Models.MRegistration::get_SerialNumber()
 FNDA:91,System.String Its.Onix.Erp.Models.MRegistration::get_SerialNumber()
 DA:9,91
@@ -432,138 +432,46 @@ BRH:0
 FNF:5
 FNH:5
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Generals\MasterRef.cs
-FN:7,System.Int32 Its.Onix.Erp.Models.Generals.MasterRef::get_Id()
-FNDA:0,System.Int32 Its.Onix.Erp.Models.Generals.MasterRef::get_Id()
-DA:8,0
-FN:8,System.String Its.Onix.Erp.Models.Generals.MasterRef::get_Code()
-FNDA:0,System.String Its.Onix.Erp.Models.Generals.MasterRef::get_Code()
-DA:9,0
-FN:9,System.String Its.Onix.Erp.Models.Generals.MasterRef::get_Name()
-FNDA:0,System.String Its.Onix.Erp.Models.Generals.MasterRef::get_Name()
-DA:10,0
-FN:10,System.String Its.Onix.Erp.Models.Generals.MasterRef::get_Description()
-FNDA:0,System.String Its.Onix.Erp.Models.Generals.MasterRef::get_Description()
-DA:11,0
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Generals\Master.cs
+FN:7,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_Id()
+FNDA:2,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_Id()
+DA:8,2
+FN:8,System.String Its.Onix.Erp.Models.Generals.Master::get_Code()
+FNDA:2,System.String Its.Onix.Erp.Models.Generals.Master::get_Code()
+DA:9,2
+FN:9,System.String Its.Onix.Erp.Models.Generals.Master::get_Name()
+FNDA:2,System.String Its.Onix.Erp.Models.Generals.Master::get_Name()
+DA:10,2
+FN:10,System.String Its.Onix.Erp.Models.Generals.Master::get_Description()
+FNDA:2,System.String Its.Onix.Erp.Models.Generals.Master::get_Description()
+DA:11,2
 LF:4
-LH:0
+LH:4
 BRF:0
 BRH:0
 FNF:4
-FNH:0
+FNH:4
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Commons\ModelCommonFields.cs
-FN:7,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tags()
-FNDA:0,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tags()
-DA:8,0
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Commons\ModelCommonFields.cs
+FN:7,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tag()
+FNDA:2,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tag()
+DA:8,2
 LF:1
-LH:0
+LH:1
 BRF:0
 BRH:0
 FNF:1
-FNH:0
-end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Databases\BaseDbContext.cs
-FN:15,Its.Onix.Erp.Databases.DbCredential Its.Onix.Erp.Databases.BaseDbContext::GetCredential()
-FNDA:0,Its.Onix.Erp.Databases.DbCredential Its.Onix.Erp.Databases.BaseDbContext::GetCredential()
-DA:16,0
-DA:17,0
-DA:18,0
-FN:20,System.Void Its.Onix.Erp.Databases.BaseDbContext::OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)
-FNDA:0,System.Void Its.Onix.Erp.Databases.BaseDbContext::OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)
-DA:21,0
-DA:22,0
-DA:23,0
-FN:25,System.Void Its.Onix.Erp.Databases.BaseDbContext::Configure(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)
-FNDA:0,System.Void Its.Onix.Erp.Databases.BaseDbContext::Configure(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)
-DA:26,0
-DA:27,0
-DA:28,0
-DA:29,0
-DA:32,0
-DA:33,0
-DA:34,0
-DA:35,0
-DA:36,0
-BRDA:27,9,0,0
-BRDA:27,9,1,0
-BRDA:32,27,0,0
-BRDA:32,27,1,0
-FN:7,System.Void Its.Onix.Erp.Databases.BaseDbContext::.ctor(Its.Onix.Erp.Databases.DbCredential)
-FNDA:1,System.Void Its.Onix.Erp.Databases.BaseDbContext::.ctor(Its.Onix.Erp.Databases.DbCredential)
-DA:8,1
-DA:10,1
-DA:11,1
-DA:12,1
-DA:13,1
-LF:20
-LH:5
-BRF:4
-BRH:0
-FNF:4
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Databases\DbCredential.cs
-FN:14,System.Void Its.Onix.Erp.Databases.DbCredential::SetDbCredential(System.String,System.Int32,System.String,System.String,System.String,System.String)
-FNDA:1,System.Void Its.Onix.Erp.Databases.DbCredential::SetDbCredential(System.String,System.Int32,System.String,System.String,System.String,System.String)
-DA:15,1
-DA:16,1
-DA:17,1
-DA:18,1
-DA:19,1
-DA:20,1
-DA:21,1
-DA:22,1
-FN:34,System.String Its.Onix.Erp.Databases.DbCredential::GetProvider()
-FNDA:0,System.String Its.Onix.Erp.Databases.DbCredential::GetProvider()
-DA:35,0
-DA:36,0
-DA:37,0
-FN:39,System.Boolean Its.Onix.Erp.Databases.DbCredential::IsProviderPgSql()
-FNDA:0,System.Boolean Its.Onix.Erp.Databases.DbCredential::IsProviderPgSql()
-DA:40,0
-DA:41,0
-DA:42,0
-FN:44,System.String Its.Onix.Erp.Databases.DbCredential::ConnectionStringPgSql()
-FNDA:0,System.String Its.Onix.Erp.Databases.DbCredential::ConnectionStringPgSql()
-DA:45,0
-DA:46,0
-DA:47,0
-DA:48,0
-FN:6,System.Void Its.Onix.Erp.Databases.DbCredential::.ctor(System.String,System.Int32,System.String,System.String,System.String)
-FNDA:1,System.Void Its.Onix.Erp.Databases.DbCredential::.ctor(System.String,System.Int32,System.String,System.String,System.String)
-DA:7,1
-DA:8,1
-DA:9,1
-DA:10,1
-DA:11,1
-DA:12,1
-DA:24,0
-DA:25,0
-DA:26,0
-DA:27,0
-FN:28,System.Void Its.Onix.Erp.Databases.DbCredential::.ctor(System.String,System.Int32,System.String,System.String,System.String,System.String)
-FNDA:1,System.Void Its.Onix.Erp.Databases.DbCredential::.ctor(System.String,System.Int32,System.String,System.String,System.String,System.String)
-DA:29,1
-DA:30,1
-DA:31,1
-DA:32,1
-LF:32
-LH:18
-BRF:0
-BRH:0
-FNF:6
-FNH:3
-end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Databases\OnixErpDbContext.cs
-FN:13,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.MasterRef> Its.Onix.Erp.Databases.OnixErpDbContext::get_MasterRefs()
-FNDA:1,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.MasterRef> Its.Onix.Erp.Databases.OnixErpDbContext::get_MasterRefs()
-DA:14,1
-FN:9,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Erp.Databases.DbCredential)
-FNDA:1,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Erp.Databases.DbCredential)
-DA:10,1
-DA:11,1
-DA:12,1
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Databases\OnixErpDbContext.cs
+FN:14,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_MasterRefs()
+FNDA:2,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_MasterRefs()
+DA:15,2
+FN:10,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Core.Databases.DbCredential)
+FNDA:2,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Core.Databases.DbCredential)
+DA:11,2
+DA:12,2
+DA:13,2
 LF:4
 LH:4
 BRF:0
@@ -571,7 +479,7 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Caches\CachePageContents.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Caches\CachePageContents.cs
 FN:21,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Caches.CachePageContents::LoadContents()
 FNDA:3,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Caches.CachePageContents::LoadContents()
 DA:22,3
@@ -603,7 +511,7 @@ BRH:2
 FNF:3
 FNH:3
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Caches\CacheProductList.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Caches\CacheProductList.cs
 FN:20,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Caches.CacheProductList::LoadContents()
 FNDA:1,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Caches.CacheProductList::LoadContents()
 DA:21,1
@@ -635,7 +543,7 @@ BRH:2
 FNF:3
 FNH:3
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Caches\CacheProductTypeList.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Caches\CacheProductTypeList.cs
 FN:19,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Caches.CacheProductTypeList::LoadContents()
 FNDA:1,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Caches.CacheProductTypeList::LoadContents()
 DA:20,1
@@ -667,7 +575,7 @@ BRH:2
 FNF:3
 FNH:3
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\CreateRegistration.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\CreateRegistration.cs
 FN:9,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
 FNDA:2,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
 DA:10,2
@@ -707,7 +615,7 @@ BRH:8
 FNF:3
 FNH:3
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\RegistrationOperationBase.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\RegistrationOperationBase.cs
 FN:18,System.String Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::PostData(Its.Onix.Erp.Models.MRegistration,System.String,System.String,System.String)
 FNDA:15,System.String Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::PostData(Its.Onix.Erp.Models.MRegistration,System.String,System.String,System.String)
 DA:19,15
@@ -760,7 +668,7 @@ BRH:6
 FNF:2
 FNH:2
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\ResetRegistration.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\ResetRegistration.cs
 FN:9,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
 FNDA:2,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
 DA:10,2
@@ -796,7 +704,7 @@ BRH:6
 FNF:3
 FNH:3
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\GetProductTypeInfo.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\GetProductTypeInfo.cs
 FN:9,Its.Onix.Erp.Models.MProductType Its.Onix.Erp.Businesses.ProductTypes.GetProductTypeInfo::Apply(Its.Onix.Erp.Models.MProductType)
 FNDA:7,Its.Onix.Erp.Models.MProductType Its.Onix.Erp.Businesses.ProductTypes.GetProductTypeInfo::Apply(Its.Onix.Erp.Models.MProductType)
 DA:10,7
@@ -816,7 +724,7 @@ BRH:2
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\GetProductTypeList.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\GetProductTypeList.cs
 FN:12,System.Collections.Generic.IEnumerable`1<Its.Onix.Erp.Models.MProductType> Its.Onix.Erp.Businesses.ProductTypes.GetProductTypeList::Apply(Its.Onix.Erp.Models.MProductType,Its.Onix.Core.Commons.Table.CTable)
 FNDA:1,System.Collections.Generic.IEnumerable`1<Its.Onix.Erp.Models.MProductType> Its.Onix.Erp.Businesses.ProductTypes.GetProductTypeList::Apply(Its.Onix.Erp.Models.MProductType,Its.Onix.Core.Commons.Table.CTable)
 DA:13,1
@@ -831,7 +739,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\SaveProductType.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\SaveProductType.cs
 FN:10,Its.Onix.Erp.Models.MProductType Its.Onix.Erp.Businesses.ProductTypes.SaveProductType::Apply(Its.Onix.Erp.Models.MProductType)
 FNDA:4,Its.Onix.Erp.Models.MProductType Its.Onix.Erp.Businesses.ProductTypes.SaveProductType::Apply(Its.Onix.Erp.Models.MProductType)
 DA:11,4
@@ -864,7 +772,7 @@ BRH:4
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\DeleteProduct.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\DeleteProduct.cs
 FN:9,System.Int32 Its.Onix.Erp.Businesses.Products.DeleteProduct::Apply(Its.Onix.Erp.Models.MProduct)
 FNDA:2,System.Int32 Its.Onix.Erp.Businesses.Products.DeleteProduct::Apply(Its.Onix.Erp.Models.MProduct)
 DA:10,2
@@ -885,7 +793,7 @@ BRH:2
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\GetProductInfo.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\GetProductInfo.cs
 FN:9,Its.Onix.Erp.Models.MProduct Its.Onix.Erp.Businesses.Products.GetProductInfo::Apply(Its.Onix.Erp.Models.MProduct)
 FNDA:7,Its.Onix.Erp.Models.MProduct Its.Onix.Erp.Businesses.Products.GetProductInfo::Apply(Its.Onix.Erp.Models.MProduct)
 DA:10,7
@@ -905,7 +813,7 @@ BRH:2
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\GetProductList.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\GetProductList.cs
 FN:12,System.Collections.Generic.IEnumerable`1<Its.Onix.Erp.Models.MProduct> Its.Onix.Erp.Businesses.Products.GetProductList::Apply(Its.Onix.Erp.Models.MProduct,Its.Onix.Core.Commons.Table.CTable)
 FNDA:1,System.Collections.Generic.IEnumerable`1<Its.Onix.Erp.Models.MProduct> Its.Onix.Erp.Businesses.Products.GetProductList::Apply(Its.Onix.Erp.Models.MProduct,Its.Onix.Core.Commons.Table.CTable)
 DA:13,1
@@ -920,7 +828,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\SaveProduct.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Products\SaveProduct.cs
 FN:11,System.Void Its.Onix.Erp.Businesses.Products.SaveProduct::PopulateImageProperty(Its.Onix.Erp.Models.MProduct)
 FNDA:3,System.Void Its.Onix.Erp.Businesses.Products.SaveProduct::PopulateImageProperty(Its.Onix.Erp.Models.MProduct)
 DA:12,3
@@ -965,7 +873,7 @@ BRH:4
 FNF:2
 FNH:2
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Contents\GetContentList.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Contents\GetContentList.cs
 FN:12,System.Collections.Generic.IEnumerable`1<Its.Onix.Erp.Models.MContent> Its.Onix.Erp.Businesses.Contents.GetContentList::Apply(Its.Onix.Erp.Models.MContent,Its.Onix.Core.Commons.Table.CTable)
 FNDA:1,System.Collections.Generic.IEnumerable`1<Its.Onix.Erp.Models.MContent> Its.Onix.Erp.Businesses.Contents.GetContentList::Apply(Its.Onix.Erp.Models.MContent,Its.Onix.Core.Commons.Table.CTable)
 DA:13,1
@@ -981,7 +889,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Contents\SaveContent.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Contents\SaveContent.cs
 FN:10,System.Int32 Its.Onix.Erp.Businesses.Contents.SaveContent::Apply(Its.Onix.Erp.Models.MContent)
 FNDA:2,System.Int32 Its.Onix.Erp.Businesses.Contents.SaveContent::Apply(Its.Onix.Erp.Models.MContent)
 DA:11,2
@@ -1002,7 +910,7 @@ BRH:2
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ContactUs\SaveContactUs.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ContactUs\SaveContactUs.cs
 FN:10,System.Int32 Its.Onix.Erp.Businesses.ContactUs.SaveContactUs::Apply(Its.Onix.Erp.Models.MContactUs)
 FNDA:1,System.Int32 Its.Onix.Erp.Businesses.ContactUs.SaveContactUs::Apply(Its.Onix.Erp.Models.MContactUs)
 DA:11,1
@@ -1020,7 +928,7 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Barcodes\CreateBarcode.cs
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Barcodes\CreateBarcode.cs
 FN:11,Its.Onix.Erp.Models.MBarcode Its.Onix.Erp.Businesses.Barcodes.CreateBarcode::Apply(Its.Onix.Erp.Models.MBarcode)
 FNDA:2,Its.Onix.Erp.Models.MBarcode Its.Onix.Erp.Businesses.Barcodes.CreateBarcode::Apply(Its.Onix.Erp.Models.MBarcode)
 DA:12,2

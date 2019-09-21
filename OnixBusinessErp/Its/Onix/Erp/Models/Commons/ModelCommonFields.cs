@@ -5,6 +5,6 @@ namespace Its.Onix.Erp.Models.Commons
 {
     public class ModelCommonFields : BaseModel
     {
-        public string Tags { get; set; }
+        public string Tag { get; set; }
     }
 }
