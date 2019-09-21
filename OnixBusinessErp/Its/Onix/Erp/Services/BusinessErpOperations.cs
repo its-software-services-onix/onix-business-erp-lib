@@ -7,14 +7,14 @@ namespace Its.Onix.Erp.Services
     {
         private static BusinessErpOperations instance = new BusinessErpOperations();
 
-        private BusinessErpOperations()
-        {
-            InitClassMap();
-        }
-
         public static BusinessErpOperations GetInstance()
         {
             return instance;
+        }
+        
+        private BusinessErpOperations()
+        {
+            InitClassMap();
         }
 
         private void InitClassMap()
