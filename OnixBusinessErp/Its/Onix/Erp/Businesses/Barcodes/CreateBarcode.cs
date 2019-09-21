@@ -22,9 +22,18 @@ namespace Its.Onix.Erp.Businesses.Barcodes
             bc.Barcode = dat.Barcode;
             bc.Product = dat.Product;
 
-            bc.SerialNumber = RandomUtils.RandomStringNum(10);
-            bc.Pin = RandomUtils.RandomStringNum(10);
-            bc.PayloadUrl = string.Format("{0}/verification/{1}/{2}/{3}", bc.Url, bc.Path, bc.SerialNumber, bc.Pin);
+            if (IsMigration(dat))
+            {
+                bc.SerialNumber = dat.SerialNumber;
+                bc.Pin = dat.Pin;
+                bc.PayloadUrl = dat.PayloadUrl;
+            }
+            else
+            {
+                bc.SerialNumber = RandomUtils.RandomStringNum(10);
+                bc.Pin = RandomUtils.RandomStringNum(10);
+                bc.PayloadUrl = string.Format("{0}/verification/{1}/{2}/{3}", bc.Url, bc.Path, bc.SerialNumber, bc.Pin);
+            }
 
             string path = BarcodeUtils.BuildBarcodePath("barcodes", bc.SerialNumber, bc.Pin);
 
@@ -32,6 +41,17 @@ namespace Its.Onix.Erp.Businesses.Barcodes
             ctx.PostData(path, bc);
 
             return bc;
+        }
+
+        private bool IsMigration(MBarcode dat)
+        {
+            if (!string.IsNullOrEmpty(dat.SerialNumber)
+                && !string.IsNullOrEmpty(dat.Pin)
+                && !string.IsNullOrEmpty(dat.PayloadUrl))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
