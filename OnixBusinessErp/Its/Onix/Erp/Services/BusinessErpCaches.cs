@@ -7,8 +7,9 @@ namespace Its.Onix.Erp.Services
     {
         private static BusinessErpCaches instance = new BusinessErpCaches();
 
-        private BusinessErpCaches() : base()
+        private BusinessErpCaches()
         {
+            InitClassMap();
         }
 
         public static BusinessErpCaches GetInstance()

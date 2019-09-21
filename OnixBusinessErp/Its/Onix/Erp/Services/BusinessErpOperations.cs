@@ -7,8 +7,9 @@ namespace Its.Onix.Erp.Services
     {
         private static BusinessErpOperations instance = new BusinessErpOperations();
 
-        private BusinessErpOperations() : base()
+        private BusinessErpOperations()
         {
+            InitClassMap();
         }
 
         public static BusinessErpOperations GetInstance()
@@ -19,7 +20,6 @@ namespace Its.Onix.Erp.Services
         protected override void InitClassMap()
         {
             Assembly asm = Assembly.GetExecutingAssembly();
-            var classMaps = GetClassMaps();
 
             AddClassConfig(asm, "CreateBarcode", "Its.Onix.Erp.Businesses.Barcodes.CreateBarcode");
             AddClassConfig(asm, "CreateRegistration", "Its.Onix.Erp.Businesses.Registrations.CreateRegistration");

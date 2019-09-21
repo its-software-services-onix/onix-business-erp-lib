@@ -8,14 +8,9 @@ namespace Its.Onix.Erp.Services
 {   
     public abstract class BusinessErpBase
     {
-        private Dictionary<string, PluginEntry> classMaps = new Dictionary<string, PluginEntry>();
+        private readonly Dictionary<string, PluginEntry> classMaps = new Dictionary<string, PluginEntry>();
 
         protected abstract void InitClassMap();
-
-        protected BusinessErpBase()
-        {
-            InitClassMap();
-        }
 
         protected void AddClassConfig(Assembly asm, string apiName, string fqdn)
         {

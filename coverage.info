@@ -39,74 +39,70 @@ FNF:1
 FNH:1
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpBase.cs
-FN:20,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
+FN:15,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
 FNDA:16,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
-DA:21,16
-DA:22,16
-DA:23,16
-DA:24,16
-FN:26,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
-FNDA:59,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
-DA:27,59
-DA:28,59
-DA:29,59
-FN:31,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
+DA:16,16
+DA:17,16
+DA:18,16
+DA:19,16
+FN:21,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
+FNDA:58,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
+DA:22,58
+DA:23,58
+DA:24,58
+FN:26,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
 FNDA:58,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
-DA:32,58
-DA:33,58
-DA:34,58
+DA:27,58
+DA:28,58
+DA:29,58
 FN:10,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 FNDA:2,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 DA:11,2
-DA:15,2
-DA:16,2
-DA:17,2
-DA:18,2
-LF:15
-LH:15
+LF:11
+LH:11
 BRF:0
 BRH:0
 FNF:4
 FNH:4
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpCaches.cs
-FN:14,Its.Onix.Erp.Services.BusinessErpCaches Its.Onix.Erp.Services.BusinessErpCaches::GetInstance()
+FN:15,Its.Onix.Erp.Services.BusinessErpCaches Its.Onix.Erp.Services.BusinessErpCaches::GetInstance()
 FNDA:3,Its.Onix.Erp.Services.BusinessErpCaches Its.Onix.Erp.Services.BusinessErpCaches::GetInstance()
-DA:15,3
 DA:16,3
 DA:17,3
-FN:19,System.Void Its.Onix.Erp.Services.BusinessErpCaches::InitClassMap()
+DA:18,3
+FN:20,System.Void Its.Onix.Erp.Services.BusinessErpCaches::InitClassMap()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpCaches::InitClassMap()
-DA:20,1
 DA:21,1
-DA:23,1
+DA:22,1
 DA:24,1
 DA:25,1
 DA:26,1
+DA:27,1
 FN:9,System.Void Its.Onix.Erp.Services.BusinessErpCaches::.ctor()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpCaches::.ctor()
 DA:10,1
 DA:11,1
 DA:12,1
+DA:13,1
 FN:7,System.Void Its.Onix.Erp.Services.BusinessErpCaches::.cctor()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpCaches::.cctor()
 DA:8,1
-LF:13
-LH:13
+LF:14
+LH:14
 BRF:0
 BRH:0
 FNF:4
 FNH:4
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpOperations.cs
-FN:14,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
+FN:15,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
 FNDA:55,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
-DA:15,55
 DA:16,55
 DA:17,55
-FN:19,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
+DA:18,55
+FN:20,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
-DA:20,1
 DA:21,1
 DA:22,1
 DA:24,1
@@ -128,6 +124,7 @@ FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.ctor()
 DA:10,1
 DA:11,1
 DA:12,1
+DA:13,1
 FN:7,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.cctor()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.cctor()
 DA:8,1
