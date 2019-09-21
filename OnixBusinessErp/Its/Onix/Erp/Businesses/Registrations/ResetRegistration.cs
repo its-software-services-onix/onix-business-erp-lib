@@ -1,12 +1,13 @@
 using System;
 
 using Its.Onix.Erp.Models;
+using Its.Onix.Erp.Utils;
 
 namespace Its.Onix.Erp.Businesses.Registrations
 {
     public class ResetRegistration : RegistrationOperationBase
     {
-        protected override void  ValidateActivation(MRegistration dat, MBarcode bc, string barcode)
+        protected override void ValidateActivation(MRegistration dat, MBarcode bc, string barcode)
         {
             if (bc.IsActivated)
             {
@@ -27,9 +28,14 @@ namespace Its.Onix.Erp.Businesses.Registrations
             }
         }
 
-        protected override void PerformRegistrationAction(MRegistration dat,string barcode)
+        protected override void PerformRegistrationAction(MRegistration dat, string barcode)
         {
             PostData(dat, barcode, "RESET", "Successfully reset serial number and PIN [{0}]");
-        }    
+        }
+
+        protected override bool GetActivateFlag()
+        {
+            return false;
+        }
     }
 }
