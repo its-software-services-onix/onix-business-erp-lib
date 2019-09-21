@@ -15,12 +15,6 @@ namespace Its.Onix.Erp.Services
             return classMaps;
         }
 
-        private static void AddClassConfig(Assembly asm, string name, string fqdn)
-        {
-            PluginEntry entry = new PluginEntry(asm, name, fqdn);
-            classMaps.Add(name, entry);
-        }
-
         static BusinessErpCaches()
         {
             InitClassMap();
@@ -30,9 +24,9 @@ namespace Its.Onix.Erp.Services
         {
             Assembly asm = Assembly.GetExecutingAssembly();
 
-            AddClassConfig(asm, "CacheProductTypeList", "Its.Onix.Erp.Caches.CacheProductTypeList");
-            AddClassConfig(asm, "CacheProductList", "Its.Onix.Erp.Caches.CacheProductList");
-            AddClassConfig(asm, "CachePageContents", "Its.Onix.Erp.Caches.CachePageContents");
+            BusinessErpUtils.AddClassConfig(classMaps, asm, "CacheProductTypeList", "Its.Onix.Erp.Caches.CacheProductTypeList");
+            BusinessErpUtils.AddClassConfig(classMaps, asm, "CacheProductList", "Its.Onix.Erp.Caches.CacheProductList");
+            BusinessErpUtils.AddClassConfig(classMaps, asm, "CachePageContents", "Its.Onix.Erp.Caches.CachePageContents");
         }  
     } 
 }
