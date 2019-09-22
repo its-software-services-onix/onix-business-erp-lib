@@ -96,11 +96,11 @@ FNF:4
 FNH:4
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpOperations.cs
-FN:15,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
+FN:10,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
 FNDA:55,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
-DA:16,55
-DA:17,55
-DA:18,55
+DA:11,55
+DA:12,55
+DA:13,55
 FN:20,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
 DA:21,1
@@ -119,12 +119,12 @@ DA:37,1
 DA:39,1
 DA:40,1
 DA:41,1
-FN:9,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.ctor()
+FN:14,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.ctor()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.ctor()
-DA:10,1
-DA:11,1
-DA:12,1
-DA:13,1
+DA:15,1
+DA:16,1
+DA:17,1
+DA:18,1
 FN:7,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.cctor()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.cctor()
 DA:8,1
@@ -152,8 +152,8 @@ FN:16,System.String Its.Onix.Erp.Models.MBarcode::get_BatchNo()
 FNDA:6,System.String Its.Onix.Erp.Models.MBarcode::get_BatchNo()
 DA:17,6
 FN:18,System.String Its.Onix.Erp.Models.MBarcode::get_SerialNumber()
-FNDA:12,System.String Its.Onix.Erp.Models.MBarcode::get_SerialNumber()
-DA:19,12
+FNDA:14,System.String Its.Onix.Erp.Models.MBarcode::get_SerialNumber()
+DA:19,14
 FN:19,System.String Its.Onix.Erp.Models.MBarcode::get_Pin()
 FNDA:12,System.String Its.Onix.Erp.Models.MBarcode::get_Pin()
 DA:20,12
@@ -453,9 +453,96 @@ BRH:0
 FNF:5
 FNH:5
 end_of_record
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Generals\Address.cs
+FN:7,System.Int32 Its.Onix.Erp.Models.Generals.Address::get_AddressId()
+FNDA:0,System.Int32 Its.Onix.Erp.Models.Generals.Address::get_AddressId()
+DA:8,0
+FN:8,System.String Its.Onix.Erp.Models.Generals.Address::get_AddressNo()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.Address::get_AddressNo()
+DA:9,0
+FN:9,System.String Its.Onix.Erp.Models.Generals.Address::get_Road()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.Address::get_Road()
+DA:10,0
+FN:10,System.String Its.Onix.Erp.Models.Generals.Address::get_District()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.Address::get_District()
+DA:11,0
+FN:11,System.String Its.Onix.Erp.Models.Generals.Address::get_Zip()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.Address::get_Zip()
+DA:12,0
+FN:13,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Address::get_Province()
+FNDA:0,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Address::get_Province()
+DA:14,0
+LF:6
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Generals\BankAccount.cs
+FN:9,System.Int32 Its.Onix.Erp.Models.Generals.BankAccount::get_BankAccountId()
+FNDA:0,System.Int32 Its.Onix.Erp.Models.Generals.BankAccount::get_BankAccountId()
+DA:10,0
+FN:10,System.String Its.Onix.Erp.Models.Generals.BankAccount::get_AcctNo()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.BankAccount::get_AcctNo()
+DA:11,0
+FN:11,System.String Its.Onix.Erp.Models.Generals.BankAccount::get_AcctName()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.BankAccount::get_AcctName()
+DA:12,0
+FN:12,System.String Its.Onix.Erp.Models.Generals.BankAccount::get_BranchName()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.BankAccount::get_BranchName()
+DA:13,0
+FN:14,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.BankAccount::get_Bank()
+FNDA:0,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.BankAccount::get_Bank()
+DA:15,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Generals\Customer.cs
+FN:9,System.Int32 Its.Onix.Erp.Models.Generals.Customer::get_CustomerId()
+FNDA:0,System.Int32 Its.Onix.Erp.Models.Generals.Customer::get_CustomerId()
+DA:10,0
+FN:10,System.String Its.Onix.Erp.Models.Generals.Customer::get_Code()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.Customer::get_Code()
+DA:11,0
+FN:11,System.String Its.Onix.Erp.Models.Generals.Customer::get_Name()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.Customer::get_Name()
+DA:12,0
+FN:12,System.String Its.Onix.Erp.Models.Generals.Customer::get_Description()
+FNDA:0,System.String Its.Onix.Erp.Models.Generals.Customer::get_Description()
+DA:13,0
+FN:14,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_CustomerType()
+FNDA:0,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_CustomerType()
+DA:15,0
+FN:15,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_CustomerGroup()
+FNDA:0,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_CustomerGroup()
+DA:16,0
+FN:16,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_NamePrefix()
+FNDA:0,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_NamePrefix()
+DA:17,0
+FN:17,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_CreditTerm()
+FNDA:0,Its.Onix.Erp.Models.Generals.Master Its.Onix.Erp.Models.Generals.Customer::get_CreditTerm()
+DA:18,0
+FN:19,System.Collections.Generic.List`1<Its.Onix.Erp.Models.Generals.Address> Its.Onix.Erp.Models.Generals.Customer::get_Addresses()
+FNDA:0,System.Collections.Generic.List`1<Its.Onix.Erp.Models.Generals.Address> Its.Onix.Erp.Models.Generals.Customer::get_Addresses()
+DA:20,0
+FN:20,System.Collections.Generic.List`1<Its.Onix.Erp.Models.Generals.BankAccount> Its.Onix.Erp.Models.Generals.Customer::get_Accounts()
+FNDA:0,System.Collections.Generic.List`1<Its.Onix.Erp.Models.Generals.BankAccount> Its.Onix.Erp.Models.Generals.Customer::get_Accounts()
+DA:21,0
+LF:10
+LH:0
+BRF:0
+BRH:0
+FNF:10
+FNH:0
+end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Generals\Master.cs
-FN:7,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_Id()
-FNDA:2,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_Id()
+FN:7,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_MasterId()
+FNDA:2,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_MasterId()
 DA:8,2
 FN:8,System.String Its.Onix.Erp.Models.Generals.Master::get_Code()
 FNDA:2,System.String Its.Onix.Erp.Models.Generals.Master::get_Code()
@@ -466,39 +553,88 @@ DA:10,2
 FN:10,System.String Its.Onix.Erp.Models.Generals.Master::get_Description()
 FNDA:2,System.String Its.Onix.Erp.Models.Generals.Master::get_Description()
 DA:11,2
-LF:4
-LH:4
+FN:11,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_Type()
+FNDA:2,System.Int32 Its.Onix.Erp.Models.Generals.Master::get_Type()
+DA:12,2
+LF:5
+LH:5
 BRF:0
 BRH:0
-FNF:4
-FNH:4
+FNF:5
+FNH:5
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Commons\ModelCommonFields.cs
 FN:7,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tag()
 FNDA:2,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tag()
 DA:8,2
-LF:1
-LH:1
+FN:8,System.Int32 Its.Onix.Erp.Models.Commons.ModelCommonFields::get_OperatorId()
+FNDA:2,System.Int32 Its.Onix.Erp.Models.Commons.ModelCommonFields::get_OperatorId()
+DA:9,2
+LF:2
+LH:2
 BRF:0
 BRH:0
-FNF:1
-FNH:1
+FNF:2
+FNH:2
+end_of_record
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Migrations\201909\Mg20190921_2150.cs
+FN:8,System.Void Its.Onix.Erp.Migrations.Mg20190921_2150::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void Its.Onix.Erp.Migrations.Mg20190921_2150::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+BRDA:10,13,0,0
+BRDA:10,13,1,0
+BRDA:10,45,0,0
+BRDA:10,45,1,0
+FN:25,System.Void Its.Onix.Erp.Migrations.Mg20190921_2150::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+FNDA:0,System.Void Its.Onix.Erp.Migrations.Mg20190921_2150::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)
+DA:26,0
+DA:27,0
+DA:28,0
+LF:18
+LH:0
+BRF:4
+BRH:0
+FNF:2
+FNH:0
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Databases\OnixErpDbContext.cs
-FN:14,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_MasterRefs()
-FNDA:2,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_MasterRefs()
+FN:14,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
+FNDA:2,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
 DA:15,2
+FN:15,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Customer> Its.Onix.Erp.Databases.OnixErpDbContext::get_Customers()
+FNDA:2,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Customer> Its.Onix.Erp.Databases.OnixErpDbContext::get_Customers()
+DA:16,2
+FN:16,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Address> Its.Onix.Erp.Databases.OnixErpDbContext::get_Addresses()
+FNDA:2,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.Address> Its.Onix.Erp.Databases.OnixErpDbContext::get_Addresses()
+DA:17,2
+FN:17,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.BankAccount> Its.Onix.Erp.Databases.OnixErpDbContext::get_BankAccounts()
+FNDA:2,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Generals.BankAccount> Its.Onix.Erp.Databases.OnixErpDbContext::get_BankAccounts()
+DA:18,2
 FN:10,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Core.Databases.DbCredential)
 FNDA:2,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Core.Databases.DbCredential)
 DA:11,2
 DA:12,2
 DA:13,2
-LF:4
-LH:4
+LF:7
+LH:7
 BRF:0
 BRH:0
-FNF:2
-FNH:2
+FNF:5
+FNH:5
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Caches\CachePageContents.cs
 FN:21,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Caches.CachePageContents::LoadContents()
@@ -682,48 +818,58 @@ BRDA:42,78,0,8
 BRDA:42,78,1,15
 BRDA:48,121,0,11
 BRDA:48,121,1,4
-LF:35
-LH:35
-BRF:6
-BRH:6
-FNF:2
-FNH:2
-end_of_record
-SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\ResetRegistration.cs
-FN:9,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
-FNDA:2,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
-DA:10,2
-DA:11,2
-DA:12,1
-DA:13,1
-DA:16,1
-DA:18,1
-DA:19,1
-BRDA:11,9,0,1
-BRDA:11,9,1,1
-FN:21,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
-FNDA:12,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
-DA:22,12
-DA:23,12
-DA:24,12
-DA:25,5
-DA:26,5
-DA:28,7
-BRDA:23,12,0,9
-BRDA:23,12,1,3
-BRDA:23,30,0,5
-BRDA:23,30,1,7
-FN:30,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
-FNDA:1,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
-DA:31,1
-DA:32,1
-DA:33,1
-LF:16
-LH:16
+FN:71,System.Boolean Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::GetActivateFlag()
+FNDA:1,System.Boolean Its.Onix.Erp.Businesses.Registrations.RegistrationOperationBase::GetActivateFlag()
+DA:72,1
+DA:73,1
+DA:74,1
+LF:38
+LH:38
 BRF:6
 BRH:6
 FNF:3
 FNH:3
+end_of_record
+SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Registrations\ResetRegistration.cs
+FN:10,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
+FNDA:2,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)
+DA:11,2
+DA:12,2
+DA:13,1
+DA:14,1
+DA:17,1
+DA:19,1
+DA:20,1
+BRDA:12,9,0,1
+BRDA:12,9,1,1
+FN:22,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
+FNDA:12,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::ValidateRegistration(Its.Onix.Erp.Models.MRegistration)
+DA:23,12
+DA:24,12
+DA:25,12
+DA:26,5
+DA:27,5
+DA:29,7
+BRDA:24,12,0,9
+BRDA:24,12,1,3
+BRDA:24,30,0,5
+BRDA:24,30,1,7
+FN:31,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
+FNDA:1,System.Void Its.Onix.Erp.Businesses.Registrations.ResetRegistration::PerformRegistrationAction(Its.Onix.Erp.Models.MRegistration,System.String)
+DA:32,1
+DA:33,1
+DA:34,1
+FN:36,System.Boolean Its.Onix.Erp.Businesses.Registrations.ResetRegistration::GetActivateFlag()
+FNDA:1,System.Boolean Its.Onix.Erp.Businesses.Registrations.ResetRegistration::GetActivateFlag()
+DA:37,1
+DA:38,1
+DA:39,1
+LF:19
+LH:19
+BRF:6
+BRH:6
+FNF:4
+FNH:4
 end_of_record
 SF:D:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\ProductTypes\GetProductTypeInfo.cs
 FN:9,Its.Onix.Erp.Models.MProductType Its.Onix.Erp.Businesses.ProductTypes.GetProductTypeInfo::Apply(Its.Onix.Erp.Models.MProductType)
@@ -964,17 +1110,43 @@ DA:21,2
 DA:22,2
 DA:23,2
 DA:25,2
-DA:26,2
-DA:27,2
-DA:29,2
-DA:31,2
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
 DA:32,2
+DA:33,2
 DA:34,2
 DA:35,2
-LF:19
-LH:19
-BRF:0
-BRH:0
-FNF:1
-FNH:1
+DA:36,2
+DA:38,2
+DA:40,2
+DA:41,2
+DA:43,2
+DA:44,2
+BRDA:25,127,0,0
+BRDA:25,127,1,2
+FN:46,System.Boolean Its.Onix.Erp.Businesses.Barcodes.CreateBarcode::IsMigration(Its.Onix.Erp.Models.MBarcode)
+FNDA:2,System.Boolean Its.Onix.Erp.Businesses.Barcodes.CreateBarcode::IsMigration(Its.Onix.Erp.Models.MBarcode)
+DA:47,2
+DA:48,2
+DA:49,2
+DA:50,2
+DA:51,0
+DA:52,0
+DA:54,2
+DA:55,2
+BRDA:48,12,0,0
+BRDA:48,25,0,0
+BRDA:48,12,1,2
+BRDA:48,25,1,2
+BRDA:48,46,0,0
+BRDA:48,46,1,2
+LF:35
+LH:28
+BRF:8
+BRH:4
+FNF:2
+FNH:2
 end_of_record
