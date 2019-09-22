@@ -1,7 +1,7 @@
 using System;
 using Its.Onix.Erp.Models.Commons;
 
-namespace Its.Onix.Erp.Models.Generals
+namespace Its.Onix.Erp.Models
 {
 	public class Address : ModelCommonFields
 	{

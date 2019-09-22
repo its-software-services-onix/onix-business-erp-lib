@@ -1,7 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 
-using Its.Onix.Erp.Models.Generals;
+using Its.Onix.Erp.Models;
 using Its.Onix.Core.Databases;
 
 namespace Its.Onix.Erp.Databases

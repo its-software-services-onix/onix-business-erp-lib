@@ -1,40 +1,35 @@
 using System;
-using System.Collections;
-using NUnit.Framework;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Linq;
 
-using Its.Onix.Erp.Models.Generals;
+using NUnit.Framework;
+using Its.Onix.Core.Commons.Model;
 
 namespace Its.Onix.Erp.Models
 {
 	public class ModelsTest
 	{
-        private ArrayList models = new ArrayList();
+        private List<Type> models = null;
 
         [SetUp]
         public void Setup()
         {
+            Type type = typeof(Master);
+            Assembly asm = Assembly.GetAssembly(type);
 
-            models.Add(new MBarcode());
-            models.Add(new MRegistration());
-            models.Add(new MProduct());
-            models.Add(new MProductComposition());
-            models.Add(new MProductCompositionGroup());
-            models.Add(new MGenericDescription());
-            models.Add(new MProductPerformance());
-            models.Add(new MProductType()); 
-            models.Add(new MProfile()); 
-            models.Add(new MRegistration()); 
-            models.Add(new MContactUs()); 
-            models.Add(new MContent());  
-
-            models.Add(new Master());            
+            models = asm.GetTypes()
+                    .Where(t => t.Namespace.Equals("Its.Onix.Erp.Models"))
+                    .ToList();
         }
 
         [TestCase]
         public void ModelPopulatePropertiesTest()
         {
-            foreach (var model in models)
+            foreach (var t in models)
             {
+                var model = (BaseModel) Activator.CreateInstance(t);
+
                 var props = model.GetType().GetProperties();
                 foreach(var prop in props) 
                 {

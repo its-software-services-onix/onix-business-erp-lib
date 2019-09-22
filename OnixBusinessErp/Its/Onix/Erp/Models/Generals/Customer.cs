@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Its.Onix.Erp.Models.Commons;
 
-namespace Its.Onix.Erp.Models.Generals
+namespace Its.Onix.Erp.Models
 {
 	public class Customer : ModelCommonFields
 	{
