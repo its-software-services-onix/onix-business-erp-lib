@@ -1,22 +1,50 @@
 ﻿using System;
+using System.Reflection;
 
-using Its.Onix.Erp.Databases;
-using Its.Onix.Core.Databases;
+using Serilog;
+using NDesk.Options;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
+using Its.Onix.Core.Factories;
+using Its.Onix.Core.Applications;
 
 namespace OnixBusinessErpApp
 {
-    public class OnixErpDbContextPgSql : OnixErpDbContext
-    {
-        public OnixErpDbContextPgSql() : base(new DbCredential("130.211.245.2", 5432, "onix_erp", "postgres", "", "pgsql"))
-        {            
-        }
-    }
-
     class Program
     {
+        private static void RegisterApplications()
+        {
+            Assembly asm = Assembly.GetExecutingAssembly();
+            FactoryApplicationContext.RegisterApplication(asm, "Migrate", "Its.Onix.Erp.Migrations.Applications.DbMigrationApplication");
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            RegisterApplications();
+            
+            string appName = args[0];
+
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddLogging(builder => builder.AddSerilog());
+        
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+            var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .CreateLogger();
+
+            FactoryApplicationContext.SetLoggerFactory(loggerFactory);
+            IApplication app = FactoryApplicationContext.CreateApplicationObject(appName);    
+
+            OptionSet opt = app.CreateOptionSet();
+            opt.Parse(args);
+
+            app.Run();
         }
     }
 }

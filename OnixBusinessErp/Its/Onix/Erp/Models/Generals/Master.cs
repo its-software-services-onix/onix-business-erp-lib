@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using Its.Onix.Erp.Models.Commons;
 
 namespace Its.Onix.Erp.Models
@@ -6,9 +7,17 @@ namespace Its.Onix.Erp.Models
 	public class Master : ModelCommonFields
 	{
         public int MasterId {get; set;}
+
+        [Required]
         public string Code {get; set;}
+
+        [Required]
         public string Name {get; set;}
-        public string Description {get; set;}
+
+        public string LongDescription {get; set;}
+        public string ShortDescription {get; set;}
+
+        [Required]
         public int Type {get; set;}
     }
 }

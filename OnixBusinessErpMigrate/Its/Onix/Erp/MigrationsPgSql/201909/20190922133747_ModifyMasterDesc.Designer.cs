@@ -2,16 +2,18 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OnixBusinessErpApp;
 
-namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
+namespace OnixBusinessErpMigrate.Its.Onix.Erp.MigrationsPgSql
 {
     [DbContext(typeof(OnixErpDbContextPgSql))]
-    partial class OnixErpDbContextPgSqlModelSnapshot : ModelSnapshot
+    [Migration("20190922133747_ModifyMasterDesc")]
+    partial class ModifyMasterDesc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,8 +26,7 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.Property<int>("AddressId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AddressNo")
-                        .IsRequired();
+                    b.Property<string>("AddressNo");
 
                     b.Property<int?>("CustomerId");
 
@@ -59,11 +60,9 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.Property<int>("BankAccountId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AcctName")
-                        .IsRequired();
+                    b.Property<string>("AcctName");
 
-                    b.Property<string>("AcctNo")
-                        .IsRequired();
+                    b.Property<string>("AcctNo");
 
                     b.Property<int?>("BankMasterId");
 
@@ -93,8 +92,7 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Code")
-                        .IsRequired();
+                    b.Property<string>("Code");
 
                     b.Property<int?>("CreditTermMasterId");
 
@@ -102,23 +100,19 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
 
                     b.Property<int?>("CustomerTypeMasterId");
 
+                    b.Property<string>("Description");
+
                     b.Property<string>("Key");
 
                     b.Property<DateTime>("LastMaintDate");
 
-                    b.Property<string>("LastName");
-
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
                     b.Property<int?>("NamePrefixMasterId");
 
                     b.Property<int>("OperatorId");
 
                     b.Property<string>("Tag");
-
-                    b.Property<string>("TaxNo")
-                        .IsRequired();
 
                     b.HasKey("CustomerId");
 
@@ -138,8 +132,7 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.Property<int>("MasterId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Code")
-                        .IsRequired();
+                    b.Property<string>("Code");
 
                     b.Property<string>("Key");
 
@@ -147,8 +140,7 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
 
                     b.Property<string>("LongDescription");
 
-                    b.Property<string>("Name")
-                        .IsRequired();
+                    b.Property<string>("Name");
 
                     b.Property<int>("OperatorId");
 
