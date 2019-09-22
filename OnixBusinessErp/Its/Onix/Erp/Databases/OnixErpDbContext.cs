@@ -12,6 +12,9 @@ namespace Its.Onix.Erp.Databases
         {
         }
 
-        public DbSet<Master> MasterRefs { get; set; }
+        public DbSet<Master> Masters { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
     }
 }
