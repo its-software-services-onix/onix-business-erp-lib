@@ -50,12 +50,13 @@ namespace Its.Onix.Erp.Migrations.Applications
 
             Hashtable args = GetArguments();
             string defaultHost = Environment.GetEnvironmentVariable("ONIX_ERP_DB_HOST");
+            string defaultPassword = Environment.GetEnvironmentVariable("ONIX_ERP_DB_PASSWORD");
 
             string host = GetOptionValue(args, "host", defaultHost);
             int port = Int32.Parse(GetOptionValue(args, "port", "5432"));
             string db = GetOptionValue(args, "database", "onix_erp");;
             string uname = GetOptionValue(args, "user", "postgres");
-            string passwd = GetOptionValue(args, "password", "");
+            string passwd = GetOptionValue(args, "password", defaultPassword);
             string provider = GetOptionValue(args, "provider", "pgsql");
 
             string msg = "Migrating data : host=[{0}] port=[{1}] db=[{2}] provider=[{3}]...";
