@@ -14,10 +14,14 @@ namespace Its.Onix.Erp.Businesses.Masters
 {
 	public class SaveMasterTest
 	{
-        [SetUp]
-        public void Setup()
+        public SaveMasterTest()
         {
             FactoryBusinessOperationUtils.LoadBusinessOperations();
+        }
+
+        [SetUp]
+        public void Setup()
+        {            
         }
 
         [TestCase]
@@ -29,7 +33,7 @@ namespace Its.Onix.Erp.Businesses.Masters
 
             FactoryBusinessOperation.SetDatabaseContext(ctx);
             var opr = (ManipulationOperation) FactoryBusinessOperation.CreateBusinessOperationObject("SaveMaster");
-            
+
             opr.Apply(m);
         } 
     }

@@ -14,10 +14,14 @@ namespace Its.Onix.Erp.Businesses.Masters
 {
 	public class DeleteMasterTest
 	{
+        public DeleteMasterTest()
+        {
+            FactoryBusinessOperationUtils.LoadBusinessOperations();
+        }
+
         [SetUp]
         public void Setup()
         {
-            FactoryBusinessOperationUtils.LoadBusinessOperations();
         }
 
         [TestCase]
