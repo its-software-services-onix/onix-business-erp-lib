@@ -4,7 +4,6 @@ using System.Reflection;
 using Serilog;
 using NDesk.Options;
 
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -19,6 +18,8 @@ namespace OnixBusinessErpApp
         {
             Assembly asm = Assembly.GetExecutingAssembly();
             FactoryApplicationContext.RegisterApplication(asm, "Migrate", "Its.Onix.Erp.Migrations.Applications.DbMigrationApplication");
+
+            FactoryDbContext.RegisterDbContext(asm, "OnixErpDbContextPgSql", "OnixBusinessErpApp.OnixErpDbContextPgSql");
         }
 
         static void Main(string[] args)
@@ -37,6 +38,8 @@ namespace OnixBusinessErpApp
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
+
+            FactoryDbContext.SetLoggerFactory(loggerFactory);
 
             FactoryApplicationContext.SetLoggerFactory(loggerFactory);
             IApplication app = FactoryApplicationContext.CreateApplicationObject(appName);    

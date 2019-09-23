@@ -6,6 +6,8 @@ using OnixBusinessErpApp;
 
 using Its.Onix.Core.Utils;
 using Its.Onix.Core.Applications;
+using Its.Onix.Core.Factories;
+using Its.Onix.Core.Databases;
 
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
@@ -62,7 +64,9 @@ namespace Its.Onix.Erp.Migrations.Applications
             string msg = "Migrating data : host=[{0}] port=[{1}] db=[{2}] provider=[{3}]...";
             LogUtils.LogInformation(logger, msg, host, port, db, provider);
 
-            OnixErpDbContextPgSql ctx = new OnixErpDbContextPgSql(host, port, db, uname, passwd);
+            DbCredential crd = new DbCredential(host, port, db, uname, passwd);
+            var ctx = (OnixErpDbContextPgSql) FactoryDbContext.CreateDbContextObject("OnixErpDbContextPgSql", crd);
+
             ctx.Database.Migrate();
 
             LogUtils.LogInformation(logger, "Migrating done");

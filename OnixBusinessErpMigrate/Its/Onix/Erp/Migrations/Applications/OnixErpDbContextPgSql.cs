@@ -13,8 +13,7 @@ namespace OnixBusinessErpApp
             //Pass the IP address when issuing command "dotnet ef migrations remove"            
         }
 
-        public OnixErpDbContextPgSql(string host, int port, string db, string uname, string passwd) 
-            : base(new DbCredential(host, port, db, uname, passwd, "pgsql"))
+        public OnixErpDbContextPgSql(DbCredential crd) : base(crd)
         {            
         }
     }
