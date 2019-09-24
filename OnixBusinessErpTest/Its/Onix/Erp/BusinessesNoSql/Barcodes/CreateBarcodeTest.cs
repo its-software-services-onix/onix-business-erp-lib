@@ -42,5 +42,24 @@ namespace Its.Onix.Erp.Businesses.Barcodes
             Assert.AreEqual(playLoad1, barcode1.PayloadUrl, "Payload URL incorrect!!!");
             Assert.AreEqual(playLoad2, barcode2.PayloadUrl, "Payload URL incorrect!!!");            
         } 
+
+        [TestCase("SERIAL", "PIN", "PAYLOAD/URL")]
+        public void CreateBarcodeWithMigrationModeTest(string serial, string pin, string payload)
+        {
+            INoSqlContext ctx = new Mock<INoSqlContext>().Object;
+            FactoryBusinessOperation.SetNoSqlContext(ctx);
+
+            var opt = (IBusinessOperationGetInfo<MBarcode>) FactoryBusinessOperation.CreateBusinessOperationObject("CreateBarcode");
+            MBarcode bc = new MBarcode();
+            bc.SerialNumber = serial;
+            bc.Pin = pin;
+            bc.PayloadUrl = payload;
+
+            MBarcode barcode1 = opt.Apply(bc);
+
+            Assert.AreEqual(serial, barcode1.SerialNumber, "SerialNumber must be the same!!!");
+            Assert.AreEqual(pin, barcode1.Pin, "Pin must be the same!!!");
+            Assert.AreEqual(payload, barcode1.PayloadUrl, "Payload URL must be the same!!!");
+        }         
     }
 }

@@ -17,7 +17,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         {            
         }
 
-        [TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "sqlite_inmem")]
         public void SaveMasterOperationTest(string db, string provider)
         {
             CreateOnixDbContext(db, provider);
@@ -26,6 +26,8 @@ namespace Its.Onix.Erp.Businesses.Masters
             
             Master m = new Master() { Code = "01", Name = "Master01" };
             Master o = (Master) opr.Apply(m);
+
+            Assert.AreNotEqual(0, o.MasterId, "Primary key ID must be returned!!!");
 
             del.Apply(o);
 

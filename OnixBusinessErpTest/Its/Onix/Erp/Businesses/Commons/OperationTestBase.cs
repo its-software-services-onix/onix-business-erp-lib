@@ -20,6 +20,12 @@ namespace Its.Onix.Erp.Businesses.Commons
                 DbCredential crd = new DbCredential(host, 5432, "onix_erp", "postgres", "", provider);
                 ctx = new OnixErpDbContext(crd);
             }                    
+            else if (provider.Equals("sqlite_inmem"))
+            {
+                DbCredential crd = new DbCredential("", 9999, "", "", "", provider);
+                ctx = new OnixErpDbContext(crd);
+                ctx.Database.EnsureCreated();
+            }    
 
             FactoryBusinessOperation.SetDatabaseContext(ctx);
             return ctx;
