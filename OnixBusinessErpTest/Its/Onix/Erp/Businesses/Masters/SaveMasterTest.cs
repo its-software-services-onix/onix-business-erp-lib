@@ -1,22 +1,15 @@
 using System;
 using NUnit.Framework;
 
-using Moq;
-
-using Its.Onix.Core.Factories;
-using Its.Onix.Core.Databases;
-using Its.Onix.Erp.Utils;
 using Its.Onix.Erp.Businesses.Commons;
-using Its.Onix.Erp.Databases;
 using Its.Onix.Erp.Models;
 
 namespace Its.Onix.Erp.Businesses.Masters
 {
-	public class SaveMasterTest
+	public class SaveMasterTest : OperationTestBase
 	{
-        public SaveMasterTest()
+        public SaveMasterTest() : base()
         {
-            FactoryBusinessOperationUtils.LoadBusinessOperations();
         }
 
         [SetUp]
@@ -24,17 +17,20 @@ namespace Its.Onix.Erp.Businesses.Masters
         {            
         }
 
-        [TestCase]
-        public void SaveMasterOperationTest()
+        [TestCase("onix_erp", "pgsql")]
+        public void SaveMasterOperationTest(string db, string provider)
         {
-            DbCredential crd = new DbCredential("130.211.245.2", 5432, "onix_erp", "postgres", "", "pgsql");
-            OnixErpDbContext ctx = new OnixErpDbContext(crd);
-            Master m = new Master() { Code = "00", Name = "Master01", Type = 1 };
+            CreateOnixDbContext(db, provider);
+            var opr = CreateManipulateOperation("SaveMaster");
+            var del = CreateManipulateOperation("DeleteMaster");
+            
+            Master m = new Master() { Code = "01", Name = "Master01" };
+            Master o = (Master) opr.Apply(m);
 
-            FactoryBusinessOperation.SetDatabaseContext(ctx);
-            var opr = (ManipulationOperation) FactoryBusinessOperation.CreateBusinessOperationObject("SaveMaster");
+            del.Apply(o);
 
-            opr.Apply(m);
+            //No excption a this point
+            Assert.True(true);            
         } 
     }
 }

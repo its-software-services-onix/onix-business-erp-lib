@@ -1,22 +1,15 @@
 using System;
 using NUnit.Framework;
 
-using Moq;
-
-using Its.Onix.Core.Factories;
-using Its.Onix.Core.Databases;
-using Its.Onix.Erp.Utils;
 using Its.Onix.Erp.Businesses.Commons;
-using Its.Onix.Erp.Databases;
 using Its.Onix.Erp.Models;
 
 namespace Its.Onix.Erp.Businesses.Masters
 {
-	public class DeleteMasterTest
+	public class DeleteMasterTest : OperationTestBase
 	{
-        public DeleteMasterTest()
+        public DeleteMasterTest() : base()
         {
-            FactoryBusinessOperationUtils.LoadBusinessOperations();
         }
 
         [SetUp]
@@ -24,17 +17,39 @@ namespace Its.Onix.Erp.Businesses.Masters
         {
         }
 
-        [TestCase]
-        public void DeleteMasterOperationTest()
+        [TestCase("onix_erp", "pgsql")]
+        public void DeleteMasterOperationFoundTest(string db, string provider)
         {
-            DbCredential crd = new DbCredential("130.211.245.2", 5432, "onix_erp", "postgres", "", "pgsql");
-            OnixErpDbContext ctx = new OnixErpDbContext(crd);
-            Master m = new Master() { MasterId = 3 };
-
-            FactoryBusinessOperation.SetDatabaseContext(ctx);
-            var opr = (ManipulationOperation) FactoryBusinessOperation.CreateBusinessOperationObject("DeleteMaster");
+            CreateOnixDbContext(db, provider);
+            var opr = CreateManipulateOperation("SaveMaster");
+            var del = CreateManipulateOperation("DeleteMaster");
             
-            opr.Apply(m);
+            Master m = new Master() { Code = "01", Name = "Will be deleted later" };
+            Master o = (Master) opr.Apply(m);
+
+            del.Apply(o);
+            
+            //No excption a this point
+            Assert.True(true);
+        } 
+
+        [TestCase("onix_erp", "pgsql")]
+        public void DeleteMasterOperationNotFoundTest(string db, string provider)
+        {            
+            CreateOnixDbContext(db, provider);
+            var opr = CreateManipulateOperation("DeleteMaster");
+            
+            Master m = new Master() { MasterId = 999999999 };
+
+            try
+            {
+                opr.Apply(m);
+                Assert.Fail("Exceptin should be thrown here!!!");
+            }
+            catch
+            {
+                Assert.True(true);
+            }
         } 
     }
 }
