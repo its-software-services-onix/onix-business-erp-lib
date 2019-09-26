@@ -55,7 +55,7 @@ namespace Its.Onix.Erp.Businesses.Commons
                 TestUtils.SetPropertyValue(m2, dupKey, code);
                 opr.Apply(m2);
             } 
-            catch (Exception e)
+            catch //(Exception e)
             {
                 //Duplicate key exception
                 //Console.WriteLine(e);  
@@ -128,6 +128,28 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             return ok;
         }        
+
+        protected bool IsDeleteNotFoundOk<T>(string db, string provider, string delName, string pk) where T : BaseModel
+        {
+            bool ok = false;
+            CreateOnixDbContext(db, provider);
+            var opr = CreateManipulateOperation(delName);
+            
+            T m = (T) Activator.CreateInstance(typeof(T));
+            //Key not exist
+            TestUtils.SetPropertyValue(m, pk, -9999);
+
+            try
+            {
+                opr.Apply(m);                
+            }
+            catch
+            {
+                ok = true;
+            }
+
+            return ok;
+        }    
 
         public OperationTestBase()
         {

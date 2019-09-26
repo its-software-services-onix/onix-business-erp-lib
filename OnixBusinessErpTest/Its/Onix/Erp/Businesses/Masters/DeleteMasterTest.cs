@@ -7,7 +7,7 @@ using Its.Onix.Erp.Models;
 namespace Its.Onix.Erp.Businesses.Masters
 {
 	public class DeleteMasterTest : OperationTestBase
-	{
+	{        
         public DeleteMasterTest() : base()
         {
         }
@@ -17,41 +17,19 @@ namespace Its.Onix.Erp.Businesses.Masters
         {
         }
 
-        [TestCase("onix_erp", "sqlite_inmem")]
-        public void DeleteMasterOperationFoundTest(string db, string provider)
-        {
-            CreateOnixDbContext(db, provider);
-            var opr = CreateManipulateOperation("SaveMaster");
-            var del = CreateManipulateOperation("DeleteMaster");
-            
-            Master m = new Master() { Code = "01", Name = "Will be deleted later" };
-            Master o = (Master) opr.Apply(m);
-
-            Assert.AreNotEqual(0, o.MasterId, "Primary key ID must be returned!!!");
-            
-            del.Apply(o);
-            
-            //No excption a this point
-            Assert.True(true);
-        } 
-
-        [TestCase("onix_erp", "sqlite_inmem")]
-        public void DeleteMasterOperationNotFoundTest(string db, string provider)
+        [TestCase("onix_erp", "sqlite_inmem", "MasterId")]
+        //[TestCase("onix_erp", "pgsql", "MasterId")]
+        public void DeleteMasterOperationFoundTest(string db, string provider, string pk)
         {            
-            CreateOnixDbContext(db, provider);
-            var opr = CreateManipulateOperation("DeleteMaster");
-            
-            Master m = new Master() { MasterId = 999999999 };
+            //Delete found test is tested along with the SaveMasterTest.cs
+        }
 
-            try
-            {
-                opr.Apply(m);
-                Assert.Fail("Exceptin should be thrown here!!!");
-            }
-            catch
-            {
-                Assert.True(true);
-            }
+        [TestCase("onix_erp", "sqlite_inmem", "MasterId")]
+        //[TestCase("onix_erp", "pgsql", "MasterId")]
+        public void DeleteMasterOperationNotFoundTest(string db, string provider, string pk)
+        {            
+            bool isOK = IsDeleteNotFoundOk<Master>(db, provider, "DeleteMaster", pk);
+            Assert.AreEqual(true, isOK, "Should not be able to delete be cause primary key [{0}] value not found!!!", pk);
         } 
     }
 }
