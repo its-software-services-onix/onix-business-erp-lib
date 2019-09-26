@@ -19,9 +19,9 @@ namespace Its.Onix.Erp.Databases
                 .IsUnique();
         }  
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            SetConstraintMaster(builder);
+            SetConstraintMaster(modelBuilder);
         }
 
         public DbSet<Master> Masters { get; set; }

@@ -12,18 +12,8 @@ namespace Its.Onix.Erp.Businesses.Masters
         {
             Master m = (Master) dat;
             context.Masters.Add(m);
-/*
-            if (m.MasterId <= 0)
-            {
-                context.Masters.Add(m);
-            }
-            else
-            {
-                context.Masters.Update(m);
-            }
-*/            
-            context.SaveChanges();
 
+            context.SaveChanges();
             return m;
         }
     }

@@ -39,7 +39,7 @@ namespace Its.Onix.Erp.Businesses.Commons
             catch (Exception e)
             {
                 DetachAllEntities(context);
-                throw(e);
+                throw new Exception("Exception occur in ManipulationOperation.Apply()", e);
             }
             finally
             {
