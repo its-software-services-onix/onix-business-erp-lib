@@ -22,9 +22,19 @@ namespace Its.Onix.Erp.Utils
 
         public static void PopulateDummyPropValues(BaseModel model)
         {
+            PopulateDummyPropValues(model, "");
+        }
+
+        public static void PopulateDummyPropValues(BaseModel model, string exceptField)
+        {
             var props = model.GetType().GetProperties();
             foreach (var prop in props)
             {
+                if (prop.Name.Equals(exceptField))
+                {
+                    continue;
+                }
+
                 object oldValue = null;
 
                 if (prop.PropertyType == typeof(int))

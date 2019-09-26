@@ -37,56 +37,50 @@ namespace Its.Onix.Erp.Businesses.Commons
             return opr;
         }        
 
-        protected bool IsDuplicateUniqueCheckOk<T>(string db, string provider, string name, string pk) where T : BaseModel
+        protected bool IsDuplicateUniqueCheckOk<T>(string db, string provider, string name, string pk, string dupKey) where T : BaseModel
         {
             bool result = false;
             var opr = CreateManipulateOperation(name);
 
-            T m1 = null;
             try
             {
-                m1 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m1);
-                TestUtils.SetPropertyValue(m1, pk, default(int));
-                
+                T m1 = (T) Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(m1, pk);                
                 opr.Apply(m1);
                                 
-                int id = (int) TestUtils.GetPropertyValue(m1, pk);
-                TestUtils.SetPropertyValue(m1, pk, id+1);
+                string code = (string) TestUtils.GetPropertyValue(m1, dupKey);
 
-                opr.Apply(m1);
+                T m2 = (T) Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(m2, pk); 
+                TestUtils.SetPropertyValue(m2, dupKey, code);
+                opr.Apply(m2);
             } 
             catch (Exception e)
             {
                 //Duplicate key exception
-                Console.WriteLine(e);  
+                //Console.WriteLine(e);  
                 result = true;
             }      
 
             return result;             
         }
 
-        protected bool IsDuplicateUniqueKeyDifferentCheckOk<T>(string db, string provider, string name, string pk, string keyCol) where T : BaseModel
+        protected bool IsDuplicateUniqueKeyDifferentCheckOk<T>(string db, string provider, string name, string pk) where T : BaseModel
         {
             bool result = true;
             var opr = CreateManipulateOperation(name);
 
-            T m1 = null;
             try
             {
-                m1 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m1);
-                TestUtils.SetPropertyValue(m1, pk, default(int));
+                T m1 = (T) Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(m1, pk);
                 
                 opr.Apply(m1);
                                 
-                int id = (int) TestUtils.GetPropertyValue(m1, pk);
-                TestUtils.SetPropertyValue(m1, pk, id+1);
+                T m2 = (T) Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(m2, pk);
 
-                string field = (string) TestUtils.GetPropertyValue(m1, keyCol);
-                TestUtils.SetPropertyValue(m1, keyCol, field + "XX__XX");
-
-                opr.Apply(m1);
+                opr.Apply(m2);
             } 
             catch (Exception e)
             {
@@ -102,8 +96,8 @@ namespace Its.Onix.Erp.Businesses.Commons
         {
             CreateOnixDbContext(db, provider);
 
-            bool isOK1 = IsDuplicateUniqueCheckOk<T>(db, provider, name, pk);
-            bool isOK2 = IsDuplicateUniqueKeyDifferentCheckOk<T>(db, provider, name, pk, keyCol);
+            bool isOK1 = IsDuplicateUniqueCheckOk<T>(db, provider, name, pk, keyCol);
+            bool isOK2 = IsDuplicateUniqueKeyDifferentCheckOk<T>(db, provider, name, pk);
 
             return (isOK1 && isOK2);
         }
@@ -120,8 +114,7 @@ namespace Its.Onix.Erp.Businesses.Commons
             try
             {
                 m = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m);
-                TestUtils.SetPropertyValue(m, pk, default(int));
+                TestUtils.PopulateDummyPropValues(m, pk);
                 T o = (T) opr.Apply(m);
 
                 del.Apply(o);

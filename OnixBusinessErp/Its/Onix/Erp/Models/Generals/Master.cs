@@ -7,7 +7,7 @@ namespace Its.Onix.Erp.Models
 {
 	public class Master : ModelCommonFields
 	{
-        public int MasterId {get; set;}
+        public int MasterId {get; set;} //No need to assign value to get auto generate
 
         [Required]
         public string Code {get; set;}

@@ -31,6 +31,22 @@ namespace Its.Onix.Erp.Businesses.Masters
         {
             bool isOK2 = IsDuplicateUniqueKeyOk<Master>(db, provider, "SaveMaster", pk, fieldName);
             Assert.AreEqual(true, isOK2, "[{0}] should not allow to duplicate!!!", fieldName);
-        }         
+        }       
+
+        [TestCase("onix_erp", "pgsql", "MasterId", "Code")]
+        public void SaveUsingTheSameContextTest(string db, string provider, string pk, string fieldName)
+        {
+            //Test for using the same context
+            CreateOnixDbContext(db, provider);
+
+            bool isOK0 = IsDuplicateUniqueCheckOk<Master>(db, provider, "SaveMaster", pk, fieldName);
+            Assert.AreEqual(true, isOK0, "[{0}] should not allow to duplicate!!!", fieldName);
+
+            bool isOK1 = IsDuplicateUniqueKeyDifferentCheckOk<Master>(db, provider, "SaveMaster", pk);
+            Assert.AreEqual(true, isOK1, "[{0}] should not allow to duplicate!!!", fieldName);
+            
+            bool isOK2 = IsSaveOperationOk<Master>(db, provider, "SaveMaster", "DeleteMaster", pk);
+            Assert.AreEqual(true, isOK2, "[{0}] should not allow to duplicate!!!", fieldName);
+        }            
     }
 }
