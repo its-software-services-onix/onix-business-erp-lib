@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 using Its.Onix.Core.Business;
 using Its.Onix.Core.Commons.Model;
@@ -11,13 +13,38 @@ namespace Its.Onix.Erp.Businesses.Commons
         protected abstract BaseModel Execute(BaseModel dat);
         protected OnixErpDbContext context = null;
 
+        private void DetachAllEntities(OnixErpDbContext context)
+        {
+            var changedEntriesCopy = context.ChangeTracker.Entries()
+                .Where(e => e.State == EntityState.Added ||
+                            e.State == EntityState.Modified ||
+                            e.State == EntityState.Deleted)
+                .ToList();
+
+            foreach (var entry in changedEntriesCopy)
+            {
+                entry.State = EntityState.Detached;
+            }
+        }
+
         public BaseModel Apply(BaseModel dat)
         {
             BaseModel obj = null;
             context = (OnixErpDbContext) GetDatabaseContext();
-            obj = Execute(dat);
 
-            //Let consider begin transaction in the future
+            try
+            {
+                obj = Execute(dat);
+            }
+            catch (Exception e)
+            {
+                DetachAllEntities(context);
+                throw(e);
+            }
+            finally
+            {
+                DetachAllEntities(context);
+            }
 
             return obj;
         }

@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Linq;
 
 using NUnit.Framework;
+
 using Its.Onix.Core.Commons.Model;
 
 namespace Its.Onix.Erp.Models
@@ -30,7 +31,8 @@ namespace Its.Onix.Erp.Models
             {
                 var model = (BaseModel) Activator.CreateInstance(t);
 
-                var props = model.GetType().GetProperties();
+                var props = model.GetType().GetProperties();                
+
                 foreach(var prop in props) 
                 {
                     object oldValue = null;

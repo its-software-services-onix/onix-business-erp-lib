@@ -12,6 +12,18 @@ namespace Its.Onix.Erp.Databases
         {
         }
 
+        private void SetConstraintMaster(ModelBuilder builder)
+        {
+            builder.Entity<Master>()
+                .HasIndex(u => u.Code)
+                .IsUnique();
+        }  
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            SetConstraintMaster(builder);
+        }
+
         public DbSet<Master> Masters { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Address> Addresses { get; set; }
