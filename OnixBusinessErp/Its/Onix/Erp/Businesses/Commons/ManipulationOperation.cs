@@ -10,7 +10,6 @@ namespace Its.Onix.Erp.Businesses.Commons
 {
     public abstract class ManipulationOperation : BusinessOperationBase
     {
-        //protected abstract BaseModel Execute(BaseModel dat);
         protected OnixErpDbContext context = null;
 
         protected virtual BaseModel Execute(BaseModel dat)
@@ -47,7 +46,7 @@ namespace Its.Onix.Erp.Businesses.Commons
             }  
             catch (Exception e)
             {
-                throw new ApplicationException("Generic exception occur in ManipulationOperation.Apply()", e);
+                throw new InvalidOperationException("Generic exception occur in ManipulationOperation.Apply()", e);
             }                        
             finally
             {
