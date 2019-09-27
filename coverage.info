@@ -46,15 +46,15 @@ DA:15,18
 DA:16,18
 DA:17,18
 FN:19,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
-FNDA:61,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
-DA:20,61
-DA:21,61
-DA:22,61
+FNDA:62,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
+DA:20,62
+DA:21,62
+DA:22,62
 FN:24,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
-FNDA:61,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
-DA:25,61
-DA:26,61
-DA:27,61
+FNDA:62,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
+DA:25,62
+DA:26,62
+DA:27,62
 FN:10,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 FNDA:2,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 DA:11,2
@@ -97,10 +97,10 @@ FNH:4
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpOperations.cs
 FN:10,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
-FNDA:58,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
-DA:11,58
-DA:12,58
-DA:13,58
+FNDA:59,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
+DA:11,59
+DA:12,59
+DA:13,59
 FN:20,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
 DA:21,1
@@ -229,23 +229,23 @@ FNH:11
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Generals\Master.cs
 FN:9,System.Int32 Its.Onix.Erp.Models.Master::get_MasterId()
-FNDA:566,System.Int32 Its.Onix.Erp.Models.Master::get_MasterId()
-DA:10,566
+FNDA:546,System.Int32 Its.Onix.Erp.Models.Master::get_MasterId()
+DA:10,546
 FN:12,System.String Its.Onix.Erp.Models.Master::get_Code()
-FNDA:192,System.String Its.Onix.Erp.Models.Master::get_Code()
-DA:13,192
+FNDA:185,System.String Its.Onix.Erp.Models.Master::get_Code()
+DA:13,185
 FN:15,System.String Its.Onix.Erp.Models.Master::get_Name()
-FNDA:184,System.String Its.Onix.Erp.Models.Master::get_Name()
-DA:16,184
+FNDA:177,System.String Its.Onix.Erp.Models.Master::get_Name()
+DA:16,177
 FN:17,System.String Its.Onix.Erp.Models.Master::get_LongDescription()
-FNDA:184,System.String Its.Onix.Erp.Models.Master::get_LongDescription()
-DA:18,184
+FNDA:177,System.String Its.Onix.Erp.Models.Master::get_LongDescription()
+DA:18,177
 FN:18,System.String Its.Onix.Erp.Models.Master::get_ShortDescription()
-FNDA:184,System.String Its.Onix.Erp.Models.Master::get_ShortDescription()
-DA:19,184
+FNDA:177,System.String Its.Onix.Erp.Models.Master::get_ShortDescription()
+DA:19,177
 FN:21,System.Int32 Its.Onix.Erp.Models.Master::get_Type()
-FNDA:164,System.Int32 Its.Onix.Erp.Models.Master::get_Type()
-DA:22,164
+FNDA:157,System.Int32 Its.Onix.Erp.Models.Master::get_Type()
+DA:22,157
 LF:6
 LH:6
 BRF:0
@@ -573,11 +573,11 @@ FNH:5
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Models\Commons\ModelCommonFields.cs
 FN:7,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tag()
-FNDA:190,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tag()
-DA:8,190
+FNDA:183,System.String Its.Onix.Erp.Models.Commons.ModelCommonFields::get_Tag()
+DA:8,183
 FN:8,System.Int32 Its.Onix.Erp.Models.Commons.ModelCommonFields::get_OperatorId()
-FNDA:170,System.Int32 Its.Onix.Erp.Models.Commons.ModelCommonFields::get_OperatorId()
-DA:9,170
+FNDA:163,System.Int32 Its.Onix.Erp.Models.Commons.ModelCommonFields::get_OperatorId()
+DA:9,163
 LF:2
 LH:2
 BRF:0
@@ -599,8 +599,8 @@ DA:23,2
 DA:24,2
 DA:25,2
 FN:26,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
-FNDA:36,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
-DA:27,36
+FNDA:35,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
+DA:27,35
 FN:27,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Customer> Its.Onix.Erp.Databases.OnixErpDbContext::get_Customers()
 FNDA:10,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Customer> Its.Onix.Erp.Databases.OnixErpDbContext::get_Customers()
 DA:28,10
@@ -720,11 +720,11 @@ FNH:3
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Masters\DeleteMaster.cs
 FN:11,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Masters.DeleteMaster::Execute(Its.Onix.Core.Commons.Model.BaseModel)
-FNDA:6,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Masters.DeleteMaster::Execute(Its.Onix.Core.Commons.Model.BaseModel)
-DA:12,6
-DA:13,6
-DA:14,6
-DA:15,6
+FNDA:5,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Masters.DeleteMaster::Execute(Its.Onix.Core.Commons.Model.BaseModel)
+DA:12,5
+DA:13,5
+DA:14,5
+DA:15,5
 DA:17,4
 DA:18,4
 LF:6
@@ -740,9 +740,9 @@ FNDA:20,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Masters.Sa
 DA:12,20
 DA:13,20
 DA:14,20
-DA:25,20
-DA:27,16
-DA:28,16
+DA:16,20
+DA:17,16
+DA:18,16
 LF:6
 LH:6
 BRF:0
@@ -751,49 +751,55 @@ FNF:1
 FNH:1
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Commons\ManipulationOperation.cs
-FN:16,System.Void Its.Onix.Erp.Businesses.Commons.ManipulationOperation::DetachAllEntities(Its.Onix.Erp.Databases.OnixErpDbContext)
-FNDA:32,System.Void Its.Onix.Erp.Businesses.Commons.ManipulationOperation::DetachAllEntities(Its.Onix.Erp.Databases.OnixErpDbContext)
-DA:17,32
-DA:18,32
-DA:19,74
-DA:20,74
-DA:21,74
-DA:22,32
-DA:24,108
-DA:25,6
-DA:26,6
-DA:27,6
-DA:28,32
-BRDA:18,18,0,1
-BRDA:18,18,1,32
-BRDA:24,89,1,6
-BRDA:24,89,0,32
-FN:30,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Commons.ManipulationOperation::Apply(Its.Onix.Core.Commons.Model.BaseModel)
-FNDA:26,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Commons.ManipulationOperation::Apply(Its.Onix.Core.Commons.Model.BaseModel)
-DA:31,26
-DA:32,26
+FN:16,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Commons.ManipulationOperation::Execute(Its.Onix.Core.Commons.Model.BaseModel)
+FNDA:1,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Commons.ManipulationOperation::Execute(Its.Onix.Core.Commons.Model.BaseModel)
+DA:17,1
+DA:18,1
+FN:21,System.Void Its.Onix.Erp.Businesses.Commons.ManipulationOperation::DetachAllEntities(Its.Onix.Erp.Databases.OnixErpDbContext)
+FNDA:26,System.Void Its.Onix.Erp.Businesses.Commons.ManipulationOperation::DetachAllEntities(Its.Onix.Erp.Databases.OnixErpDbContext)
+DA:22,26
+DA:23,26
+DA:24,63
+DA:25,63
+DA:26,63
+DA:27,26
+DA:29,88
+DA:30,5
+DA:31,5
+DA:32,5
 DA:33,26
+BRDA:23,18,0,1
+BRDA:23,18,1,26
+BRDA:29,89,1,5
+BRDA:29,89,0,26
+FN:35,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Commons.ManipulationOperation::Apply(Its.Onix.Core.Commons.Model.BaseModel)
+FNDA:26,Its.Onix.Core.Commons.Model.BaseModel Its.Onix.Erp.Businesses.Commons.ManipulationOperation::Apply(Its.Onix.Core.Commons.Model.BaseModel)
 DA:36,26
 DA:37,26
-DA:38,20
-DA:39,6
-DA:40,6
-DA:41,6
-DA:42,6
-DA:45,26
-DA:46,26
-DA:47,26
-DA:49,20
-DA:50,20
+DA:38,26
+DA:41,26
+DA:42,26
+DA:43,20
+DA:44,5
+DA:45,5
+DA:46,5
+DA:48,1
+DA:49,1
+DA:50,1
+DA:53,26
+DA:54,26
+DA:55,26
+DA:57,20
+DA:58,20
 FN:13,System.Void Its.Onix.Erp.Businesses.Commons.ManipulationOperation::.ctor()
 FNDA:18,System.Void Its.Onix.Erp.Businesses.Commons.ManipulationOperation::.ctor()
 DA:14,18
-LF:27
-LH:27
+LF:31
+LH:31
 BRF:8
 BRH:8
-FNF:3
-FNH:3
+FNF:4
+FNH:4
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\BusinessesNoSql\Registrations\CreateRegistration.cs
 FN:9,System.Void Its.Onix.Erp.Businesses.Registrations.CreateRegistration::ValidateActivation(Its.Onix.Erp.Models.MRegistration,Its.Onix.Erp.Models.MBarcode,System.String)

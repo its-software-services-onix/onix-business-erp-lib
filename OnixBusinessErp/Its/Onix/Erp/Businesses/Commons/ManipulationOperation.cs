@@ -10,8 +10,13 @@ namespace Its.Onix.Erp.Businesses.Commons
 {
     public abstract class ManipulationOperation : BusinessOperationBase
     {
-        protected abstract BaseModel Execute(BaseModel dat);
+        //protected abstract BaseModel Execute(BaseModel dat);
         protected OnixErpDbContext context = null;
+
+        protected virtual BaseModel Execute(BaseModel dat)
+        {
+            throw new NotImplementedException();
+        }
 
         private void DetachAllEntities(OnixErpDbContext context)
         {
@@ -36,11 +41,14 @@ namespace Its.Onix.Erp.Businesses.Commons
             {
                 obj = Execute(dat);
             }
+            catch (DbUpdateException e)
+            {
+                throw new DbUpdateException("Update exception occur in ManipulationOperation.Apply()", e);
+            }  
             catch (Exception e)
             {
-                DetachAllEntities(context);
-                throw new Exception("Exception occur in ManipulationOperation.Apply()", e);
-            }
+                throw new ApplicationException("Generic exception occur in ManipulationOperation.Apply()", e);
+            }                        
             finally
             {
                 DetachAllEntities(context);
