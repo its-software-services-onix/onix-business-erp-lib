@@ -29,9 +29,9 @@ namespace Its.Onix.Erp.Businesses.Commons
             try
             {
                 opr.Apply(null);
-                Assert.Fail("ApplicationException should be thrown here!!!");
+                Assert.Fail("InvalidOperationException should be thrown here!!!");
             }
-            catch (ApplicationException)
+            catch (InvalidOperationException)
             {
                 Assert.Pass();
             }
