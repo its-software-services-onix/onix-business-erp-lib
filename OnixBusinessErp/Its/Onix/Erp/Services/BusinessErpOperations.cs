@@ -1,4 +1,3 @@
-using System;
 using System.Reflection;
 
 namespace Its.Onix.Erp.Services
@@ -34,9 +33,10 @@ namespace Its.Onix.Erp.Services
             AddClassConfig(asm, "SaveContactUs", "Its.Onix.Erp.Businesses.ContactUs.SaveContactUs");
             AddClassConfig(asm, "GetContentList", "Its.Onix.Erp.Businesses.Contents.GetContentList");
             AddClassConfig(asm, "SaveContent", "Its.Onix.Erp.Businesses.Contents.SaveContent");
-
             AddClassConfig(asm, "SaveMaster", "Its.Onix.Erp.Businesses.Masters.SaveMaster");
             AddClassConfig(asm, "DeleteMaster", "Its.Onix.Erp.Businesses.Masters.DeleteMaster");
+            AddClassConfig(asm, "RetrieveMatrix", "Its.Onix.Erp.Businesses.Matrices.Retrieve");
+            AddClassConfig(asm, "IncreaseAndRetrieveMatrix", "Its.Onix.Erp.Businesses.Matrices.IncreaseAndRetrieve");
         }  
     } 
 }
