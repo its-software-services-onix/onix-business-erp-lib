@@ -4,20 +4,19 @@ using Microsoft.EntityFrameworkCore;
 
 using Its.Onix.Core.Business;
 using Its.Onix.Core.Commons.Model;
-using Its.Onix.Erp.Databases;
 
 namespace Its.Onix.Erp.Businesses.Commons
 {
     public abstract class ManipulationOperation : BusinessOperationBase
     {
-        protected OnixErpDbContext context = null;
+        protected DbContext context = null;
 
         protected virtual BaseModel Execute(BaseModel dat)
         {
             throw new NotImplementedException();
         }
 
-        private void DetachAllEntities(OnixErpDbContext context)
+        private void DetachAllEntities(DbContext context)
         {
             var changedEntriesCopy = context.ChangeTracker.Entries()
                 .Where(e => e.State == EntityState.Added ||
@@ -34,7 +33,7 @@ namespace Its.Onix.Erp.Businesses.Commons
         public BaseModel Apply(BaseModel dat)
         {
             BaseModel obj = null;
-            context = (OnixErpDbContext) GetDatabaseContext();
+            context = (DbContext) GetDatabaseContext();
 
             try
             {

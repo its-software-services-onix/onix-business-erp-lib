@@ -3,6 +3,7 @@ using System;
 using Its.Onix.Core.Commons.Model;
 using Its.Onix.Erp.Businesses.Commons;
 using Its.Onix.Erp.Models;
+using Its.Onix.Erp.Databases;
 
 namespace Its.Onix.Erp.Businesses.Masters
 {
@@ -10,11 +11,22 @@ namespace Its.Onix.Erp.Businesses.Masters
     {        
         protected override BaseModel Execute(BaseModel dat)
         {
-            Master m = (Master) dat;
-            context.Masters.Add(m);
+            OnixErpDbContext ctx = (OnixErpDbContext) context;
 
-            context.SaveChanges();
+            Master m = (Master) dat;
+
+            if (m.MasterId <= 0)
+            {
+                ctx.Masters.Add(m);
+            }
+            else
+            {
+                ctx.Masters.Update(m);
+            }
+
+            ctx.SaveChanges();
             return m;
+
         }
     }
 }
