@@ -2,25 +2,18 @@ using System;
 
 using Its.Onix.Erp.Models;
 using Its.Onix.Core.Business;
+using Its.Onix.Core.Commons.Table;
+using System.Collections.Generic;
 
 namespace Its.Onix.Erp.Businesses.Matrices
 {
-    public class Retrieve : BusinessOperationBase, IBusinessOperationManipulate<MMatrix>
+    public class Retrieve : BusinessOperationBase, IBusinessOperationQuery<MMetricWrapper>
     {
-        public int Apply(MMatrix dat)
+        public IEnumerable<MMetricWrapper> Apply(MMetricWrapper dat, CTable param)
         {
-            DateTime currentDate = DateTime.Now;
-            dat.LastMaintDate = currentDate;
-
-            string path = string.Format("matrix/{0}", dat.Key);
-
             var ctx = GetNoSqlContext();
-            var mtx = ctx.GetObjectByKey<MMatrix>(path);
-            if (mtx == null)
-            {
-                return 0;
-            }
-            return mtx.Value;
+            var metrics = ctx.GetObjectList<MMetricWrapper>("matrics");
+            return metrics;
         }
     }
 }
