@@ -5,26 +5,26 @@ using Its.Onix.Core.Business;
 
 namespace Its.Onix.Erp.Businesses.Matrices
 {
-    public class IncreaseAndRetrieve : BusinessOperationBase, IBusinessOperationManipulate<MMatrix>
+    public class IncreaseAndRetrieve : BusinessOperationBase, IBusinessOperationManipulate<MMetric>
     {
-        public int Apply(MMatrix dat)
+        public int Apply(MMetric dat)
         {
             string key = dat.Key;
-            string path = string.Format("matrix/{0}", key);
+            string path = string.Format("matrics/{0}", key);
 
             var ctx = GetNoSqlContext();
-            var mtx = ctx.GetObjectByKey<MMatrix>(path);
-            if (mtx == null)
+            var metric = ctx.GetObjectByKey<MMetric>(path);
+            if (metric == null)
             {
-                mtx = dat;
+                metric = dat;
             }
             else
             {
-                mtx.Value = mtx.Value + dat.Value;
+                metric.Value = metric.Value + dat.Value;
             }
-            mtx.LastMaintDate = DateTime.Now;
-            ctx.PutData(path, "DEFAULT", mtx);
-            return mtx.Value;
+            metric.LastMaintDate = DateTime.Now;
+            ctx.PutData(path, "Value", metric);
+            return metric.Value;
         }
     }
 }

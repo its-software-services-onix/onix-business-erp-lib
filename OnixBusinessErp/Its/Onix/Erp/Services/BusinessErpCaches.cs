@@ -24,6 +24,7 @@ namespace Its.Onix.Erp.Services
             AddClassConfig(asm, "CacheProductTypeList", "Its.Onix.Erp.Caches.CacheProductTypeList");
             AddClassConfig(asm, "CacheProductList", "Its.Onix.Erp.Caches.CacheProductList");
             AddClassConfig(asm, "CachePageContents", "Its.Onix.Erp.Caches.CachePageContents");
+            AddClassConfig(asm, "CacheMetrics", "Its.Onix.Erp.Caches.CacheMetrics");
         }  
     } 
 }
