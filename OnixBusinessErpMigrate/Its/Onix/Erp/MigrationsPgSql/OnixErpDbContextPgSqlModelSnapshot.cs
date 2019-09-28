@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OnixBusinessErpApp;
 
-namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
+namespace OnixBusinessErpMigrate.Its.Onix.Erp.MigrationsPgSql
 {
     [DbContext(typeof(OnixErpDbContextPgSql))]
     partial class OnixErpDbContextPgSqlModelSnapshot : ModelSnapshot
@@ -159,6 +159,9 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.Property<int>("Type");
 
                     b.HasKey("MasterId");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
 
                     b.ToTable("Masters");
                 });

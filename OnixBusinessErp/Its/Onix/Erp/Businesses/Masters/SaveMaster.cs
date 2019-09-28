@@ -11,10 +11,9 @@ namespace Its.Onix.Erp.Businesses.Masters
         protected override BaseModel Execute(BaseModel dat)
         {
             Master m = (Master) dat;
-
             context.Masters.Add(m);
-            context.SaveChanges();
 
+            context.SaveChanges();
             return m;
         }
     }

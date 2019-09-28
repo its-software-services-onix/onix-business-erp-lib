@@ -17,22 +17,34 @@ namespace Its.Onix.Erp.Businesses.Masters
         {            
         }
 
-        [TestCase("onix_erp", "sqlite_inmem")]
-        public void SaveMasterOperationTest(string db, string provider)
+        [TestCase("onix_erp", "sqlite_inmem", "MasterId")]
+        //[TestCase("onix_erp", "pgsql", "MasterId")]
+        public void SaveMasterOperationTest(string db, string provider, string pk)
         {
-            CreateOnixDbContext(db, provider);
-            var opr = CreateManipulateOperation("SaveMaster");
-            var del = CreateManipulateOperation("DeleteMaster");
-            
-            Master m = new Master() { Code = "01", Name = "Master01" };
-            Master o = (Master) opr.Apply(m);
-
-            Assert.AreNotEqual(0, o.MasterId, "Primary key ID must be returned!!!");
-
-            del.Apply(o);
-
-            //No excption a this point
-            Assert.True(true);            
+            bool isOK = IsSaveOperationOk<Master>(db, provider, "SaveMaster", "DeleteMaster", pk);
+            Assert.AreEqual(true, isOK, "Primary key ID [{0}] must be returned!!!", pk);
         } 
+
+        [TestCase("onix_erp", "sqlite_inmem", "MasterId", "Code")]
+        //[TestCase("onix_erp", "pgsql", "MasterId", "Code")]
+        public void SaveDuplicateUniqueKeyTest(string db, string provider, string pk, string fieldName)
+        {
+            bool isOK2 = IsDuplicateUniqueKeyOk<Master>(db, provider, "SaveMaster", pk, fieldName);
+            Assert.AreEqual(true, isOK2, "[{0}] should not allow to duplicate!!!", fieldName);
+        }       
+
+        [TestCase("onix_erp", "sqlite_inmem", "MasterId", "Code")]
+        //[TestCase("onix_erp", "pgsql", "MasterId", "Code")]
+        public void SaveUsingTheSameContextTest(string db, string provider, string pk, string fieldName)
+        {
+            bool isOK0 = IsDuplicateUniqueCheckOk<Master>(db, provider, "SaveMaster", pk, fieldName);
+            Assert.AreEqual(true, isOK0, "[{0}] should not allow to duplicate!!!", fieldName);
+
+            bool isOK1 = IsDuplicateUniqueKeyDifferentCheckOk<Master>(db, provider, "SaveMaster", pk);
+            Assert.AreEqual(true, isOK1, "[{0}] should not allow to duplicate!!!", fieldName);
+            
+            bool isOK2 = IsSaveOperationOk<Master>(db, provider, "SaveMaster", "DeleteMaster", pk);
+            Assert.AreEqual(true, isOK2, "[{0}] should not allow to duplicate!!!", fieldName);
+        }            
     }
 }

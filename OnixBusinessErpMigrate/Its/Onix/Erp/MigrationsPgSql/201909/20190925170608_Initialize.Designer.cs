@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OnixBusinessErpApp;
 
-namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
+namespace OnixBusinessErpMigrate.Its.Onix.Erp.MigrationsPgSql
 {
     [DbContext(typeof(OnixErpDbContextPgSql))]
-    [Migration("20190922092732_Masters15")]
-    partial class Masters15
+    [Migration("20190925170608_Initialize")]
+    partial class Initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,12 +21,13 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("Its.Onix.Erp.Models.Generals.Address", b =>
+            modelBuilder.Entity("Its.Onix.Erp.Models.Address", b =>
                 {
                     b.Property<int>("AddressId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AddressNo");
+                    b.Property<string>("AddressNo")
+                        .IsRequired();
 
                     b.Property<int?>("CustomerId");
 
@@ -35,6 +36,8 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.Property<string>("Key");
 
                     b.Property<DateTime>("LastMaintDate");
+
+                    b.Property<int>("OperatorId");
 
                     b.Property<int?>("ProvinceMasterId");
 
@@ -53,14 +56,16 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("Its.Onix.Erp.Models.Generals.BankAccount", b =>
+            modelBuilder.Entity("Its.Onix.Erp.Models.BankAccount", b =>
                 {
                     b.Property<int>("BankAccountId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AcctName");
+                    b.Property<string>("AcctName")
+                        .IsRequired();
 
-                    b.Property<string>("AcctNo");
+                    b.Property<string>("AcctNo")
+                        .IsRequired();
 
                     b.Property<int?>("BankMasterId");
 
@@ -72,6 +77,8 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
 
                     b.Property<DateTime>("LastMaintDate");
 
+                    b.Property<int>("OperatorId");
+
                     b.Property<string>("Tag");
 
                     b.HasKey("BankAccountId");
@@ -80,15 +87,16 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("BankAccount");
+                    b.ToTable("BankAccounts");
                 });
 
-            modelBuilder.Entity("Its.Onix.Erp.Models.Generals.Customer", b =>
+            modelBuilder.Entity("Its.Onix.Erp.Models.Customer", b =>
                 {
                     b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Code");
+                    b.Property<string>("Code")
+                        .IsRequired();
 
                     b.Property<int?>("CreditTermMasterId");
 
@@ -96,17 +104,23 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
 
                     b.Property<int?>("CustomerTypeMasterId");
 
-                    b.Property<string>("Description");
-
                     b.Property<string>("Key");
 
                     b.Property<DateTime>("LastMaintDate");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<int?>("NamePrefixMasterId");
 
+                    b.Property<int>("OperatorId");
+
                     b.Property<string>("Tag");
+
+                    b.Property<string>("TaxNo")
+                        .IsRequired();
 
                     b.HasKey("CustomerId");
 
@@ -121,20 +135,26 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("Its.Onix.Erp.Models.Generals.Master", b =>
+            modelBuilder.Entity("Its.Onix.Erp.Models.Master", b =>
                 {
                     b.Property<int>("MasterId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Code");
-
-                    b.Property<string>("Description");
+                    b.Property<string>("Code")
+                        .IsRequired();
 
                     b.Property<string>("Key");
 
                     b.Property<DateTime>("LastMaintDate");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("LongDescription");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("OperatorId");
+
+                    b.Property<string>("ShortDescription");
 
                     b.Property<string>("Tag");
 
@@ -142,46 +162,49 @@ namespace OnixBusinessErpApp.Its.Onix.Erp.Migrations
 
                     b.HasKey("MasterId");
 
+                    b.HasIndex("Code")
+                        .IsUnique();
+
                     b.ToTable("Masters");
                 });
 
-            modelBuilder.Entity("Its.Onix.Erp.Models.Generals.Address", b =>
+            modelBuilder.Entity("Its.Onix.Erp.Models.Address", b =>
                 {
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Customer")
+                    b.HasOne("Its.Onix.Erp.Models.Customer")
                         .WithMany("Addresses")
                         .HasForeignKey("CustomerId");
 
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Master", "Province")
+                    b.HasOne("Its.Onix.Erp.Models.Master", "Province")
                         .WithMany()
                         .HasForeignKey("ProvinceMasterId");
                 });
 
-            modelBuilder.Entity("Its.Onix.Erp.Models.Generals.BankAccount", b =>
+            modelBuilder.Entity("Its.Onix.Erp.Models.BankAccount", b =>
                 {
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Master", "Bank")
+                    b.HasOne("Its.Onix.Erp.Models.Master", "Bank")
                         .WithMany()
                         .HasForeignKey("BankMasterId");
 
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Customer")
+                    b.HasOne("Its.Onix.Erp.Models.Customer")
                         .WithMany("Accounts")
                         .HasForeignKey("CustomerId");
                 });
 
-            modelBuilder.Entity("Its.Onix.Erp.Models.Generals.Customer", b =>
+            modelBuilder.Entity("Its.Onix.Erp.Models.Customer", b =>
                 {
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Master", "CreditTerm")
+                    b.HasOne("Its.Onix.Erp.Models.Master", "CreditTerm")
                         .WithMany()
                         .HasForeignKey("CreditTermMasterId");
 
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Master", "CustomerGroup")
+                    b.HasOne("Its.Onix.Erp.Models.Master", "CustomerGroup")
                         .WithMany()
                         .HasForeignKey("CustomerGroupMasterId");
 
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Master", "CustomerType")
+                    b.HasOne("Its.Onix.Erp.Models.Master", "CustomerType")
                         .WithMany()
                         .HasForeignKey("CustomerTypeMasterId");
 
-                    b.HasOne("Its.Onix.Erp.Models.Generals.Master", "NamePrefix")
+                    b.HasOne("Its.Onix.Erp.Models.Master", "NamePrefix")
                         .WithMany()
                         .HasForeignKey("NamePrefixMasterId");
                 });
