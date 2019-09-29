@@ -8,53 +8,60 @@ namespace Its.Onix.Erp.Businesses.Masters
 {
 	public class SaveMasterTest : OperationTestBase
 	{
+        private TestOperationParam param = null;
+
         public SaveMasterTest() : base()
-        {
+        {          
         }
 
         [SetUp]
         public void Setup()
-        {                
+        {
+            param = new TestOperationParam();
+            param.DeleteOprName = "DeleteMaster";
+            param.SaveOprName = "SaveMaster";
+            param.KeyFieldName = "Code";
+            param.PkFieldName = "MasterId";                            
         }
 
-        [TestCase("onix_erp", "sqlite_inmem", "MasterId")]
-        //[TestCase("onix_erp", "pgsql", "MasterId")]
-        public void SaveCreateMasterOperationTest(string db, string provider, string pk)
+        [TestCase("onix_erp", "sqlite_inmem")]
+        //[TestCase("onix_erp", "pgsql")]
+        public void CreateMasterOperationWithNoDuplicateTest(string db, string provider)
         {
-            bool isOK = IsSaveCreateOperationOk<Master>(db, provider, "SaveMaster", "DeleteMaster", pk);
-            Assert.AreEqual(true, isOK, "Primary key ID [{0}] must be returned!!!", pk);
+            bool isOk = CreateOperation<Master>(db, provider, false, param);
+            Assert.AreEqual(true, isOk, "Object should be able to create!!!");
         } 
 
-        [TestCase("onix_erp", "sqlite_inmem", "MasterId", "Code")]
-        //[TestCase("onix_erp", "pgsql", "MasterId", "Code")]
-        public void SaveDuplicateUniqueKeyTest(string db, string provider, string pk, string fieldName)
+        [TestCase("onix_erp", "sqlite_inmem")]
+        //[TestCase("onix_erp", "pgsql")]
+        public void CreateMasterOperationWithDuplicateTest(string db, string provider)
         {
-            bool isOK2 = IsDuplicateUniqueKeyOk<Master>(db, provider, "SaveMaster", pk, fieldName);
-            Assert.AreEqual(true, isOK2, "[{0}] should not allow to duplicate!!!", fieldName);
-        }       
+            bool isOk = CreateOperation<Master>(db, provider, true, param);
+            Assert.AreEqual(true, isOk, "Object should not be able to create!!!");
+        } 
 
-        [TestCase("onix_erp", "sqlite_inmem", "MasterId", "Code")]
-        //[TestCase("onix_erp", "pgsql", "MasterId", "Code")]
-        public void SaveUsingContextTest(string db, string provider, string pk, string fieldName)
+        [TestCase("onix_erp", "sqlite_inmem")]
+        //[TestCase("onix_erp", "pgsql")]
+        public void UpdateMasterOperationWithNotFoundIdTest(string db, string provider)
         {
-            CreateOnixDbContext(db, provider);
+            bool isOk = UpdateNotFoundOperation<Master>(db, provider, param);
+            Assert.AreEqual(true, isOk, "Object should not be able to update because no ID found!!!");
+        } 
 
-            bool isOK0 = IsCreateDuplicateUniqueCheckOk<Master>(db, provider, "SaveMaster", pk, fieldName);
-            Assert.AreEqual(true, isOK0, "[{0}] should not allow to duplicate!!!", fieldName);
-
-            bool isOK1 = IsCreateDuplicateUniqueKeyDifferentCheckOk<Master>(db, provider, "SaveMaster", pk);
-            Assert.AreEqual(true, isOK1, "[{0}] should not allow to duplicate!!!", fieldName);
-            
-            bool isOK2 = IsSaveCreateOperationOk<Master>(db, provider, "SaveMaster", "DeleteMaster", pk);
-            Assert.AreEqual(true, isOK2, "[{0}] should not allow to duplicate!!!", fieldName);
-        }      
-
-        [TestCase("onix_erp", "sqlite_inmem", "MasterId")]
-        //[TestCase("onix_erp", "pgsql", "MasterId")]
-        public void SaveUpdateMasterOperationTest(string db, string provider, string pk)
+        [TestCase("onix_erp", "sqlite_inmem")]
+        //[TestCase("onix_erp", "pgsql")]
+        public void UpdateMasterOperationWithDuplicateTest(string db, string provider)
         {
-            bool isOK = IsSaveUpdateOperationOk<Master>(db, provider, "SaveMaster", "DeleteMaster", pk);
-            Assert.AreEqual(true, isOK, "Primary key ID [{0}] must be returned!!!", pk);
-        }                    
+            bool isOk = UpdateOperation<Master>(db, provider, true, param);
+            Assert.AreEqual(true, isOk, "Object should not be able to update because unique key constraint!!!");
+        } 
+
+        [TestCase("onix_erp", "sqlite_inmem")]
+        //[TestCase("onix_erp", "pgsql")]
+        public void UpdateMasterOperationWithoutDuplicateTest(string db, string provider)
+        {
+            bool isOk = UpdateOperation<Master>(db, provider, false, param);
+            Assert.AreEqual(true, isOk, "Object should be able to update because not brak a unique key constraint!!!");
+        }                  
     }
 }

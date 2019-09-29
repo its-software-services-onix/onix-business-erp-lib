@@ -43,132 +43,99 @@ namespace Its.Onix.Erp.Businesses.Commons
             return opr;
         }  
 
-        protected bool IsCreateDuplicateUniqueCheckOk<T>(string db, string provider, string name, string pk, string dupKey) where T : BaseModel
+        protected bool UpdateNotFoundOperation<T>(string db, string provider, TestOperationParam param) where T : BaseModel
         {
             bool result = false;
-
+        
             try
             {
                 CreateOnixDbContext(db, provider);
-                var opr = CreateManipulateOperation(name);
+                var updateOpr = CreateManipulateOperation(param.SaveOprName);
 
                 T m1 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m1, pk);                
-                opr.Apply(m1);
-                                
-                string code = (string) TestUtils.GetPropertyValue(m1, dupKey);
+                TestUtils.PopulateDummyPropValues(m1, param.PkFieldName);
+                TestUtils.SetPropertyValue(m1, param.PkFieldName, 69696); //Not found ID earlier
 
-                T m2 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m2, pk); 
-                TestUtils.SetPropertyValue(m2, dupKey, code);
-                opr.Apply(m2);
+                updateOpr.Apply(m1);
             } 
-            catch //(Exception e)
+            catch (Exception e)
             {
-                //Duplicate key exception
-                //Console.WriteLine(e);  
+                //Not found to update
+                Console.WriteLine(e);  
                 result = true;
-            }      
+            }
 
-            return result;             
+            return result;                
         }
 
-        protected bool IsCreateDuplicateUniqueKeyDifferentCheckOk<T>(string db, string provider, string name, string pk) where T : BaseModel
+        protected bool UpdateOperation<T>(string db, string provider, bool withDuplicate, TestOperationParam param) where T : BaseModel
         {
             bool result = true;
         
             try
             {
                 CreateOnixDbContext(db, provider);
-                var opr = CreateManipulateOperation(name);
+                var saveOpr = CreateManipulateOperation(param.SaveOprName);
 
                 T m1 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m1, pk);
-                
+                TestUtils.PopulateDummyPropValues(m1, param.PkFieldName);
+                string code = (string) TestUtils.GetPropertyValue(m1, param.KeyFieldName);              
+                saveOpr.Apply(m1);
+
+                //Create another one with different key
+                T m2 = (T) Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(m2, param.PkFieldName);
+                saveOpr.Apply(m2);
+
+                //Update the existing ID with or without duplicate key
+                if (withDuplicate)
+                {
+                    //Should throw exception from here
+                    TestUtils.SetPropertyValue(m2, param.KeyFieldName, code);
+                }
+                saveOpr.Apply(m2);                
+            } 
+            catch (Exception e)
+            {
+                //Duplicate key exception
+                Console.WriteLine(e);  
+                result = withDuplicate;
+            }
+
+            return result;                
+        }
+
+        protected bool CreateOperation<T>(string db, string provider, bool withDuplicate, TestOperationParam param) where T : BaseModel
+        {
+            bool result = true;
+        
+            try
+            {
+                CreateOnixDbContext(db, provider);
+                var opr = CreateManipulateOperation(param.SaveOprName);
+
+                T m1 = (T) Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(m1, param.PkFieldName);
+                string code = (string) TestUtils.GetPropertyValue(m1, param.KeyFieldName);              
                 opr.Apply(m1);
 
                 T m2 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m2, pk);
-
+                TestUtils.PopulateDummyPropValues(m2, param.PkFieldName);
+                if (withDuplicate)
+                {
+                    TestUtils.SetPropertyValue(m2, param.KeyFieldName, code);                    
+                }
                 opr.Apply(m2);
             } 
             catch (Exception e)
             {
                 //Duplicate key exception
                 Console.WriteLine(e);  
-                result = false;
-            }      
+                result = withDuplicate;
+            }
 
-            return result;             
+            return result;                
         }
-
-        protected bool IsDuplicateUniqueKeyOk<T>(string db, string provider, string name, string pk, string keyCol) where T : BaseModel
-        {
-            CreateOnixDbContext(db, provider);
-
-            bool isOK1 = IsCreateDuplicateUniqueCheckOk<T>(db, provider, name, pk, keyCol);
-            bool isOK2 = IsCreateDuplicateUniqueKeyDifferentCheckOk<T>(db, provider, name, pk);
-
-            return (isOK1 && isOK2);
-        }
-
-        protected bool IsSaveCreateOperationOk<T>(string db, string provider, string saveName, string delName, string pk) where T : BaseModel
-        {
-            bool ok = true;
-            CreateOnixDbContext(db, provider);
-
-            var opr = CreateManipulateOperation(saveName);
-            var del = CreateManipulateOperation(delName);
-            
-            try
-            {
-                T m1 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m1, pk);
-                T o1 = (T) opr.Apply(m1);
-
-                del.Apply(o1);
-            }
-            catch (Exception e)
-            {
-                //Exception if no data to delete
-                Console.WriteLine(e);                
-                ok = false;
-            }
-
-            return ok;
-        }        
-
-        protected bool IsSaveUpdateOperationOk<T>(string db, string provider, string saveName, string delName, string pk) where T : BaseModel
-        {
-            bool ok = true;
-            CreateOnixDbContext(db, provider);
-
-            var opr = CreateManipulateOperation(saveName);
-            var del = CreateManipulateOperation(delName);
-            
-            try
-            {
-                T m1 = (T) Activator.CreateInstance(typeof(T));
-                TestUtils.PopulateDummyPropValues(m1, pk);
-                T o1 = (T) opr.Apply(m1);
-
-                int createdId = (int) TestUtils.GetPropertyValue(o1, pk);
-
-                TestUtils.PopulateDummyPropValues(o1);
-                TestUtils.SetPropertyValue(o1, pk, createdId);
-                opr.Apply(o1);
-
-                del.Apply(o1);
-            }
-            catch (Exception e)
-            {
-                //Exception if no data to delete
-                Console.WriteLine(e);                
-                ok = false;
-            }
-
-            return ok;
-        }         
 
         protected bool DeleteOperationWithExisting<T>(string db, string provider, TestOperationParam param) where T : BaseModel
         {
