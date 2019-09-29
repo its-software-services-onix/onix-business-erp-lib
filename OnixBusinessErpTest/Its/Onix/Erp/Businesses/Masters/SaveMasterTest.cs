@@ -14,7 +14,7 @@ namespace Its.Onix.Erp.Businesses.Masters
 
         [SetUp]
         public void Setup()
-        {            
+        {                
         }
 
         [TestCase("onix_erp", "sqlite_inmem", "MasterId")]

@@ -170,15 +170,44 @@ namespace Its.Onix.Erp.Businesses.Commons
             return ok;
         }         
 
-        protected bool IsDeleteNotFoundOk<T>(string db, string provider, string delName, string pk) where T : BaseModel
+        protected bool DeleteOperationWithExisting<T>(string db, string provider, TestOperationParam param) where T : BaseModel
         {
+            CreateOnixDbContext(db, provider);     
+
+            var addOpr = CreateManipulateOperation(param.SaveOprName);
+
+            T createdObj = (T)Activator.CreateInstance(typeof(T));
+            TestUtils.PopulateDummyPropValues(createdObj, param.PkFieldName);
+            addOpr.Apply(createdObj);
+            int createdId = (int)TestUtils.GetPropertyValue(createdObj, param.PkFieldName);
+
+            bool ok = true;
+            var delOpr = CreateManipulateOperation(param.DeleteOprName);
+
+            try
+            {
+                delOpr.Apply(createdObj);                
+            }
+            catch (Exception e)
+            {
+                //Should not error because data already exist, so should be able to delete
+                Console.WriteLine(e);
+                ok = false;
+            }
+
+            return ok;
+        }
+
+        protected bool DeleteOperationWithNotExist<T>(string db, string provider, TestOperationParam param) where T : BaseModel
+        {
+            CreateOnixDbContext(db, provider);     
+
             bool ok = false;
-            CreateOnixDbContext(db, provider);
-            var opr = CreateManipulateOperation(delName);
+            var opr = CreateManipulateOperation(param.DeleteOprName);
             
-            T m = (T) Activator.CreateInstance(typeof(T));
-            //Key not exist
-            TestUtils.SetPropertyValue(m, pk, -9999);
+            T m = (T) Activator.CreateInstance(typeof(T));            
+            int id = -9999;
+            TestUtils.SetPropertyValue(m, param.PkFieldName, id);
 
             try
             {
@@ -186,6 +215,8 @@ namespace Its.Onix.Erp.Businesses.Commons
             }
             catch
             {
+                //Should error because data not found
+                //Success if exception is thrown
                 ok = true;
             }
 
