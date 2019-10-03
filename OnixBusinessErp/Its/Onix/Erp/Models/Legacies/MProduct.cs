@@ -16,6 +16,8 @@ namespace Its.Onix.Erp.Models
         public string Image1LocalPath {get; set;}
         public string Image1StoragePath {get; set;}
         public DateTime LastUpdateDate {get; set;}
+        public string NameColor {get; set;}
+        public string NameBgColor {get; set;}
 
         public List<MProductCompositionGroup> CompositionGroups {get; set;}
         public List<MProductPerformance> Performances {get; set;}
