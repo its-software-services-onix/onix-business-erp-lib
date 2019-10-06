@@ -25,7 +25,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         }
 
         [TestCase("onix_erp", "sqlite_inmem")]
-        //[TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "pgsql")]
         public void DeleteMasterOperationFoundTest(string db, string provider)
         {            
             bool isOK = DeleteOperationWithExisting<Master>(db, provider, param);
@@ -33,7 +33,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         }
 
         [TestCase("onix_erp", "sqlite_inmem")]
-        //[TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "pgsql")]
         public void DeleteMasterOperationNotFoundTest(string db, string provider)
         {            
             bool isOK = DeleteOperationWithNotExist<Master>(db, provider, param);

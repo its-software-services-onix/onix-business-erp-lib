@@ -25,7 +25,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         }
 
         [TestCase("onix_erp", "sqlite_inmem")]
-        //[TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "pgsql")]
         public void CreateMasterOperationWithNoDuplicateTest(string db, string provider)
         {
             bool isOk = CreateOperation<Master>(db, provider, false, param);
@@ -33,7 +33,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         } 
 
         [TestCase("onix_erp", "sqlite_inmem")]
-        //[TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "pgsql")]
         public void CreateMasterOperationWithDuplicateTest(string db, string provider)
         {
             bool isOk = CreateOperation<Master>(db, provider, true, param);
@@ -41,7 +41,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         } 
 
         [TestCase("onix_erp", "sqlite_inmem")]
-        //[TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "pgsql")]
         public void UpdateMasterOperationWithNotFoundIdTest(string db, string provider)
         {
             bool isOk = UpdateNotFoundOperation<Master>(db, provider, param);
@@ -49,7 +49,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         } 
 
         [TestCase("onix_erp", "sqlite_inmem")]
-        //[TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "pgsql")]
         public void UpdateMasterOperationWithDuplicateTest(string db, string provider)
         {
             bool isOk = UpdateOperation<Master>(db, provider, true, param);
@@ -57,7 +57,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         } 
 
         [TestCase("onix_erp", "sqlite_inmem")]
-        //[TestCase("onix_erp", "pgsql")]
+        [TestCase("onix_erp", "pgsql")]
         public void UpdateMasterOperationWithoutDuplicateTest(string db, string provider)
         {
             bool isOk = UpdateOperation<Master>(db, provider, false, param);

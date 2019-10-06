@@ -17,7 +17,10 @@ namespace Its.Onix.Erp.Businesses.Commons
             if (provider.Equals("pgsql"))
             {
                 string host = Environment.GetEnvironmentVariable("ONIX_ERP_DB_HOST");
-                DbCredential crd = new DbCredential(host, 5432, "onix_erp", "postgres", "", provider);
+                string dbname = Environment.GetEnvironmentVariable("ONIX_ERP_DB_NAME");
+                string user = Environment.GetEnvironmentVariable("ONIX_ERP_DB_USER");
+                string password = Environment.GetEnvironmentVariable("ONIX_ERP_DB_PASSWORD");
+                DbCredential crd = new DbCredential(host, 5432, dbname, user, password, provider);
                 ctx = new OnixErpDbContext(crd);
             }                    
             else if (provider.Equals("sqlite_inmem"))
