@@ -38,6 +38,6 @@ namespace Its.Onix.Erp.Businesses.Masters
         {            
             bool isOK = DeleteOperationWithNotExist<Master>(db, provider, param);
             Assert.AreEqual(true, isOK, "Should not be able to delete because primary key [{0}] value not found!!!", param.PkFieldName);
-        } 
+        }       
     }
 }

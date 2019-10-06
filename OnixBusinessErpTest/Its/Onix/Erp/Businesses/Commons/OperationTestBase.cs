@@ -38,7 +38,13 @@ namespace Its.Onix.Erp.Businesses.Commons
         {
             var opr = (ManipulationOperation) FactoryBusinessOperation.CreateBusinessOperationObject(name);
             return opr;
-        }        
+        }       
+
+        protected GetInfoOperation CreateGetInfoOperation(string name)
+        {
+            var opr = (GetInfoOperation) FactoryBusinessOperation.CreateBusinessOperationObject(name);
+            return opr;
+        }           
 
         protected IsExistOperation CreateIsExistOperation(string name)
         {
@@ -243,7 +249,86 @@ namespace Its.Onix.Erp.Businesses.Commons
             }
 
             return isExist;
-        }           
+        }     
+
+        protected bool GetInfoOperationWithInvalidId<T>(string db, string provider, TestOperationParam param) where T : BaseModel
+        {
+            CreateOnixDbContext(db, provider);     
+
+            bool ok = false;
+            var opr = CreateGetInfoOperation(param.GetInfoName);
+            
+            T m = (T) Activator.CreateInstance(typeof(T));            
+            int id = -9999;
+            TestUtils.SetPropertyValue(m, param.PkFieldName, id);
+
+            try
+            {
+                opr.Apply(m);                
+            }
+            catch
+            {
+                //Should error because data not found
+                //Success if exception is thrown
+                ok = true;
+            }
+
+            return ok;
+        }              
+
+        protected bool GetInfoOperationWithExisting<T>(string db, string provider, TestOperationParam param) where T : BaseModel
+        {
+            CreateOnixDbContext(db, provider);     
+
+            var addOpr = CreateManipulateOperation(param.SaveOprName);
+
+            T createdObj = (T)Activator.CreateInstance(typeof(T));
+            TestUtils.PopulateDummyPropValues(createdObj, param.PkFieldName);
+            addOpr.Apply(createdObj);
+            int createdId = (int)TestUtils.GetPropertyValue(createdObj, param.PkFieldName);
+
+            bool ok = true;
+            var getInfoOpr = CreateGetInfoOperation(param.GetInfoName);
+
+            try
+            {
+                getInfoOpr.Apply(createdObj);                
+            }
+            catch (Exception e)
+            {
+                //Should not error because data already exist, so should be able to get info
+                Console.WriteLine(e);
+                ok = false;
+            }
+
+            return ok;
+        }
+
+
+        protected bool GetInfoNullIfNotFound<T>(string db, string provider, TestOperationParam param) where T : BaseModel
+        {
+            CreateOnixDbContext(db, provider);     
+
+            T notFoundObj = (T)Activator.CreateInstance(typeof(T));
+            TestUtils.SetPropertyValue(notFoundObj, param.PkFieldName, 8999889); //Should not found
+
+            bool ok = true;
+            var getInfoOpr = CreateGetInfoOperation(param.GetInfoName);
+
+            T getInfoObj = notFoundObj;
+            try
+            {
+                getInfoObj = (T) getInfoOpr.Apply(notFoundObj);                
+            }
+            catch (Exception e)
+            {
+                //Should not error because data already exist, so should be able to get info
+                Console.WriteLine(e);
+                ok = false;
+            }
+
+            return ok && (getInfoObj == null);
+        }
 
         public OperationTestBase()
         {
