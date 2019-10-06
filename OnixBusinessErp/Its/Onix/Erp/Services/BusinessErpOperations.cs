@@ -40,6 +40,7 @@ namespace Its.Onix.Erp.Services
             AddClassConfig(asm, "SaveMaster", "Its.Onix.Erp.Businesses.Masters.SaveMaster");
             AddClassConfig(asm, "DeleteMaster", "Its.Onix.Erp.Businesses.Masters.DeleteMaster");
             AddClassConfig(asm, "IsMasterExist", "Its.Onix.Erp.Businesses.Masters.IsMasterExist");
+            AddClassConfig(asm, "GetMasterInfo", "Its.Onix.Erp.Businesses.Masters.GetMasterInfo");
 
         }  
     } 

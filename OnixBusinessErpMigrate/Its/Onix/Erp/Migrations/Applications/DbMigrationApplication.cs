@@ -53,11 +53,14 @@ namespace Its.Onix.Erp.Migrations.Applications
             Hashtable args = GetArguments();
             string defaultHost = Environment.GetEnvironmentVariable("ONIX_ERP_DB_HOST");
             string defaultPassword = Environment.GetEnvironmentVariable("ONIX_ERP_DB_PASSWORD");
+            string user = Environment.GetEnvironmentVariable("ONIX_ERP_DB_USER");
+            string dbname = Environment.GetEnvironmentVariable("ONIX_ERP_DB_NAME");
 
             string host = GetOptionValue(args, "host", defaultHost);
             int port = Int32.Parse(GetOptionValue(args, "port", "5432"));
-            string db = GetOptionValue(args, "database", "onix_erp");;
-            string uname = GetOptionValue(args, "user", "postgres");
+            
+            string db = GetOptionValue(args, "database", dbname);;
+            string uname = GetOptionValue(args, "user", user);
             string passwd = GetOptionValue(args, "password", defaultPassword);
             string provider = GetOptionValue(args, "provider", "pgsql");
 

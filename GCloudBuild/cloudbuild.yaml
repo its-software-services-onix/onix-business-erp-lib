@@ -1,5 +1,5 @@
 substitutions:
-  _VERSION: "1.0.14"
+  _VERSION: "1.0.15"
   _NUGET_API: "https://api.nuget.org/v3/index.json"
   _PACKAGE_PATH: "/workspace/OnixBusinessErp/bin/Release/OnixBusinessErp"
 
@@ -13,6 +13,10 @@ steps:
     - 'BRANCH_NAME=${BRANCH_NAME}'
     - 'COMMIT_SHA=${COMMIT_SHA}'
     - 'BASELINE_VERSION=1.0.0'
+    - 'ONIX_ERP_DB_HOST=${_ONIX_ERP_DB_HOST}'
+    - 'ONIX_ERP_DB_NAME=${_ONIX_ERP_DB_NAME}'
+    - 'ONIX_ERP_DB_USER=${_ONIX_ERP_DB_USER}'
+    - 'ONIX_ERP_DB_PASSWORD=${_ONIX_ERP_DB_PASSWORD}'
 
 - name: 'microsoft/dotnet:2.2-sdk' 
   entrypoint: 'dotnet'

@@ -27,8 +27,8 @@ namespace Its.Onix.Erp.Businesses.Masters
 
         [TestCase("onix_erp", "sqlite_inmem", true, "add")]        
         [TestCase("onix_erp", "sqlite_inmem", true, "add")]
-        //[TestCase("onix_erp", "pgsql", true, "add")]
-        //[TestCase("onix_erp", "pgsql", true, "add")]
+        [TestCase("onix_erp", "pgsql", true, "add")]
+        [TestCase("onix_erp", "pgsql", true, "add")]
         public void CheckExistIfKeyFoundAnotherAddTest(string db, string provider, bool foundEarlier, string mode)
         {
             param.CreateDummyRecord = foundEarlier;
@@ -40,8 +40,8 @@ namespace Its.Onix.Erp.Businesses.Masters
 
         [TestCase("onix_erp", "sqlite_inmem", false, "add")]        
         [TestCase("onix_erp", "sqlite_inmem", false, "add")]
-        //[TestCase("onix_erp", "pgsql", false, "add")]
-        //[TestCase("onix_erp", "pgsql", false, "add")]
+        [TestCase("onix_erp", "pgsql", false, "add")]
+        [TestCase("onix_erp", "pgsql", false, "add")]
         public void CheckExistIfKeyNotFoundAnotherAddTest(string db, string provider, bool foundEarlier, string mode)
         {
             param.CreateDummyRecord = foundEarlier;
@@ -53,8 +53,8 @@ namespace Its.Onix.Erp.Businesses.Masters
 
         [TestCase("onix_erp", "sqlite_inmem", true, "edit", true)]        
         [TestCase("onix_erp", "sqlite_inmem", true, "edit", false)]
-        //[TestCase("onix_erp", "pgsql", true, "edit", true)]
-        //[TestCase("onix_erp", "pgsql", true, "edit", false)]
+        [TestCase("onix_erp", "pgsql", true, "edit", true)]
+        [TestCase("onix_erp", "pgsql", true, "edit", false)]
         public void CheckExistIfKeyFoundAnotherEditTest(string db, string provider, bool foundEarlier, string mode, bool selfCheck)
         {
             param.CreateDummyRecord = foundEarlier;
