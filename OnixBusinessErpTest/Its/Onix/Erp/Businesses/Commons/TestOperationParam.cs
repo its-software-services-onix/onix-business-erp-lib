@@ -8,6 +8,7 @@ namespace Its.Onix.Erp.Businesses.Commons
         public string IsExistOprName {get; set;}
         public string DeleteOprName {get; set;}
         public string GetInfoName {get; set;}
+        public string GetListName {get; set;}
         public string PkFieldName {get; set;}
         public string KeyFieldName {get; set;}
         public string Mode {get; set;}

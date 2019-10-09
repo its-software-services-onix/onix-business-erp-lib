@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Its.Onix.Core.Business;
@@ -28,7 +29,14 @@ namespace Its.Onix.Erp.Businesses.Commons
             QueryResponseParam qrp = new QueryResponseParam();
             int totalRec = GetTotalRecord();
 
-            qrp.Results = Query();
+            qrp.Results = new List<BaseModel>();
+
+            var results = Query();        
+            foreach (var r in results)
+            {
+                qrp.Results.Add(r);
+            }
+
             qrp.RecordCount = qrp.Results.Count();
             qrp.TotalRecord = totalRec;
             qrp.TotalPage = GetTotalPage(totalRec);

@@ -46,6 +46,12 @@ namespace Its.Onix.Erp.Businesses.Commons
             return opr;
         }           
 
+        protected GetListOperation CreateGetListOperation(string name)
+        {
+            var opr = (GetListOperation) FactoryBusinessOperation.CreateBusinessOperationObject(name);
+            return opr;
+        }  
+
         protected IsExistOperation CreateIsExistOperation(string name)
         {
             var opr = (IsExistOperation) FactoryBusinessOperation.CreateBusinessOperationObject(name);
@@ -329,6 +335,26 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             return ok && (getInfoObj == null);
         }
+
+        protected bool GetListOperationWithNoParameter<T>(string db, string provider, TestOperationParam param) where T : BaseModel
+        {
+            CreateOnixDbContext(db, provider);     
+
+            bool ok = true;
+            var opr = CreateGetListOperation(param.GetListName);            
+
+            try
+            {
+                QueryRequestParam qrp = new QueryRequestParam();
+                QueryResponseParam response = opr.Apply(qrp);          
+            }
+            catch
+            {
+                ok = false;
+            }
+
+            return ok;
+        }   
 
         public OperationTestBase()
         {

@@ -1,5 +1,5 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
 using Its.Onix.Core.Commons.Model;
 
@@ -11,6 +11,6 @@ namespace Its.Onix.Erp.Businesses.Commons
         public int TotalPage {get; set;}
         public int RecordCount {get; set;}
 
-        public IQueryable<BaseModel> Results {get; set;}
+        public List<BaseModel> Results {get; set;}
     }
 }

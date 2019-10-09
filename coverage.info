@@ -40,21 +40,21 @@ FNH:1
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpBase.cs
 FN:13,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
-FNDA:23,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
-DA:14,23
-DA:15,23
-DA:16,23
-DA:17,23
+FNDA:24,System.Void Its.Onix.Erp.Services.BusinessErpBase::AddClassConfig(System.Reflection.Assembly,System.String,System.String)
+DA:14,24
+DA:15,24
+DA:16,24
+DA:17,24
 FN:19,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
-FNDA:64,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
-DA:20,64
-DA:21,64
-DA:22,64
+FNDA:65,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::GetClassMaps()
+DA:20,65
+DA:21,65
+DA:22,65
 FN:24,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
-FNDA:64,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
-DA:25,64
-DA:26,64
-DA:27,64
+FNDA:65,System.Collections.Generic.Dictionary`2<System.String,Its.Onix.Core.Commons.Plugin.PluginEntry> Its.Onix.Erp.Services.BusinessErpBase::ExportedServicesList()
+DA:25,65
+DA:26,65
+DA:27,65
 FN:10,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 FNDA:2,System.Void Its.Onix.Erp.Services.BusinessErpBase::.ctor()
 DA:11,2
@@ -98,10 +98,10 @@ FNH:4
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Services\BusinessErpOperations.cs
 FN:9,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
-FNDA:61,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
-DA:10,61
-DA:11,61
-DA:12,61
+FNDA:62,Its.Onix.Erp.Services.BusinessErpOperations Its.Onix.Erp.Services.BusinessErpOperations::GetInstance()
+DA:10,62
+DA:11,62
+DA:12,62
 FN:19,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::InitClassMap()
 DA:20,1
@@ -125,7 +125,8 @@ DA:40,1
 DA:41,1
 DA:42,1
 DA:43,1
-DA:45,1
+DA:44,1
+DA:46,1
 FN:13,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.ctor()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.ctor()
 DA:14,1
@@ -135,8 +136,8 @@ DA:17,1
 FN:6,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.cctor()
 FNDA:1,System.Void Its.Onix.Erp.Services.BusinessErpOperations::.cctor()
 DA:7,1
-LF:30
-LH:30
+LF:31
+LH:31
 BRF:0
 BRH:0
 FNF:4
@@ -638,22 +639,22 @@ DA:23,2
 DA:24,2
 DA:25,2
 FN:26,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
-FNDA:97,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
-DA:27,97
+FNDA:103,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Master> Its.Onix.Erp.Databases.OnixErpDbContext::get_Masters()
+DA:27,103
 FN:27,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Customer> Its.Onix.Erp.Databases.OnixErpDbContext::get_Customers()
-FNDA:35,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Customer> Its.Onix.Erp.Databases.OnixErpDbContext::get_Customers()
-DA:28,35
+FNDA:37,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Customer> Its.Onix.Erp.Databases.OnixErpDbContext::get_Customers()
+DA:28,37
 FN:28,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Address> Its.Onix.Erp.Databases.OnixErpDbContext::get_Addresses()
-FNDA:35,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Address> Its.Onix.Erp.Databases.OnixErpDbContext::get_Addresses()
-DA:29,35
+FNDA:37,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.Address> Its.Onix.Erp.Databases.OnixErpDbContext::get_Addresses()
+DA:29,37
 FN:29,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.BankAccount> Its.Onix.Erp.Databases.OnixErpDbContext::get_BankAccounts()
-FNDA:35,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.BankAccount> Its.Onix.Erp.Databases.OnixErpDbContext::get_BankAccounts()
-DA:30,35
+FNDA:37,Microsoft.EntityFrameworkCore.DbSet`1<Its.Onix.Erp.Models.BankAccount> Its.Onix.Erp.Databases.OnixErpDbContext::get_BankAccounts()
+DA:30,37
 FN:10,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Core.Databases.DbCredential)
-FNDA:35,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Core.Databases.DbCredential)
-DA:11,35
-DA:12,35
-DA:13,35
+FNDA:37,System.Void Its.Onix.Erp.Databases.OnixErpDbContext::.ctor(Its.Onix.Core.Databases.DbCredential)
+DA:11,37
+DA:12,37
+DA:13,37
 LF:15
 LH:15
 BRF:0
@@ -876,6 +877,28 @@ BRH:0
 FNF:2
 FNH:2
 end_of_record
+SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Masters\GetMasterList.cs
+FN:12,System.Linq.IQueryable`1<Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Businesses.Masters.GetMasterList::Query()
+FNDA:2,System.Linq.IQueryable`1<Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Businesses.Masters.GetMasterList::Query()
+DA:13,2
+DA:14,2
+DA:15,2
+DA:17,2
+DA:18,2
+FN:20,System.Int32 Its.Onix.Erp.Businesses.Masters.GetMasterList::GetTotalRecord()
+FNDA:2,System.Int32 Its.Onix.Erp.Businesses.Masters.GetMasterList::GetTotalRecord()
+DA:21,2
+DA:22,2
+DA:23,2
+DA:25,2
+DA:26,2
+LF:10
+LH:10
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Masters\IsMasterExist.cs
 FN:13,System.Int32 Its.Onix.Erp.Businesses.Masters.IsMasterExist::GetId(Its.Onix.Core.Commons.Model.BaseModel)
 FNDA:12,System.Int32 Its.Onix.Erp.Businesses.Masters.IsMasterExist::GetId(Its.Onix.Core.Commons.Model.BaseModel)
@@ -950,6 +973,36 @@ BRF:2
 BRH:2
 FNF:2
 FNH:2
+end_of_record
+SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Commons\GetListOperation.cs
+FN:18,System.Int32 Its.Onix.Erp.Businesses.Commons.GetListOperation::GetTotalPage(System.Int32)
+FNDA:2,System.Int32 Its.Onix.Erp.Businesses.Commons.GetListOperation::GetTotalPage(System.Int32)
+DA:19,2
+DA:20,2
+DA:21,2
+FN:23,Its.Onix.Erp.Businesses.Commons.QueryResponseParam Its.Onix.Erp.Businesses.Commons.GetListOperation::Apply(Its.Onix.Erp.Businesses.Commons.QueryRequestParam)
+FNDA:2,Its.Onix.Erp.Businesses.Commons.QueryResponseParam Its.Onix.Erp.Businesses.Commons.GetListOperation::Apply(Its.Onix.Erp.Businesses.Commons.QueryRequestParam)
+DA:24,2
+DA:25,2
+DA:26,2
+DA:28,2
+DA:29,2
+DA:31,2
+DA:32,2
+DA:33,2
+DA:34,2
+DA:36,2
+DA:37,2
+FN:11,System.Void Its.Onix.Erp.Businesses.Commons.GetListOperation::.ctor()
+FNDA:2,System.Void Its.Onix.Erp.Businesses.Commons.GetListOperation::.ctor()
+DA:12,2
+DA:13,2
+LF:16
+LH:16
+BRF:0
+BRH:0
+FNF:3
+FNH:3
 end_of_record
 SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Commons\IsExistOperation.cs
 FN:17,System.Boolean Its.Onix.Erp.Businesses.Commons.IsExistOperation::Apply(Its.Onix.Core.Commons.Model.BaseModel)
@@ -1034,6 +1087,64 @@ LF:31
 LH:31
 BRF:8
 BRH:8
+FNF:4
+FNH:4
+end_of_record
+SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Commons\QueryRequestParam.cs
+FN:7,System.String Its.Onix.Erp.Businesses.Commons.FilterParam::get_FieldName()
+FNDA:0,System.String Its.Onix.Erp.Businesses.Commons.FilterParam::get_FieldName()
+DA:8,0
+FN:8,System.String Its.Onix.Erp.Businesses.Commons.FilterParam::get_Value()
+FNDA:0,System.String Its.Onix.Erp.Businesses.Commons.FilterParam::get_Value()
+DA:9,0
+FN:9,System.String Its.Onix.Erp.Businesses.Commons.FilterParam::get_Operator()
+FNDA:0,System.String Its.Onix.Erp.Businesses.Commons.FilterParam::get_Operator()
+DA:10,0
+FN:14,System.String Its.Onix.Erp.Businesses.Commons.OrderByParam::get_FieldName()
+FNDA:0,System.String Its.Onix.Erp.Businesses.Commons.OrderByParam::get_FieldName()
+DA:15,0
+FN:15,System.String Its.Onix.Erp.Businesses.Commons.OrderByParam::get_Order()
+FNDA:0,System.String Its.Onix.Erp.Businesses.Commons.OrderByParam::get_Order()
+DA:16,0
+FN:20,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_PageNo()
+FNDA:0,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_PageNo()
+DA:21,0
+FN:21,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_PageSize()
+FNDA:0,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_PageSize()
+DA:22,0
+FN:22,System.Boolean Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_ByChunk()
+FNDA:2,System.Boolean Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_ByChunk()
+DA:23,2
+FN:24,System.Collections.Generic.List`1<Its.Onix.Erp.Businesses.Commons.FilterParam> Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_Filters()
+FNDA:0,System.Collections.Generic.List`1<Its.Onix.Erp.Businesses.Commons.FilterParam> Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_Filters()
+DA:25,0
+FN:25,System.Collections.Generic.List`1<Its.Onix.Erp.Businesses.Commons.OrderByParam> Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_OrderBy()
+FNDA:0,System.Collections.Generic.List`1<Its.Onix.Erp.Businesses.Commons.OrderByParam> Its.Onix.Erp.Businesses.Commons.QueryRequestParam::get_OrderBy()
+DA:26,0
+LF:10
+LH:1
+BRF:0
+BRH:0
+FNF:10
+FNH:1
+end_of_record
+SF:d:\dev\projects\its_workspace\OnixBusinessErp\OnixBusinessErp\Its\Onix\Erp\Businesses\Commons\QueryResponseParam.cs
+FN:9,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_TotalRecord()
+FNDA:2,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_TotalRecord()
+DA:10,2
+FN:10,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_TotalPage()
+FNDA:2,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_TotalPage()
+DA:11,2
+FN:11,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_RecordCount()
+FNDA:2,System.Int32 Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_RecordCount()
+DA:12,2
+FN:13,System.Linq.IQueryable`1<Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_Results()
+FNDA:4,System.Linq.IQueryable`1<Its.Onix.Core.Commons.Model.BaseModel> Its.Onix.Erp.Businesses.Commons.QueryResponseParam::get_Results()
+DA:14,4
+LF:4
+LH:4
+BRF:0
+BRH:0
 FNF:4
 FNH:4
 end_of_record
