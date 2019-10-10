@@ -16,9 +16,21 @@ using Its.Onix.Erp.Businesses.Factories;
 namespace Its.Onix.Erp.Businesses.Applications
 {
     class Program
-    {
+    {        
         private static void Init()
         {
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddLogging(builder => builder.AddSerilog());    
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+            
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .CreateLogger();            
+
+            var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
+            FactoryApplication.SetLoggerFactory(loggerFactory);
+
             FactoryBusinessOperation.ClearRegisteredItems();
             FactoryBusinessOperation.RegisterBusinessOperations(BusinessErpOperations.GetInstance().ExportedServicesList());
 
@@ -29,23 +41,8 @@ namespace Its.Onix.Erp.Businesses.Applications
             DbCredential crd = new DbCredential(host, 5432, dbname, user, password, "pgsql");
 
             OnixErpDbContext ctx = new OnixErpDbContext(crd);
+            ctx.SetLoggerFactory(loggerFactory);
             FactoryBusinessOperation.SetDatabaseContext(ctx);
-        }
-
-        private static void SetupLog()
-        {
-            var serviceCollection = new ServiceCollection();
-            serviceCollection.AddLogging(builder => builder.AddSerilog());
-        
-            var serviceProvider = serviceCollection.BuildServiceProvider();
-            var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
-
-            Log.Logger = new LoggerConfiguration()
-                .Enrich.FromLogContext()
-                .WriteTo.Console()
-                .CreateLogger();
-
-            FactoryApplication.SetLoggerFactory(loggerFactory);
         }
 
         static void Main(string[] args)
@@ -57,7 +54,6 @@ namespace Its.Onix.Erp.Businesses.Applications
             }
 
             Init();            
-            SetupLog();
 
             string appName = args[0];
             IApplication app = FactoryApplication.CreateConsoleApplicationObject(appName);    
