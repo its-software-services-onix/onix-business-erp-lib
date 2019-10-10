@@ -1,20 +1,21 @@
 using System;
 using System.Collections;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
-using Its.Onix.Core.Factories;
-using Its.Onix.Core.Applications;
 using Its.Onix.Core.Utils;
-using Its.Onix.Erp.Businesses.Commons;
+using Its.Onix.Core.Applications;
+using Its.Onix.Erp.Businesses.Applications.OperationTest.Executors;
 
 using Microsoft.Extensions.Logging;
 using NDesk.Options;
-using Newtonsoft.Json;
 
 namespace Its.Onix.Erp.Businesses.Applications.OperationTest
 {
     public class OperationTestApplication : ConsoleAppBase
     {
         private ILogger logger = null;
+        private Hashtable executorMap = new Hashtable();
 
         private bool ValidParams(Hashtable args)
         {
@@ -37,6 +38,15 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
             return (errCount <= 0);
         }
 
+        private void InitExecutorMap()
+        {
+            executorMap["^Save.*$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.ManipulateExecutor";
+            //executorMap["^Delete.*$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.ManipulateExecutor";
+            //executorMap["^Get.*Info$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetInfoExecutor";
+            //executorMap["^Get.*List$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetListExecutor";
+            //executorMap["^Is.*Exist$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.IsExistExecutor";
+        }
+
         protected override OptionSet PopulateCustomOptionSet(OptionSet options)
         {
             options.Add("opr=", "Business operation name", s => AddArgument("opr", s))
@@ -48,6 +58,8 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
 
         protected override int Execute()
         {
+            InitExecutorMap();
+
             logger = GetLogger();
             Hashtable args = GetArguments();
 
@@ -57,9 +69,23 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
                 return 1;
             }
                                        
-            string oprName = args["opr"].ToString();
-            string inputFile = args["if"].ToString();
+            string oprName = args["opr"].ToString();            
+            foreach (string pattern in executorMap.Keys)
+            {
+                Match match = Regex.Match(oprName, pattern);
+                if (!match.Success)
+                {
+                    continue;
+                }
 
+                string fqdn = (string) executorMap[pattern];
+                Assembly asm = Assembly.GetExecutingAssembly();
+                IOperationExecutor obj = (IOperationExecutor) asm.CreateInstance(fqdn);
+
+                string json = obj.ExecuteOperation(oprName, args);
+                Console.WriteLine(json);
+            }
+/*
             var opr = (GetListOperation) FactoryBusinessOperation.CreateBusinessOperationObject(oprName);
 
             QueryRequestParam request = new QueryRequestParam();
@@ -67,7 +93,7 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
 
             string json = JsonConvert.SerializeObject(response, Formatting.Indented);
             Console.WriteLine(json);
-
+*/
             return 0;
         }
     }
