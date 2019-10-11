@@ -9,6 +9,8 @@ using Newtonsoft.Json;
 using Its.Onix.Core.Utils;
 using Its.Onix.Core.Commons.Model;
 using Its.Onix.Erp.Models;
+using Its.Onix.Core.Factories;
+using Its.Onix.Erp.Businesses.Commons;
 
 namespace Its.Onix.Erp.Businesses.Applications.OperationTest.Executors
 {
@@ -100,6 +102,18 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest.Executors
             object o = Apply(oprName, m);
 
             string json = JsonConvert.SerializeObject(o, Formatting.Indented);
+            return json;
+        }
+
+        public string ExecuteGetListOperation(string oprName, Hashtable args)
+        {
+            var opr = (GetListOperation) FactoryBusinessOperation.CreateBusinessOperationObject(oprName);
+
+            QueryRequestParam request = new QueryRequestParam(); //Should get from JSON instead
+            QueryResponseParam response = opr.Apply(request);
+
+            string json = JsonConvert.SerializeObject(response, Formatting.Indented);
+
             return json;
         }
     }

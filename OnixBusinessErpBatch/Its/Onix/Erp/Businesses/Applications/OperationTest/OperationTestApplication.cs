@@ -43,7 +43,7 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
             executorMap["^Save.*$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.ManipulateExecutor";
             executorMap["^Delete.*$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.ManipulateExecutor";
             executorMap["^Get.*Info$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetInfoExecutor";
-            //executorMap["^Get.*List$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetListExecutor";
+            executorMap["^Get.*List$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetListExecutor";
             executorMap["^Is.*Exist$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.IsExistExecutor";
         }
 
@@ -80,22 +80,24 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
                 }
 
                 string fqdn = (string) executorMap[pattern];
+                string json = "";
+                
                 Assembly asm = Assembly.GetExecutingAssembly();
                 IOperationExecutor obj = (IOperationExecutor) asm.CreateInstance(fqdn);
                 obj.SetLogger(logger);
 
-                string json = obj.ExecuteOperation(oprName, args);
+                if (fqdn.EndsWith("GetListExecutor"))
+                {
+                    json = obj.ExecuteGetListOperation(oprName, args);
+                }
+                else
+                {
+                    json = obj.ExecuteOperation(oprName, args);
+                }
+
                 Console.WriteLine(json);
             }
-/*
-            var opr = (GetListOperation) FactoryBusinessOperation.CreateBusinessOperationObject(oprName);
 
-            QueryRequestParam request = new QueryRequestParam();
-            QueryResponseParam response = opr.Apply(request);
-
-            string json = JsonConvert.SerializeObject(response, Formatting.Indented);
-            Console.WriteLine(json);
-*/
             return 0;
         }
     }
