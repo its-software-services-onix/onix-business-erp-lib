@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -18,7 +17,7 @@ namespace Its.Onix.Erp.Businesses.Commons
 
         private int GetTotalPage(int totalRec)
         {
-            return 0;
+            return totalRec;
         }
 
         public QueryResponseParam Apply(QueryRequestParam param)
@@ -37,7 +36,7 @@ namespace Its.Onix.Erp.Businesses.Commons
                 qrp.Results.Add(r);
             }
 
-            qrp.RecordCount = qrp.Results.Count();
+            qrp.RecordCount = qrp.Results.Count;
             qrp.TotalRecord = totalRec;
             qrp.TotalPage = GetTotalPage(totalRec);
 
