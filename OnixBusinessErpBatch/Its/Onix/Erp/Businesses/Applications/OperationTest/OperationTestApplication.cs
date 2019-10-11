@@ -41,16 +41,17 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
         private void InitExecutorMap()
         {
             executorMap["^Save.*$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.ManipulateExecutor";
-            //executorMap["^Delete.*$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.ManipulateExecutor";
-            //executorMap["^Get.*Info$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetInfoExecutor";
+            executorMap["^Delete.*$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.ManipulateExecutor";
+            executorMap["^Get.*Info$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetInfoExecutor";
             //executorMap["^Get.*List$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.GetListExecutor";
-            //executorMap["^Is.*Exist$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.IsExistExecutor";
+            executorMap["^Is.*Exist$"] = "Its.Onix.Erp.Businesses.Applications.OperationTest.Executors.IsExistExecutor";
         }
 
         protected override OptionSet PopulateCustomOptionSet(OptionSet options)
         {
             options.Add("opr=", "Business operation name", s => AddArgument("opr", s))
                 .Add("m=", "Model name", s => AddArgument("m", s))
+                .Add("fields=", "Fields overrided", s => AddArgument("fields", s))
                 .Add("if=", "Input file", s => AddArgument("if", s));
 
             return options;
@@ -81,6 +82,7 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest
                 string fqdn = (string) executorMap[pattern];
                 Assembly asm = Assembly.GetExecutingAssembly();
                 IOperationExecutor obj = (IOperationExecutor) asm.CreateInstance(fqdn);
+                obj.SetLogger(logger);
 
                 string json = obj.ExecuteOperation(oprName, args);
                 Console.WriteLine(json);
