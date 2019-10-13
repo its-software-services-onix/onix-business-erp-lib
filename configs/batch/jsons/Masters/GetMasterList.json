@@ -3,16 +3,16 @@
     "PageSize": 0,
     "ByChunk": false,
     
-    "FiltersXXX": [
+    "FiltersXX": [
       {
         "FieldName": "Type",
         "Value": "1",
         "Operator": "="
       }, 
       {
-        "FieldName": "Code",
-        "Value": "0A",
-        "Operator": "CONTAIN"
+        "FieldName": "MasterId",
+        "Value": "521",
+        "Operator": "="
       }       
     ],
 
@@ -22,8 +22,8 @@
         "Order": "ASC"
       },
       {
-        "FieldName": "Code",
-        "Order": "DESC"
+        "FieldName": "MasterId",
+        "Order": "ASC"
       }      
     ]
   }

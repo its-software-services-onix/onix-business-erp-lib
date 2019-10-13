@@ -4,6 +4,7 @@ using Its.Onix.Core.Commons.Model;
 using Its.Onix.Erp.Businesses.Commons;
 using Its.Onix.Erp.Models;
 using Its.Onix.Erp.Databases;
+using Its.Onix.Erp.Utils;
 
 namespace Its.Onix.Erp.Businesses.Masters
 {
@@ -15,8 +16,9 @@ namespace Its.Onix.Erp.Businesses.Masters
 
             Master m = (Master) dat;
 
-            if (m.MasterId <= 0)
+            if (ConvertUtils.NullableToInt(m.MasterId, 0) <= 0)
             {
+                m.MasterId = null;
                 ctx.Masters.Add(m);
             }
             else

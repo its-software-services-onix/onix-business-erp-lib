@@ -37,7 +37,7 @@ namespace Its.Onix.Erp.Utils
 
                 object oldValue = null;
 
-                if (prop.PropertyType == typeof(int))
+                if (prop.PropertyType == typeof(int) || prop.PropertyType == typeof(int?))
                 {
                     oldValue = 99999;
                 }

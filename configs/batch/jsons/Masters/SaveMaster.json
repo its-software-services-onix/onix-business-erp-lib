@@ -1,7 +1,8 @@
 {
-    "Code": "0C",
+    "MasterId": null,
+    "Code": "XA",
     "Name": "Personal",
-    "LongDescription": "Persional",
+    "LongDescription": "Test edit by setting MasterId = null",
     "ShortDescription": "Persional customer type",
     "Type": 1,
     "Tag": "",

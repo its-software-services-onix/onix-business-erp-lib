@@ -10,8 +10,6 @@ using Its.Onix.Erp.Businesses.Applications.OperationTest.Executors;
 using Microsoft.Extensions.Logging;
 using NDesk.Options;
 
-//dotnet run OperationTest --opr=GetMasterList --m=Master --if=../configs/batch/jsons/Masters/GetMasterList.json
-
 namespace Its.Onix.Erp.Businesses.Applications.OperationTest
 {
     public class OperationTestApplication : ConsoleAppBase

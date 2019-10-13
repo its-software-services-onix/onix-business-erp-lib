@@ -27,6 +27,7 @@ namespace Its.Onix.Erp.Businesses.Factories
         private static void initClassMap()
         {            
             addClassConfig("OperationTest", "Its.Onix.Erp.Businesses.Applications.OperationTest.OperationTestApplication"); 
+            addClassConfig("Migrate", "Its.Onix.Erp.Businesses.Applications.Migrations.DbMigrationApplication"); 
         }  
 
         public static IApplication CreateConsoleApplicationObject(string name)

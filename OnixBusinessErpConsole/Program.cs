@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Serilog;
 using NDesk.Options;
 
@@ -44,6 +45,9 @@ namespace Its.Onix.Erp.Businesses.Applications
             ctx.SetLoggerFactory(loggerFactory);
             FactoryBusinessOperation.SetDatabaseContext(ctx);
             FactoryBusinessOperation.SetLoggerFactory(loggerFactory);
+
+            Assembly asm = Assembly.GetExecutingAssembly();
+            FactoryDbContext.RegisterDbContext(asm, "OnixErpDbContextPgSql", "OnixBusinessErpApp.OnixErpDbContextPgSql");
         }
 
         static void Main(string[] args)

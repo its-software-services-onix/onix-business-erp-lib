@@ -211,13 +211,15 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             int createdId = 0;
             T createdObj = null;
+            string key = "";
             if (param.CreateDummyRecord)
             {
                 var addOpr = CreateManipulateOperation(param.SaveOprName);
 
                 createdObj = (T) Activator.CreateInstance(typeof(T));
                 TestUtils.PopulateDummyPropValues(createdObj, param.PkFieldName);
-                TestUtils.SetPropertyValue(createdObj, param.KeyFieldName, "UNIQUE_KEY_HERE");
+                key = (string) TestUtils.GetPropertyValue(createdObj, param.KeyFieldName);
+                
                 addOpr.Apply(createdObj);
 
                 createdId = (int) TestUtils.GetPropertyValue(createdObj, param.PkFieldName);
@@ -244,7 +246,7 @@ namespace Its.Onix.Erp.Businesses.Commons
             {
                 TestUtils.PopulateDummyPropValues(m1, param.PkFieldName); //Simulate create new record
             }
-            TestUtils.SetPropertyValue(m1, param.KeyFieldName, "UNIQUE_KEY_HERE");
+            TestUtils.SetPropertyValue(m1, param.KeyFieldName, key);
 
             bool isExist = opr.Apply(m1);
 
