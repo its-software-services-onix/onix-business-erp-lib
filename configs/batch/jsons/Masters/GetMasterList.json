@@ -1,2 +1,24 @@
 {
-}
+    "PageNo": 0,
+    "PageSize": 0,
+    "ByChunk": true,
+    
+    "Filters": [
+      {
+        "FieldName": "Type",
+        "Value": "1",
+        "Operator": "="
+      } 
+    ],
+
+    "OrderBy": [
+      {
+        "FieldName": "Type",
+        "Order": "ASC"
+      },
+      {
+        "FieldName": "Code",
+        "Order": "DESC"
+      }      
+    ]
+  }

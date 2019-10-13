@@ -43,6 +43,7 @@ namespace Its.Onix.Erp.Businesses.Applications
             OnixErpDbContext ctx = new OnixErpDbContext(crd);
             ctx.SetLoggerFactory(loggerFactory);
             FactoryBusinessOperation.SetDatabaseContext(ctx);
+            FactoryBusinessOperation.SetLoggerFactory(loggerFactory);
         }
 
         static void Main(string[] args)

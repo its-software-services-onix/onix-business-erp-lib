@@ -109,8 +109,12 @@ namespace Its.Onix.Erp.Businesses.Applications.OperationTest.Executors
         {
             var opr = (GetListOperation) FactoryBusinessOperation.CreateBusinessOperationObject(oprName);
 
-            QueryRequestParam request = new QueryRequestParam(); //Should get from JSON instead
-            QueryResponseParam response = opr.Apply(request);
+            string jsonFile = args["if"].ToString();
+            string content = File.ReadAllText(jsonFile);
+
+            var qrp = (QueryRequestParam) JsonConvert.DeserializeObject<QueryRequestParam>(content);
+
+            QueryResponseParam response = opr.Apply(qrp);
 
             string json = JsonConvert.SerializeObject(response, Formatting.Indented);
 
