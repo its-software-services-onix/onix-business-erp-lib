@@ -100,7 +100,7 @@ namespace Its.Onix.Erp.Businesses.Commons
             return command;
         }
 
-        private IQueryable<BaseModel> ApplyLimitOffset(IQueryable<BaseModel> query, int itemCount, QueryRequestParam param)
+        private IQueryable<BaseModel> ApplyLimitOffset(IQueryable<BaseModel> query, QueryRequestParam param)
         {
             int currentChunk = param.PageNo;
 
@@ -168,7 +168,7 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             if (param.ByChunk)
             {
-                results = ApplyLimitOffset(results, totalRec, param);
+                results = ApplyLimitOffset(results, param);
                 qrp.PageNo = param.PageNo;
             }
 

@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 
 using Its.Onix.Core.Commons.Model;

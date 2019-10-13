@@ -2,10 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-using Microsoft.Extensions.Logging;
-
-using Its.Onix.Core.Utils;
-
 namespace Its.Onix.Erp.Businesses.Commons
 {        
     public delegate Expression GetExpressionDelegate (ParameterExpression param, string property, string value);
