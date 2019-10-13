@@ -12,6 +12,8 @@ namespace Its.Onix.Erp.Businesses.Commons
 {
     public abstract class GetListOperation : BusinessOperationBase
     {
+        private readonly int limit = 150;
+
         protected BaseDbContext context = null;
         protected QueryRequestParam queryParam = null;
 
@@ -21,7 +23,27 @@ namespace Its.Onix.Erp.Businesses.Commons
 
         private int GetTotalPage(int totalRec)
         {
-            return totalRec;
+            int totalChunk = (int) Math.Ceiling((double) totalRec / limit);
+            return totalChunk;
+        }
+
+        private bool ValidateField(ParameterExpression param, string property)
+        {
+            Expression body = param;
+            foreach (var member in property.Split('.')) 
+            {
+                try
+                {
+                    body = Expression.PropertyOrField(body, member);
+                }
+                catch (Exception e)
+                {
+                    LogUtils.LogWarning(GetLogger(), e.Message);
+                    return false;
+                }
+            }
+        
+            return(true);
         }
 
         private Expression ConstructWhereExpr(ParameterExpression startParam, QueryRequestParam param)
@@ -31,6 +53,11 @@ namespace Its.Onix.Erp.Businesses.Commons
             int idx = 0;
             foreach (var filter in param.Filters)
             {
+                if (!ValidateField(startParam, filter.FieldName))
+                {
+                    continue;
+                }
+
                 Expression e = null;
                 var func = QueryExpression.GetExprDelegate(filter.Operator);
                 e = func(startParam, filter.FieldName, filter.Value);
@@ -71,6 +98,21 @@ namespace Its.Onix.Erp.Businesses.Commons
             }
 
             return command;
+        }
+
+        private IQueryable<BaseModel> ApplyLimitOffset(IQueryable<BaseModel> query, int itemCount, QueryRequestParam param)
+        {
+            int currentChunk = param.PageNo;
+
+            if (currentChunk <= 0)
+            {
+                currentChunk = 1;
+            }
+
+            int offset = ((currentChunk-1) * limit);            
+
+            var qr = query.Skip(offset).Take(limit);
+            return(qr);
         }
 
         private IQueryable<BaseModel> ApplyOrderBy(IQueryable<BaseModel> query, Type type, QueryRequestParam param)
@@ -123,6 +165,12 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             var results = Query(startParam, expr);
             results = ApplyOrderBy(results, mt, param);
+
+            if (param.ByChunk)
+            {
+                results = ApplyLimitOffset(results, totalRec, param);
+                qrp.PageNo = param.PageNo;
+            }
 
             foreach (var r in results)
             {

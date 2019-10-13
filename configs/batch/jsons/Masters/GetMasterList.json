@@ -1,14 +1,19 @@
 {
-    "PageNo": 0,
+    "PageNo": 2,
     "PageSize": 0,
-    "ByChunk": true,
+    "ByChunk": false,
     
-    "Filters": [
+    "FiltersXXX": [
       {
         "FieldName": "Type",
         "Value": "1",
         "Operator": "="
-      } 
+      }, 
+      {
+        "FieldName": "Code",
+        "Value": "0A",
+        "Operator": "CONTAIN"
+      }       
     ],
 
     "OrderBy": [
