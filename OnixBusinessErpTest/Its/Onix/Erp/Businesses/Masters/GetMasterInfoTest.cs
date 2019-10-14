@@ -25,7 +25,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         }
 
         [TestCase("onix_erp", "sqlite_inmem")]        
-        [TestCase("onix_erp", "pgsql")]
+        //[TestCase("onix_erp", "pgsql")]
         public void CheckIfInvalidMasterIdTest(string db, string provider)
         {
             bool checkOk = GetInfoOperationWithInvalidId<Master>(db, provider, param);
@@ -33,7 +33,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         }  
 
         [TestCase("onix_erp", "sqlite_inmem")]        
-        [TestCase("onix_erp", "pgsql")]
+        //[TestCase("onix_erp", "pgsql")]
         public void CheckIfMasterIdExistTest(string db, string provider)
         {
             bool checkOk = GetInfoOperationWithExisting<Master>(db, provider, param);
@@ -41,7 +41,7 @@ namespace Its.Onix.Erp.Businesses.Masters
         }
 
         [TestCase("onix_erp", "sqlite_inmem")]        
-        [TestCase("onix_erp", "pgsql")]
+        //[TestCase("onix_erp", "pgsql")]
         public void NullReturnIfMasterNotFoundTest(string db, string provider)
         {
             bool checkOk = GetInfoNullIfNotFound<Master>(db, provider, param);

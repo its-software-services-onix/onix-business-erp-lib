@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 using Its.Onix.Erp.Utils;
 using Its.Onix.Erp.Databases;
@@ -312,7 +313,6 @@ namespace Its.Onix.Erp.Businesses.Commons
             return ok;
         }
 
-
         protected bool GetInfoNullIfNotFound<T>(string db, string provider, TestOperationParam param) where T : BaseModel
         {
             CreateOnixDbContext(db, provider);     
@@ -338,6 +338,28 @@ namespace Its.Onix.Erp.Businesses.Commons
             return ok && (getInfoObj == null);
         }
 
+        protected ArrayList CreateMultipleItems<T>(string db, string provider, TestOperationParam param, int count, string prefix) where T : BaseModel
+        {
+            ArrayList arr = new ArrayList();
+
+            for (int i=1; i<=count; i++)
+            {
+                T model = (T)Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(model, param.PkFieldName);
+
+                string code = (string) TestUtils.GetPropertyValue(model, param.KeyFieldName);
+                code = string.Format("{0}{1}_{2}", prefix, i, code);
+                TestUtils.SetPropertyValue(model, param.KeyFieldName, code);
+
+                var saveOpr = CreateManipulateOperation(param.SaveOprName);
+                var o = saveOpr.Apply(model);
+
+                arr.Add(o);
+            }
+
+            return arr;
+        }
+
         protected bool GetListOperationWithNoParameter<T>(string db, string provider, TestOperationParam param) where T : BaseModel
         {
             CreateOnixDbContext(db, provider);     
@@ -357,6 +379,16 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             return ok;
         }   
+
+        protected QueryResponseParam GetListOperationWithParameter<T>(string db, string provider, TestOperationParam param, QueryRequestParam qrp) where T : BaseModel
+        {
+            QueryResponseParam response = null;
+            var opr = CreateGetListOperation(param.GetListName);    
+
+            response = opr.Apply(qrp);
+
+            return response;
+        }        
 
         public OperationTestBase()
         {
