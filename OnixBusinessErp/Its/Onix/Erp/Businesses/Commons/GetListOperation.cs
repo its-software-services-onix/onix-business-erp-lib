@@ -12,7 +12,9 @@ namespace Its.Onix.Erp.Businesses.Commons
 {
     public abstract class GetListOperation : BusinessOperationBase
     {
-        private readonly int limit = 150;
+
+        private readonly int maxPageLimit = 150;
+        private int limit = 150;
 
         protected BaseDbContext context = null;
         protected QueryRequestParam queryParam = null;
@@ -149,8 +151,28 @@ namespace Its.Onix.Erp.Businesses.Commons
             return query.Provider.CreateQuery<BaseModel>(expression);
         }
 
+        private void InitPageLimit(QueryRequestParam param)
+        {
+            int pageSize = param.PageSize;
+
+            limit = pageSize;
+            if (limit > maxPageLimit)
+            {
+                limit = maxPageLimit;
+                LogUtils.LogWarning(GetLogger(), "Adjusted page size from [{0}] to [{1}]!!!]", pageSize, limit);
+            }
+
+            if (limit <= 0)
+            {
+                limit = maxPageLimit;
+                LogUtils.LogWarning(GetLogger(), "Adjusted page size from [{0}] to [{1}]!!!]", pageSize, limit);
+            }
+        }
+
         public QueryResponseParam Apply(QueryRequestParam param)
         {
+            InitPageLimit(param);
+            
             queryParam = param;
             context = GetDatabaseContext();
 
