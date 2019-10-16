@@ -18,7 +18,7 @@ namespace Its.Onix.Erp.Businesses.Metrices
         }
 
         [Test]
-        public void Apply()
+        public void NewEntry()
         {
             MockedNoSqlContext ctx = new MockedNoSqlContext();
             FactoryBusinessOperation.SetNoSqlContext(ctx);
@@ -31,7 +31,35 @@ namespace Its.Onix.Erp.Businesses.Metrices
 
             try
             {
-                opt.Apply(dat);                
+                int result = opt.Apply(dat);
+                Assert.AreEqual(5,result);               
+            }
+            catch (Exception)
+            {
+                Assert.Fail("Exception should not be thrown here!!!");
+            }
+        }
+
+        [Test]
+        public void UpdateExisting()
+        {
+            MockedNoSqlContext ctx = new MockedNoSqlContext();
+            FactoryBusinessOperation.SetNoSqlContext(ctx);
+            MMetric existing = new MMetric();
+            existing.Key = "PageViews";
+            existing.Value = 5;
+            ctx.SetReturnObjectByKey<MMetric>(existing);
+
+            var opt = (IBusinessOperationManipulate<MMetric>) FactoryBusinessOperation.CreateBusinessOperationObject("IncreaseAndRetrieveMetric");
+            
+            MMetric dat = new MMetric();
+            dat.Key = "PageViews";
+            dat.Value = 5;
+
+            try
+            {
+                int result = opt.Apply(dat);
+                Assert.AreEqual(10,result);               
             }
             catch (Exception)
             {
