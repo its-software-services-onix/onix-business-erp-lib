@@ -12,7 +12,7 @@ using Its.Onix.Core.Databases;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 
-namespace Its.Onix.Erp.Migrations.Applications
+namespace Its.Onix.Erp.Businesses.Applications.Migrations
 {
 	public class DbMigrationApplication : ConsoleAppBase
 	{        

@@ -1,0 +1,12 @@
+{
+    "MasterId": null,
+    "Code": "XA",
+    "Name": "Personal",
+    "LongDescription": "Test edit by setting MasterId = null",
+    "ShortDescription": "Persional customer type",
+    "Type": 1,
+    "Tag": "",
+    "OperatorId": 99999,
+    "Key": "This is key",
+    "LastMaintDate": "0001-01-01T00:00:00"
+}

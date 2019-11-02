@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 
 using Its.Onix.Erp.Utils;
 using Its.Onix.Erp.Databases;
@@ -45,6 +46,12 @@ namespace Its.Onix.Erp.Businesses.Commons
             var opr = (GetInfoOperation) FactoryBusinessOperation.CreateBusinessOperationObject(name);
             return opr;
         }           
+
+        protected GetListOperation CreateGetListOperation(string name)
+        {
+            var opr = (GetListOperation) FactoryBusinessOperation.CreateBusinessOperationObject(name);
+            return opr;
+        }  
 
         protected IsExistOperation CreateIsExistOperation(string name)
         {
@@ -205,13 +212,15 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             int createdId = 0;
             T createdObj = null;
+            string key = "";
             if (param.CreateDummyRecord)
             {
                 var addOpr = CreateManipulateOperation(param.SaveOprName);
 
                 createdObj = (T) Activator.CreateInstance(typeof(T));
                 TestUtils.PopulateDummyPropValues(createdObj, param.PkFieldName);
-                TestUtils.SetPropertyValue(createdObj, param.KeyFieldName, "UNIQUE_KEY_HERE");
+                key = (string) TestUtils.GetPropertyValue(createdObj, param.KeyFieldName);
+                
                 addOpr.Apply(createdObj);
 
                 createdId = (int) TestUtils.GetPropertyValue(createdObj, param.PkFieldName);
@@ -238,7 +247,7 @@ namespace Its.Onix.Erp.Businesses.Commons
             {
                 TestUtils.PopulateDummyPropValues(m1, param.PkFieldName); //Simulate create new record
             }
-            TestUtils.SetPropertyValue(m1, param.KeyFieldName, "UNIQUE_KEY_HERE");
+            TestUtils.SetPropertyValue(m1, param.KeyFieldName, key);
 
             bool isExist = opr.Apply(m1);
 
@@ -304,7 +313,6 @@ namespace Its.Onix.Erp.Businesses.Commons
             return ok;
         }
 
-
         protected bool GetInfoNullIfNotFound<T>(string db, string provider, TestOperationParam param) where T : BaseModel
         {
             CreateOnixDbContext(db, provider);     
@@ -329,6 +337,58 @@ namespace Its.Onix.Erp.Businesses.Commons
 
             return ok && (getInfoObj == null);
         }
+
+        protected ArrayList CreateMultipleItems<T>(string db, string provider, TestOperationParam param, int count, string prefix) where T : BaseModel
+        {
+            ArrayList arr = new ArrayList();
+
+            for (int i=1; i<=count; i++)
+            {
+                T model = (T)Activator.CreateInstance(typeof(T));
+                TestUtils.PopulateDummyPropValues(model, param.PkFieldName);
+
+                string code = (string) TestUtils.GetPropertyValue(model, param.KeyFieldName);
+                code = string.Format("{0}{1}_{2}", prefix, i, code);
+                TestUtils.SetPropertyValue(model, param.KeyFieldName, code);
+
+                var saveOpr = CreateManipulateOperation(param.SaveOprName);
+                var o = saveOpr.Apply(model);
+
+                arr.Add(o);
+            }
+
+            return arr;
+        }
+
+        protected bool GetListOperationWithNoParameter<T>(string db, string provider, TestOperationParam param) where T : BaseModel
+        {
+            CreateOnixDbContext(db, provider);     
+
+            bool ok = true;
+            var opr = CreateGetListOperation(param.GetListName);            
+
+            try
+            {
+                QueryRequestParam qrp = new QueryRequestParam();
+                QueryResponseParam response = opr.Apply(qrp);          
+            }
+            catch
+            {
+                ok = false;
+            }
+
+            return ok;
+        }   
+
+        protected QueryResponseParam GetListOperationWithParameter<T>(string db, string provider, TestOperationParam param, QueryRequestParam qrp) where T : BaseModel
+        {
+            QueryResponseParam response = null;
+            var opr = CreateGetListOperation(param.GetListName);    
+
+            response = opr.Apply(qrp);
+
+            return response;
+        }        
 
         public OperationTestBase()
         {

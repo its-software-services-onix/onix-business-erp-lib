@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,7 +7,7 @@ namespace Its.Onix.Erp.Models
 {
 	public class Customer : ModelCommonFields
 	{
-        public int CustomerId {get; set;}
+        public int? CustomerId {get; set;}
 
         [Required]
         public string Code {get; set;}

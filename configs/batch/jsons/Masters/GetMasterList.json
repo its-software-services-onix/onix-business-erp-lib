@@ -1,0 +1,29 @@
+{
+    "PageNo": 1,
+    "PageSize": 999,
+    "ByChunk": true,
+    
+    "FiltersXX": [
+      {
+        "FieldName": "Type",
+        "Value": "1",
+        "Operator": "="
+      }, 
+      {
+        "FieldName": "MasterId",
+        "Value": "521",
+        "Operator": "="
+      }       
+    ],
+
+    "OrderBy": [
+      {
+        "FieldName": "Type",
+        "Order": "ASC"
+      },
+      {
+        "FieldName": "MasterId",
+        "Order": "ASC"
+      }      
+    ]
+  }

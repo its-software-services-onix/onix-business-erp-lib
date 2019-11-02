@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnixBusinessErp", "OnixBusi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnixBusinessErpTest", "OnixBusinessErpTest\OnixBusinessErpTest.csproj", "{B3560694-5E18-4D8E-A5F9-016F3DBEDBA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnixBusinessErpMigrate", "OnixBusinessErpMigrate\OnixBusinessErpMigrate.csproj", "{C16C243C-554B-4794-8F19-6ECF6F31A3FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnixBusinessErpConsole", "OnixBusinessErpConsole\OnixBusinessErpConsole.csproj", "{145E8704-1E52-431A-BD30-B73040CE12D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,5 +58,17 @@ Global
 		{C16C243C-554B-4794-8F19-6ECF6F31A3FF}.Release|x64.Build.0 = Release|Any CPU
 		{C16C243C-554B-4794-8F19-6ECF6F31A3FF}.Release|x86.ActiveCfg = Release|Any CPU
 		{C16C243C-554B-4794-8F19-6ECF6F31A3FF}.Release|x86.Build.0 = Release|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Debug|x64.Build.0 = Debug|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Debug|x86.Build.0 = Debug|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Release|x64.ActiveCfg = Release|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Release|x64.Build.0 = Release|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Release|x86.ActiveCfg = Release|Any CPU
+		{145E8704-1E52-431A-BD30-B73040CE12D7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
