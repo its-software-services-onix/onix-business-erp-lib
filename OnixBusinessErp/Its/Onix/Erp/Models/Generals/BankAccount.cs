@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 using Its.Onix.Erp.Models.Commons;
