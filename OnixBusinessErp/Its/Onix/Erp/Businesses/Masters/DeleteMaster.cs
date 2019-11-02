@@ -1,5 +1,3 @@
-using System;
-
 using Its.Onix.Core.Commons.Model;
 using Its.Onix.Erp.Businesses.Commons;
 using Its.Onix.Erp.Models;

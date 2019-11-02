@@ -1,4 +1,3 @@
-using System;
 using Its.Onix.Core.Commons.Model;
 
 namespace Its.Onix.Erp.Models

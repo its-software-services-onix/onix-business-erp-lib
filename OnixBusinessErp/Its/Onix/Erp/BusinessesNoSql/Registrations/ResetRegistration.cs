@@ -1,7 +1,6 @@
 using System;
 
 using Its.Onix.Erp.Models;
-using Its.Onix.Erp.Utils;
 
 namespace Its.Onix.Erp.Businesses.Registrations
 {
