@@ -195,6 +195,6 @@ jobs:
           name: Publish Packages
           command: |
             dotnet nuget \
-            push << pipeline.parameters.workspace_path >>/<< pipeline.parameters.package_path >>/OnixCore.${PACKAGE_NAME}.nupkg \
+            push << pipeline.parameters.workspace_path >>/<< pipeline.parameters.package_path >>/OnixBusinessErp.${PACKAGE_NAME}.nupkg \
             -k ${NUGET_PUSH_KEY} \
             -s << pipeline.parameters.nuget_api >>
