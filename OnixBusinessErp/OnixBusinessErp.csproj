@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <Authors>Pjamenaja</Authors>
     <Company>ITS-SOFTWARE-SERVICES.com</Company>    
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
@@ -12,6 +12,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.4" />
-    <PackageReference Include="OnixCore" Version="1.0.19" />
+    <PackageReference Include="OnixCore" Version="1.0.30" />
   </ItemGroup>
 </Project>
