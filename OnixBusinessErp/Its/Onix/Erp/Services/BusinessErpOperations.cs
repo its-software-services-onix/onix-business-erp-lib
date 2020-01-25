@@ -43,6 +43,11 @@ namespace Its.Onix.Erp.Services
             AddClassConfig(asm, "GetMasterInfo", "Its.Onix.Erp.Businesses.Masters.GetMasterInfo");
             AddClassConfig(asm, "GetMasterList", "Its.Onix.Erp.Businesses.Masters.GetMasterList");
 
+            AddClassConfig(asm, "SaveCompanyProfile", "Its.Onix.Erp.Businesses.CompanyProfiles.SaveCompanyProfile");
+            AddClassConfig(asm, "DeleteCompanyProfile", "Its.Onix.Erp.Businesses.CompanyProfiles.DeleteCompanyProfile");
+            AddClassConfig(asm, "IsCompanyProfileExist", "Its.Onix.Erp.Businesses.CompanyProfiles.IsCompanyProfileExist");
+            AddClassConfig(asm, "GetCompanyProfileInfo", "Its.Onix.Erp.Businesses.CompanyProfiles.GetCompanyProfileInfo");
+            AddClassConfig(asm, "GetCompanyProfileList", "Its.Onix.Erp.Businesses.CompanyProfiles.GetCompanyProfileList");            
         }  
     } 
 }

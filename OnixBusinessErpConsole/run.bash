@@ -1,6 +1,6 @@
 dotnet run Migrate
 
-dotnet ef migrations add MasterAddKeyAuto \
+dotnet ef migrations add CompanyProfilesAdd \
 -o "Its/Onix/Erp/Businesses/Applications/Migrations/MigrationsPgSql" \
 --context "OnixBusinessErpApp.OnixErpDbContextPgSql"
 

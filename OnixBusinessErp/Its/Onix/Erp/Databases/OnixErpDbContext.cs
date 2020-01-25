@@ -23,6 +23,7 @@ namespace Its.Onix.Erp.Databases
             SetConstraintMaster(modelBuilder);
         }
 
+        public DbSet<CompanyProfile> CompanyProfiles { get; set; }
         public DbSet<Master> Masters { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Address> Addresses { get; set; }
