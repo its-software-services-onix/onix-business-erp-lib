@@ -20,3 +20,8 @@ dotnet run OperationTest \
 --opr=IsMasterExist \
 --m=Master \
 --if=../configs/batch/jsons/Masters/IsMasterExist.json
+
+dotnet run OperationTest \
+--opr=SaveCompanyProfile \
+--m=CompanyProfile \
+--if=../configs/batch/jsons/CompanyProfiles/SaveCompanyProfile.json
