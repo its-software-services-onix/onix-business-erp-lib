@@ -1,9 +1,11 @@
 {
     "CompanyProfileId": null,
-    "Code": "ITS",
+    "Code": "ITS3",
     "CompanyNameThai": "ITS-Software-Services.com",
     "CompanyNameEng": "ITS Software Services Dot Com",
     "OperatorNameThai": "Seubpong Monsar",
+
+    "CompanyPrefix": {"MasterId": null, "Code": "XXXss", "Name": "This is name"},
 
     "Tag": "",
     "OperatorId": 99999,

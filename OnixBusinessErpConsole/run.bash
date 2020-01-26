@@ -25,3 +25,8 @@ dotnet run OperationTest \
 --opr=SaveCompanyProfile \
 --m=CompanyProfile \
 --if=../configs/batch/jsons/CompanyProfiles/SaveCompanyProfile.json
+
+dotnet run OperationTest \
+--opr=GetCompanyProfileInfo \
+--m=CompanyProfile \
+--if=../configs/batch/jsons/CompanyProfiles/GetCompanyProfileInfo.json
