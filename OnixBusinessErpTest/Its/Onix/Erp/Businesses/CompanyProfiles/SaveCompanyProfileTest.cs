@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 using Its.Onix.Erp.Businesses.Commons;
 using Its.Onix.Erp.Models;
+using Its.Onix.Erp.Utils;
 
 namespace Its.Onix.Erp.Businesses.CompanyProfiles
 {
@@ -62,6 +63,25 @@ namespace Its.Onix.Erp.Businesses.CompanyProfiles
         {
             bool isOk = UpdateOperation<CompanyProfile>(db, provider, false, param);
             Assert.AreEqual(true, isOk, "Object should be able to update because not brak a unique key constraint!!!");
-        }                  
+        }   
+
+        [TestCase("onix_erp", "sqlite_inmem")]
+        public void UpdateCompanyProfileOperationWithRefToPrefixIdTest(string db, string provider)
+        {
+            CreateOnixDbContext(db, provider);
+
+            var prefixOpr = CreateManipulateOperation("SaveMaster");
+            Master prefix = (Master) Activator.CreateInstance(typeof(Master));
+            TestUtils.PopulateDummyPropValues(prefix, "MasterId");
+            TestUtils.SetPropertyValue(prefix, "MasterId", null); //Create new one
+            Master pr = (Master) prefixOpr.Apply(prefix);
+
+            var updateOpr = CreateManipulateOperation(param.SaveOprName);
+            CompanyProfile m1 = (CompanyProfile) Activator.CreateInstance(typeof(CompanyProfile));
+            TestUtils.PopulateDummyPropValues(m1, param.PkFieldName);
+            m1.CompanyPrefix = pr;
+
+            updateOpr.Apply(m1);
+        }                        
     }
 }

@@ -1,3 +1,5 @@
+using System.Linq;
+
 using Its.Onix.Core.Commons.Model;
 using Its.Onix.Erp.Businesses.Commons;
 using Its.Onix.Erp.Models;
@@ -14,6 +16,16 @@ namespace Its.Onix.Erp.Businesses.CompanyProfiles
 
             CompanyProfile m = (CompanyProfile) dat;
 
+            if ((m.CompanyPrefix != null) && (m.CompanyPrefix.MasterId != null))
+            {
+                int? id = m.CompanyPrefix.MasterId;
+                var o = ctx.Masters
+                    .Where(s => s.MasterId == id)
+                    .FirstOrDefault();
+
+                m.CompanyPrefix = o;                 
+            }
+            
             if (ConvertUtils.NullableToInt(m.CompanyProfileId, 0) <= 0)
             {
                 m.CompanyProfileId = null;
