@@ -1,4 +1,5 @@
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 using Its.Onix.Core.Commons.Model;
 using Its.Onix.Erp.Businesses.Commons;
@@ -27,6 +28,7 @@ namespace Its.Onix.Erp.Businesses.CompanyProfiles
 
             var o = ctx.CompanyProfiles
                     .Where(s => s.CompanyProfileId == id)
+                    .Include(c => c.CompanyPrefix)
                     .FirstOrDefault();
     
             return o;
