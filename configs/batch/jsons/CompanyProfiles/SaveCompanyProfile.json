@@ -5,7 +5,7 @@
     "CompanyNameEng": "ITS Software Services Dot Com",
     "OperatorNameThai": "Seubpong Monsar",
 
-    "CompanyPrefix": {"MasterId": null, "Code": "XXXss", "Name": "This is name"},
+    "CompanyPrefix": {"MasterId": 11},
 
     "Tag": "",
     "OperatorId": 99999,
