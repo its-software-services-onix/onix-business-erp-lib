@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <!-- <PackageReference Include="Microsoft.EntityFrameworkCore.DynamicLinq" Version="1.0.19" /> -->
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <ProjectReference Include="..\OnixBusinessErp\OnixBusinessErp.csproj" />
     <PackageReference Include="OnixCore" Version="1.0.32" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.4" />
